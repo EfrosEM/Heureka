@@ -1,0 +1,31 @@
+{
+  "name": "heureka",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "qunit",
+    "start": "node app",
+    "dev-unix": "export NODE_ENV=dev && nodemon app",
+    "dev-windows": "set NODE_ENV=dev && nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gatoinomana/heureka.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gatoinomana/heureka/issues"
+  },
+  "homepage": "https://github.com/gatoinomana/heureka#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "jquery": "^3.5.1",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "qunit": "^2.11.1"
+  }
+}
