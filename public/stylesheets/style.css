@@ -28,13 +28,11 @@
 }
 
 #imagenes-home img:first-child {
-  transform: rotate(2deg);
   max-width: 100%;
   margin: auto;
 }
 
 #imagenes-home img:nth-child(2) {
-  transform: rotate(-5deg);
   max-width: 70%;
   margin: 15px auto auto auto;
 }

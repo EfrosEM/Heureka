@@ -22,6 +22,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "fs": "0.0.1-security",
+    "handlebars-i18n": "^1.6.4",
+    "i18next": "^23.10.1",
     "jquery": "^3.5.1",
     "nodemon": "^2.0.4"
   },
