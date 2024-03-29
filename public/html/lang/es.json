@@ -23,5 +23,14 @@
     "heuristicas7": "Flexibilidad y eficiencia de uso",
     "heuristicas8": "Estética y diseño minimalista",
     "heuristicas9": "Ayudar a reconocer, diagnosticar y recuperarse de fallos",
-    "heuristicas10": "Ayuda y documentación"
+    "heuristicas10": "Ayuda y documentación",
+
+
+    "error": "Ha habido un error...",
+    "error403": "No tienes permiso para acceder a esta página",
+    "error404": "La página a la que has intentado acceder no existe.",
+    "error500": "Nuestro servidor ha tenido algún problema para cargar la partida.",
+    "dirigete": "Dirígete a alguna de estas páginas:",
+    "recarga": "Recarga la página o dirígete a alguna de estas páginas:"
+
 }

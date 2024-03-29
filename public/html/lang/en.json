@@ -23,5 +23,14 @@
     "heuristicas7": "Flexibility and efficiency of use.",
     "heuristicas8": "Minimalist aesthetics and design",
     "heuristicas9": "Help recognize, diagnose and recover from failures",
-    "heuristicas10": "Help and documentation"
+    "heuristicas10": "Help and documentation",
+    
+
+    "error": "An error has occured...",
+    "error403": "You do not have permission to access this page",
+    "error404": "The page you have tried to access does not exist.",
+    "error500": "Our server had a problem loading the game.",
+    "dirigete": "Go to one of these pages:",
+    "recarga": "Reload the page or go to one of these pages:"
+
 }

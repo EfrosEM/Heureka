@@ -15,21 +15,26 @@
         <a href="index.html"><img alt="Página principal de Heureka" src="images/logo.svg"></a>
       </div>
       <div id="nav">
-        <a href="index.html">Página principal</a>
-        <a href="game.html">Nueva partida</a>
-        <a href="fuentes.html">Fuentes</a>
+        <a data-i18n="home" class="active" href="index.html"></a>
+        <a data-i18n="new-game" href="game.html"></a>
+        <a data-i18n="sources" href="fuentes.html"></a>
       </div>
     </header>
     
     <main class="contenido" id="error">
-      <h1>Ha habido un error...</h1>
-      <h2>Nuestro servidor ha tenido algún problema para cargar la partida.</h2>
-      <p>Recarga la página o dirígete a alguna de estas páginas:</p>
+      <!-- Menú desplegable para seleccionar idioma -->
+      <select id="language-select">
+        <option value="es">Español</option>
+        <option value="en">English</option>
+      </select>
+      <h1 data-i18n="error"></h1>
+      <h2 data-i18n="error500"></h2>
+      <p data-i18n="recarga"></p>
       <p>
         <ul>
-          <li><a href="index.html">Página principal</li> 
-          <li><a href="game.html">Nueva partida</a></li>
-          <li><a href="fuentes.html">Fuentes</a></li>
+          <li><a data-i18n="home" class="active" href="index.html"></a></li> 
+          <li><a data-i18n="new-game" href="game.html"></a></li>
+          <li><a data-i18n="sources" href="fuentes.html"></a></li>
         </ul>
       </p>
     </main>
@@ -55,8 +60,12 @@
       </div>
       <div><a id="link-sitemap" lang="en" href="sitemap.html">Sitemap</a></div>
       <div id="creditos">
-        <p>Creado por Noelia Martínez Rojo (Universidad de Murcia, 2020)</p>
+        <p data-i18n="creator"></p>
       </div>
     </footer>
+    
+    <!-- Script para seleccionar el idioma de la página -->
+    <script src="/js/i18n.js"></script>
+
   </body>
 </html>
