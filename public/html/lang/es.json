@@ -8,5 +8,20 @@
     "heureka-description3": "No te preocupes por entenderlas ahora. Podrás consultarlas durante el juego.",
     "diagram": "Descripción diagrama",
     "play": "Jugar",
-    "creator": "Noelia Martínez Rojo y Eduardo Espinosa Meroño (Universidad de Murcia, 2024)"
+    "creator": "Noelia Martínez Rojo y Eduardo Espinosa Meroño (Universidad de Murcia, 2024)",
+
+
+    "accesibilidad": "Accesibilidad",
+    "descripcion": "Descripción del diagrama de las 10 heurísticas de Nielsen",
+    "heuristicas": "El diagrama muestra el nombre de cada heurística junto a un icono decorativo:",
+    "heuristicas1": "Visibilidad del estado del sistema",
+    "heuristicas2": "Correspondencia entre el sistema y el mundo real",
+    "heuristicas3": "Control y libertad para el usuario",
+    "heuristicas4": "Consistencia y estándares",
+    "heuristicas5": "Prevención de errores",
+    "heuristicas6": "Favorecer el reconocimiento sobre el recuerdo",
+    "heuristicas7": "Flexibilidad y eficiencia de uso",
+    "heuristicas8": "Estética y diseño minimalista",
+    "heuristicas9": "Ayudar a reconocer, diagnosticar y recuperarse de fallos",
+    "heuristicas10": "Ayuda y documentación"
 }

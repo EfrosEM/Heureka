@@ -15,27 +15,32 @@
         <a href="index.html"><img alt="Página principal de Heureka" src="images/logo.svg"></a>
       </div>
       <div id="nav">
-        <a href="index.html">Página principal</a>
-        <a href="game.html">Nueva partida</a>
-        <a href="fuentes.html">Fuentes</a>
+        <a data-i18n="home" class="active" href="index.html"></a>
+        <a data-i18n="new-game" href="game.html"></a>
+        <a data-i18n="sources" href="fuentes.html"></a>
       </div>
     </header>
     <main class="contenido" id="longdesc">
-      <h2>Accesibilidad</h2>
-      <h3>Descripción del diagrama de las 10 heurísticas de Nielsen</h3>
+      <!-- Menú desplegable para seleccionar idioma -->
+      <select id="language-select">
+        <option value="es">Español</option>
+        <option value="en">English</option>
+      </select>
+      <h2 data-i18n="accesibilidad"></h2>
+      <h3 data-i18n="descripcion"></h3>
       <img alt="Diagrama de las 10 heurísticas de Nielsen" src="images/diagrama-heuristicas.png">
-      <p>El diagrama muestra el nombre de cada heurística junto a un icono decorativo:</p>
+      <p data-i18n="heuristicas"></p>
       <ul id="lista-heuristicas">
-        <li>Visibilidad del estado del sistema</li>
-        <li>Correspondencia entre el sistema y el mundo real</li>
-        <li>Control y libertad para el usuario</li>
-        <li>Consistencia y estándares</li>
-        <li>Prevención de errores</li>
-        <li>Favorecer el reconocimiento sobre el recuerdo</li>
-        <li>Flexibilidad y eficiencia de uso</li>
-        <li>Estética y diseño minimalista</li>
-        <li>Ayudar a reconocer, diagnosticar y recuperarse de fallos</li>
-        <li>Ayuda y documentación</li>
+        <li data-i18n="heuristicas1"></li>
+        <li data-i18n="heuristicas2"></li>
+        <li data-i18n="heuristicas3"></li>
+        <li data-i18n="heuristicas4"></li>
+        <li data-i18n="heuristicas5"></li>
+        <li data-i18n="heuristicas6"></li>
+        <li data-i18n="heuristicas7"></li>
+        <li data-i18n="heuristicas8"></li>
+        <li data-i18n="heuristicas9"></li>
+        <li data-i18n="heuristicas10"></li>
       </ul>
     </main>
     
@@ -60,8 +65,12 @@
       </div>
       <div><a id="link-sitemap" lang="en" href="sitemap.html">Sitemap</a></div>
       <div id="creditos">
-        <p>Creado por Noelia Martínez Rojo (Universidad de Murcia, 2020)</p>
+        <p data-i18n="creator"></p>
       </div>
     </footer>
+
+    <!-- Script para seleccionar el idioma de la página -->
+    <script src="/js/i18n.js"></script>
+
   </body>
 </html>
