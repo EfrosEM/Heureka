@@ -31,6 +31,21 @@
     "error404": "La página a la que has intentado acceder no existe.",
     "error500": "Nuestro servidor ha tenido algún problema para cargar la partida.",
     "dirigete": "Dirígete a alguna de estas páginas:",
-    "recarga": "Recarga la página o dirígete a alguna de estas páginas:"
+    "recarga": "Recarga la página o dirígete a alguna de estas páginas:",
+
+
+    "ejemplos": "Los ejemplos utilizados en el juego se han tomado de diversos artículos de la web de NNGroup, una empresa de investigación y consultoría de UX fundada por el propio Jakob Nielsen y Don Norman:",
+
+    "mapa": "Mapa del sitio",
+    "paginas": "Estas son las páginas del sitio web:",
+
+    "ganado": "¡Has ganado!",
+    "perdido": "¡Has perdido!",
+    "superado": "Has conseguido superar las 10 preguntas sin perder todas las vidas.",
+    "agotado": "Has agotado todas las vidas antes de terminar las 10 preguntas.",
+    "play-again": "Volver a jugar",
+    "has-acertado": "Has acertado ",
+    "de": " de ",
+    "preguntas-en": " preguntas en "
 
 }

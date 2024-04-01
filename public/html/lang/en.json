@@ -31,6 +31,22 @@
     "error404": "The page you have tried to access does not exist.",
     "error500": "Our server had a problem loading the game.",
     "dirigete": "Go to one of these pages:",
-    "recarga": "Reload the page or go to one of these pages:"
+    "recarga": "Reload the page or go to one of these pages:",
+
+
+    "ejemplos": "The examples used in the game have been taken from various articles on the NNGroup website, a UX research and consulting company founded by Jakob Nielsen himself and Don Norman:",
+
+
+    "mapa": "Sitemap",
+    "paginas": "These are the pages of the website:",
+
+    "ganado": "You have won!",
+    "perdido": "You have lost!",
+    "superado": "You have managed to pass all 10 questions without losing all your lives.",
+    "agotado": "You have lost all the lives before finishing the 10 questions.",
+    "play-again": "Play again",
+    "has-acertado": "You have answered correctly ",
+    "de": " of ",
+    "preguntas-en": " questions in "
 
 }
