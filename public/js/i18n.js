@@ -14,6 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         xhr.open('GET', 'lang/' + lang + '.json');
         xhr.send();
+
+        // Almacenar el idioma seleccionado en el almacenamiento local
+        localStorage.setItem('selectedLanguage', lang);
+
+        // Establecer el valor seleccionado del menú desplegable
+        const languageSelect = document.getElementById('language-select');
+        if (languageSelect) {
+            languageSelect.value = lang;
+        }
     }
 
     // Función para traducir el contenido de la página
@@ -27,6 +36,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Obtener el idioma seleccionado del almacenamiento local
+    const selectedLang = localStorage.getItem('selectedLanguage') || 'en';
+
+    // Llama a la función de carga de idioma con el idioma seleccionado
+    loadLanguage(selectedLang);
+
     // Llama a la función de carga de idioma cuando se cambia la selección del menú desplegable
     const languageSelect = document.getElementById('language-select');
     if (languageSelect) {
@@ -35,7 +50,4 @@ document.addEventListener('DOMContentLoaded', function() {
             loadLanguage(selectedLang);
         });
     }
-
-    // Cargar el idioma por defecto al inicio
-    loadLanguage('es');
 });
