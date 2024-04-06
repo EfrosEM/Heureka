@@ -40,6 +40,7 @@
     "mapa": "Sitemap",
     "paginas": "These are the pages of the website:",
 
+
     "ganado": "You have won!",
     "perdido": "You have lost!",
     "superado": "You have managed to pass all 10 questions without losing all your lives.",
@@ -47,6 +48,9 @@
     "play-again": "Play again",
     "has-acertado": "You have answered correctly ",
     "de": " of ",
-    "preguntas-en": " questions in "
+    "preguntas-en": " questions in ",
 
+
+    "vidas": "Lives remaining",
+    "crono": "Chronometer"
 }

@@ -36,8 +36,10 @@
 
     "ejemplos": "Los ejemplos utilizados en el juego se han tomado de diversos artículos de la web de NNGroup, una empresa de investigación y consultoría de UX fundada por el propio Jakob Nielsen y Don Norman:",
 
+
     "mapa": "Mapa del sitio",
     "paginas": "Estas son las páginas del sitio web:",
+
 
     "ganado": "¡Has ganado!",
     "perdido": "¡Has perdido!",
@@ -46,6 +48,10 @@
     "play-again": "Volver a jugar",
     "has-acertado": "Has acertado ",
     "de": " de ",
-    "preguntas-en": " preguntas en "
+    "preguntas-en": " preguntas en ",
+
+
+    "vidas": "Vidas restantes",
+    "crono": "Cronometro"
 
 }
