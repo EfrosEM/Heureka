@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="shortcut icon" href="#" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body class="web">
     <header>
@@ -18,15 +19,16 @@
         <a data-i18n="home" class="active" href="index.html"></a>
         <a data-i18n="new-game" href="game.html"></a>
         <a data-i18n="sources" href="fuentes.html"></a>
+
+        <!-- Menú desplegable para seleccionar idioma -->
+        <select class="form-select"  style="width:auto;" id="language-select">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+        </select>
       </div>
     </header>
     
     <main class="contenido" id="fuentes">
-      <!-- Menú desplegable para seleccionar idioma -->
-      <select id="language-select">
-        <option value="es">Español</option>
-        <option value="en">English</option>
-      </select>
       <h1 data-i18n="mapa"></h1>
       <p data-i18n="paginas"></p>
       <p>
@@ -62,7 +64,10 @@
         <p data-i18n="creator"></p>
       </div>
     </footer>
+
     <!-- Script para seleccionar el idioma de la página -->
     <script src="/js/i18n.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>

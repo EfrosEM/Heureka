@@ -214,8 +214,8 @@ header {
     overflow-x: hidden;
   }
   
-  #div-extra, #nav {
-    width: 350px;
+  #div-extra, #nav{
+    width: 500px;
   }
 }
 

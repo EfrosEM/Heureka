@@ -52,6 +52,8 @@
 
 
     "vidas": "Vidas restantes",
-    "crono": "Cronometro"
+    "crono": "Cronometro",
+    "pregunta": "Pregunta ",
+    "de-10": " de 10"
 
 }

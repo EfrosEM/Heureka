@@ -52,5 +52,7 @@
 
 
     "vidas": "Lives remaining",
-    "crono": "Chronometer"
+    "crono": "Chronometer",
+    "pregunta": "Question ",
+    "de-10": " of 10"
 }
