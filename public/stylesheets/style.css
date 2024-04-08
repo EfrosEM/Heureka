@@ -254,6 +254,10 @@ footer {
   flex-wrap: wrap;
 }
 
+#iconos-validacion, #creditos {
+  width: 350px;
+}
+
 #creditos {
   color: #242424;
   font-size: smaller;
