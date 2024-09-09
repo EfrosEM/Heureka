@@ -1,42 +1,62 @@
 [
     {
         "nombre": "Visibilidad del estado del sistema",
-        "ayuda": "El sistema siempre debe mantener a los usuarios informados de lo que está ocurriendo, reaccionando a sus acciones de forma apropiada y en un tiempo razonable."
+        "ayuda": "El sistema siempre debe mantener a los usuarios informados de lo que está ocurriendo, reaccionando a sus acciones de forma apropiada y en un tiempo razonable.",
+        "name": "System status visibility",
+        "help": "The system must always keep users informed of what is happening, reacting to their actions appropriately and in a reasonable time."
     },
     {
         "nombre": "Correspondencia entre el sistema y el mundo real",
-        "ayuda": "El sistema debe hablar el lenguaje del usuario, utilizando palabras, frases y conceptos familiares para él, en lugar de términos orientados al sistema. Sigue las convenciones del mundo real, haciendo que la información aparezca en un orden natural y lógico."
+        "ayuda": "El sistema debe hablar el lenguaje del usuario, utilizando palabras, frases y conceptos familiares para él, en lugar de términos orientados al sistema. Sigue las convenciones del mundo real, haciendo que la información aparezca en un orden natural y lógico.",
+        "name": "Correspondence between the system and the real world",
+        "help": "The system must speak the user's language, using words, phrases, and concepts familiar to the user, rather than system-oriented terms. It follows real-world conventions, making information appear in a natural, logical order."
     },
     {
         "nombre": "Control y libertad para el usuario",
-        "ayuda": "Es frecuente que los usuarios escojan funcionalidades por error, por lo que necesitarán una \"salida de emergencia\" claramente marcada para abandonar el estado indeseado sin tener que pasar por un cuadro de diálogo tedioso. Da soporte a deshacer y rehacer."
+        "ayuda": "Es frecuente que los usuarios escojan funcionalidades por error, por lo que necesitarán una \"salida de emergencia\" claramente marcada para abandonar el estado indeseado sin tener que pasar por un cuadro de diálogo tedioso. Da soporte a deshacer y rehacer.",
+        "name": "Control and freedom for the user",
+        "help": "Users often choose features by mistake, so they will need a clearly marked \"emergency exit\" to exit the unwanted state without having to go through a tedious dialog. Supports undo and redo."
     },
     {
         "nombre": "Consistencia y estándares",
-        "ayuda": "Los usuarios no deben tener que preguntarse si palabras, situaciones o acciones diferentes significan lo mismo. Sigue las convenciones de la plataforma de desarrollo."
+        "ayuda": "Los usuarios no deben tener que preguntarse si palabras, situaciones o acciones diferentes significan lo mismo. Sigue las convenciones de la plataforma de desarrollo.",
+        "name": "Consistency and standards",
+        "help": "Users should not have to wonder if different words, situations, or actions mean the same thing. Follow the conventions of the development platform."
     },
     {
         "nombre": "Prevención de errores",
-        "ayuda": "Aún mejor que los buenos mensajes de error es un diseño que evite que se llegue a producir el error. Elimina las condiciones propensas a errores o bien detéctalas y da al usuario la opción de confirmar la acción antes de realizarla."
+        "ayuda": "Aún mejor que los buenos mensajes de error es un diseño que evite que se llegue a producir el error. Elimina las condiciones propensas a errores o bien detéctalas y da al usuario la opción de confirmar la acción antes de realizarla.",
+        "name": "Error prevention",
+        "help": "Even better than good error messages is a design that prevents the error from ever occurring. Eliminate error-prone conditions or detect them and give the user the option to confirm the action before performing it."
     },
     {
         "nombre": "Favorecer el reconocimiento sobre el recuerdo",
-        "ayuda": "Minimiza la carga cognitiva del usuario haciendo visibles los objetos, acciones y opciones. El usuario no debería tener que recordar la información de un cuadro de diálogo en otro posterior. Las instrucciones para usar el sistema deberían ser visibles o fácilmente accesibles cuando sea preciso."
+        "ayuda": "Minimiza la carga cognitiva del usuario haciendo visibles los objetos, acciones y opciones. El usuario no debería tener que recordar la información de un cuadro de diálogo en otro posterior. Las instrucciones para usar el sistema deberían ser visibles o fácilmente accesibles cuando sea preciso.",
+        "name": "Promote recognition over memory",
+        "help": "Minimizes the user's cognitive load by making objects, actions and options visible. The user should not have to remember information from one dialog box in a subsequent one. Instructions for using the system should be visible or easily accessible when necessary."
     },
     {
         "nombre": "Flexibilidad y eficiencia de uso",
-        "ayuda": "Los aceleradores (ocultos para el usuario novato) a menudo agilizan la interacción para los usuarios expertos, de tal manera que el sistema puede servir a usuarios con y sin experiencia. Permite que los usuarios adapten a su medida las acciones frecuentes."
+        "ayuda": "Los aceleradores (ocultos para el usuario novato) a menudo agilizan la interacción para los usuarios expertos, de tal manera que el sistema puede servir a usuarios con y sin experiencia. Permite que los usuarios adapten a su medida las acciones frecuentes.",
+        "name": "Flexibility and efficiency of use",
+        "help": "Accelerators (hidden from the novice user) often speed up interaction for expert users, so that the system can serve both experienced and inexperienced users. Allows users to tailor frequent actions to suit themselves."
     },
     {
         "nombre": "Estética y diseño minimalista",
-        "ayuda": "Los diálogos no deben contener información irrelevante o normalmente innecesaria. Cada unidad extra de información dentro de un diálogo compite con las unidades de información relevantes y disminuye su visibilidad relativa."
+        "ayuda": "Los diálogos no deben contener información irrelevante o normalmente innecesaria. Cada unidad extra de información dentro de un diálogo compite con las unidades de información relevantes y disminuye su visibilidad relativa.",
+        "name": "Minimalist aesthetics and design",
+        "help": "Dialogues should not contain irrelevant or normally unnecessary information. Each extra unit of information within a dialogue competes with the relevant units of information and decreases their relative visibility."
     },
     {
         "nombre": "Ayudar a los usuarios a reconocer, diagnosticar y recuperarse de los fallos",
-        "ayuda": "Los mensajes de error deben expresarse con lenguaje llano (sin códigos de error), indicar el problema con precisión y sugerir una solución de forma constructiva."
+        "ayuda": "Los mensajes de error deben expresarse con lenguaje llano (sin códigos de error), indicar el problema con precisión y sugerir una solución de forma constructiva.",
+        "name": "Help users recognize, diagnose, and recover from failures",
+        "help": "Error messages should be expressed in plain language (without error codes), state the problem precisely, and constructively suggest a solution."
     },
     {
         "nombre": "Ayuda y documentación",
-        "ayuda": "Aunque es mejor que el sistema se pueda usar sin documentación, puede ser necesario ofrecer ayuda y documentación. Cualquier información de este tipo debe ser fácil de buscar, centrarse en la tarea del usuario, enumerar los pasos a seguir y no ser demasiado extensa."
+        "ayuda": "Aunque es mejor que el sistema se pueda usar sin documentación, puede ser necesario ofrecer ayuda y documentación. Cualquier información de este tipo debe ser fácil de buscar, centrarse en la tarea del usuario, enumerar los pasos a seguir y no ser demasiado extensa.",
+        "name": "Help and documentation",
+        "help": "Although it is best that the system can be used without documentation, it may be necessary to offer help and documentation. Any such information should be easy to search, focus on the user's task, list the steps to follow, and not be too long."
     }
 ]
