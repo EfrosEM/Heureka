@@ -54,7 +54,7 @@
           <span id="num-pregunta">{{numPregunta}}</span>
           <span data-i18n="de-10" id="num-pregunta"></span>
           
-          <p tabindex="0">Encuentra una interfaz que {{cumpla}}<strong id="mal-ejemplo">{{incumpla}}</strong> la heurística {{numHeuristica}}:</p>
+          <p tabindex="0">Encuentra una interfaz que<strong id="mal-ejemplo">{{cumpla}}{{incumpla}}</strong> la heurística {{numHeuristica}}:</p>
           <p id="nombre-heuristica" tabindex="0"><strong>{{nombreHeuristica}}</strong></p>
         </script>
 
@@ -77,11 +77,11 @@
       </div>
 
       <script id="plantilla-vidas" type="text/x-handlebars-template">   
-        Vidas restantes: {{{vidas}}}
+        <span data-i18n="vidas"></span>: {{{vidas}}}
       </script>
 
       <script id="plantilla-cronometro" type="text/x-handlebars-template">
-        Cronómetro: ⏱️ {{cronometro}}
+        <span data-i18n="crono"></span>: ⏱️ {{cronometro}}
       </script>
 
       <div id="tarjetas-botones">

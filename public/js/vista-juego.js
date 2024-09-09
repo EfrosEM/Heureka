@@ -3,7 +3,41 @@ import {Controlador} from './controlador.js';
 let controlador = null;
 
 $(document).ready( () => {
+    // Cargar el idioma antes de inicializar los elementos de la página
+    const selectedLang = localStorage.getItem('selectedLanguage') || 'en';
 
+    // Cargar el idioma y después inicializar el juego
+    cargarIdioma(selectedLang).then(() => {
+        inicializarPagina();  // Este es el siguiente paso
+    }).catch((error) => {
+        console.error('Error al cargar el idioma:', error);
+        inicializarPagina();  // Inicializar la página aunque falle la carga del idioma
+    });
+})
+
+function cargarIdioma(lang) {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: 'lang/' + lang + '.json',
+            type: 'GET',
+            async: true,
+            success: function(result) {
+                // Almacenar las traducciones en una variable global
+                window.translations = result;
+
+                // Aplicar las traducciones globales a los elementos ya existentes en el DOM
+                aplicarTraducciones();
+
+                resolve();  // Resolvemos la promesa
+            },
+            error: function() {
+                reject('Error al cargar el archivo de idioma.');
+            }
+        });
+    });
+}
+
+function inicializarPagina() {
     // Deshabilitar botón por defecto
     $("#boton-accion").prop("disabled", true);
     
@@ -24,19 +58,21 @@ $(document).ready( () => {
             setupPartida();
         },
         error: function(xhr, status, error) {
-            $.ajax({
-                url: '/error500.html',
-                type: 'GET',
-                async: true,
-                success: function(result, status, xhr) {
-                },
-                error: function(xhr, status, error) {
-                    window.location.href = "error500.html";
-                }
-            });
+            // Manejar error si la configuración del juego falla
+            window.location.href = "error500.html";
         }
     });
-})
+}
+
+function aplicarTraducciones() {
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (window.translations[key]) {
+            element.textContent = window.translations[key];
+        }
+    });
+}
 
 function setupPartida() {
     mostrarNuevaPregunta();
@@ -90,34 +126,25 @@ function mostrarNuevaPregunta() {
     const plantillaAyudaCompilada = Handlebars.compile(plantillaAyuda);
 
     var contexto = {
-        "numPregunta" : controlador.getNumPreguntadas(),
-        "cumpla": preguntaActual.esBuenEjemplo? "cumpla" : "",
-        "incumpla": preguntaActual.esBuenEjemplo? "" : "👎INCUMPLA",
-        "numHeuristica" : preguntaActual.numHeuristica,
-        "nombreHeuristica" : preguntaActual.nombreHeuristica,
-        "tarjetas" : preguntaActual.tarjetasRespuesta,
-        "ayuda" : preguntaActual.definicionHeuristica
+        "numPregunta": controlador.getNumPreguntadas(),
+        "cumpla": preguntaActual.esBuenEjemplo? " 👍CUMPLA" : "",
+        "incumpla": preguntaActual.esBuenEjemplo? "" : " 👎INCUMPLA",
+        "numHeuristica": preguntaActual.numHeuristica,
+        "nombreHeuristica": preguntaActual.nombreHeuristica,
+        "tarjetas": preguntaActual.tarjetasRespuesta,
+        "ayuda": preguntaActual.definicionHeuristica
     };
 
     // Actualizar interfaz con pregunta
-    new Promise((resolve, reject) => {
-        $("#heuristica").html(plantillaHeuristicaCompilada(contexto));
-        resolve();
-    }).then(() => {
-        $("#mal-ejemplo").addClass("animar");
-    });
+    $("#heuristica").html(plantillaHeuristicaCompilada(contexto));
+    $("#mal-ejemplo").addClass("animar");
     $("#tarjetas").html(plantillaRespuestasCompilada(contexto));
     $("#ayuda").html(plantillaAyudaCompilada(contexto));
 
+    aplicarTraducciones();  // Aplicamos las traducciones a los elementos dinámicos
+
     // Manejar selección de respuesta
     $(".tarjeta").click(clicTarjeta);
-    $(".tarjeta").keyup((e) => {
-        var code = e.keyCode || e.which;
-        if(code == 13) { // Enter
-            clicTarjeta(e);
-        }
-    });
-
     // Manejar clic en "confirmar" respuesta
     $("#boton-accion").click(mostrarCorreccion);
 
