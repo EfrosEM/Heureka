@@ -1,6 +1,7 @@
 import {Controlador} from './controlador.js';
 
 let controlador = null;
+let translations = {};  // Aquí se almacenarán las traducciones cargadas
 
 $(document).ready( () => {
     // Cargar el idioma antes de inicializar los elementos de la página
@@ -13,36 +14,44 @@ $(document).ready( () => {
         console.error('Error al cargar el idioma:', error);
         inicializarPagina();  // Inicializar la página aunque falle la carga del idioma
     });
+
+    // Manejar cambios en el selector de idioma
+    $('#language-select').on('change', function () {
+        const nuevoIdioma = $(this).val();
+        cambiarIdioma(nuevoIdioma);
+    });
 })
 
 function cargarIdioma(lang) {
-    return new Promise((resolve, reject) => {
-        $.ajax({
-            url: 'lang/' + lang + '.json',
-            type: 'GET',
-            async: true,
-            success: function(result) {
-                // Almacenar las traducciones en una variable global
-                window.translations = result;
+    return $.ajax({
+        url: `lang/${lang}.json`,
+        type: 'GET',
+        async: true
+    }).then((result) => {
+        translations = result;
+        aplicarTraducciones();
+    }).catch(() => {
+        throw new Error('Error al cargar el archivo de idioma.');
+    });
+}
 
-                // Aplicar las traducciones globales a los elementos ya existentes en el DOM
-                aplicarTraducciones();
+// Cambiar el idioma y recargar las traducciones
+function cambiarIdioma(nuevoIdioma) {
+    // Guardar el nuevo idioma en localStorage
+    localStorage.setItem('selectedLanguage', nuevoIdioma);
 
-                resolve();  // Resolvemos la promesa
-            },
-            error: function() {
-                reject('Error al cargar el archivo de idioma.');
-            }
-        });
+    // Recargar las traducciones con el nuevo idioma
+    cargarIdioma(nuevoIdioma).then(() => {
+        aplicarTraducciones();  // Aplicar las traducciones nuevamente
+    }).catch((error) => {
+        console.error('Error al cambiar el idioma:', error);
     });
 }
 
 function inicializarPagina() {
     // Deshabilitar botón por defecto
     $("#boton-accion").prop("disabled", true);
-    
     $("#boton-ayuda").click(clicAyuda);
-
     // Obtener tarjetas de juego y definiciones de heuristicas
     $('#cargando').show();
 
@@ -64,12 +73,12 @@ function inicializarPagina() {
     });
 }
 
+// Aplica las traducciones a los elementos existentes en el DOM
 function aplicarTraducciones() {
-    const elements = document.querySelectorAll('[data-i18n]');
-    elements.forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (window.translations[key]) {
-            element.textContent = window.translations[key];
+    $('[data-i18n]').each(function () {
+        const key = $(this).data('i18n');
+        if (translations[key]) {
+            $(this).text(translations[key]);
         }
     });
 }
@@ -78,7 +87,7 @@ function setupPartida() {
     mostrarNuevaPregunta();
     actualizarCronometro();
     actualizarVidas();
-    setInterval(actualizarCronometro, 500);
+    setInterval(actualizarCronometro, 1000);
 }
 
 function actualizarVidas() {
@@ -98,6 +107,8 @@ function actualizarVidas() {
     };
 
     $("#vidas").html(plantillaVidasCompilada(contexto));
+    // Aplicar traducciones después de actualizar las vidas
+    aplicarTraducciones();
 }
 
 function actualizarCronometro() {
@@ -109,6 +120,8 @@ function actualizarCronometro() {
     };
 
     $("#cronometro").html(plantillaCronometroCompilada(contexto));
+    // Aplicar traducciones después de actualizar las vidas
+    aplicarTraducciones();
 }
 
 function mostrarNuevaPregunta() {

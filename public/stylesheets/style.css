@@ -399,7 +399,7 @@ span.animar {
   }
 
   50% {
-    transform: scale(5,5);
+    transform: scale(3,3);
   }
 
   to {

@@ -3,133 +3,133 @@
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "Marcar con un tic y cambiar el color de las opciones seleccionadas",
-        "text" : "",
+        "text" : "Mark and change the color of the selected options",
         "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-1.png"
     },
     {
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "Indicador de progreso para que el usuario sepa que el sistema sigue funcionando",
-        "text" : "",
+        "text" : "Progress indicator to let the user know that the system is still running",
         "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-2.png"
     },
     { 
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "Manipular directamente el orden de las canciones en una lista de reproducción",
-        "text" : "",
+        "text" : "Directly manipulate the order of songs in a playlist",
         "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-3.gif"
     },
     { 
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "Mostrar el mensaje 'Pocas unidades' al pasar el ratón por una talla",
-        "text" : "",
+        "text" : "Display 'Low Stock' message when hovering over a size",
         "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-4.png"
     },
     { 
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "Mostrar las tallas agotadas tachadas y con un color más apagado",
-        "text" : "",
+        "text" : "Show sold-out sizes crossed out and in a duller color",
         "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-4.png"
     },
     { 
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "Una barra superior indicando cuánto dinero queda para conseguir gastos de envío gratis",
-        "text" : "",
+        "text" : "A top bar indicating how much money is left to get free shipping",
         "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-5.png"
     },
     { 
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "Seguir mostrando los artículos agotados de la lista de deseos, señalizándolos como tal",
-        "text" : "",
+        "text" : "Continue to display out-of-stock wish list items, marking them as such",
         "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-6.png"
     },
     { 
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "Cuando pulsas el botón para llamar al ascensor, se ilumina",
-        "text" : "",
+        "text" : "When you press the button to call the elevator, it lights up",
         "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-7.png"
     },
     { 
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "Encima del ascensor se indica por qué piso va",
-        "text" : "",
+        "text" : "Above the elevator it indicates in which floor it is",
         "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-8.png"
     },
     { 
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "Barra superior del móvil indicando nivel de señal Wi-Fi, batería, etc.",
-        "text" : "",
+        "text" : "Top bar of the mobile indicating Wi-Fi signal level, battery, etc.",
         "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-9.png"
     },
     { 
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "En un videojuego se indica permanentemente el estado de salud con corazones",
-        "text" : "",
+        "text" : "In a video game, the health status is permanently indicated with hearts",
         "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-10.png"
     },
     { 
         "heuristica": 2,
         "esBuenEjemplo": true,
         "texto" : "La web de un hospital usa lenguaje sencillo para describir los tipos de atención médica",
-        "text" : "",
+        "text" : "A hospital website uses simple language to describe types of medical care",
         "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-1.png"
     },
     { 
         "heuristica": 2,
         "esBuenEjemplo": true,
         "texto" : "La interfaz de una brújula digital imita el aspecto de una brújula real",
-        "text" : "",
+        "text" : "The interface of a digital compass mimics the look of a real compass",
         "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-2.png"
     },
     { 
         "heuristica": 2,
         "esBuenEjemplo": true,
         "texto" : "Los botones de volumen de los auriculares están colocados de forma análoga al resultado: arriba el de subir y abajo el de bajar",
-        "text" : "",
+        "text" : "The volume buttons on the headphones are placed in the same way as the result: above is the volume up button and below is the volume down button",
         "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-3.png"
     },
     { 
         "heuristica": 2,
         "esBuenEjemplo": true,
         "texto" : "Seleccionar texto en una web de artículos simula el subrayar con rotulador fosforito sobre papel",
-        "text" : "",
+        "text" : "Selecting text on a web page of articles simulates highlighting with a highlighter pen on paper",
         "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-4.png"
     },
     { 
         "heuristica": 2,
         "esBuenEjemplo": true,
         "texto" : "Pasar página en un libro electrónico con un gesto parecido a pasar página en un libro real",
-        "text" : "",
+        "text" : "Turning pages in an e-book with a gesture similar to turning pages in a real book",
         "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-5.gif"
     },
     { 
         "heuristica": 2,
         "esBuenEjemplo": true,
         "texto" : "Marcar como favorita una página de un libro electrónico se señaliza simulando una esquina de papel doblada",
-        "text" : "",
+        "text" : "Bookmarking a page in an e-book is indicated by simulating a folded paper corner",
         "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-6.png"
     },
     { 
         "heuristica": 2,
         "esBuenEjemplo": true,
         "texto" : "Las armas de un juego se corresponden a armas reales",
-        "text" : "",
+        "text" : "Weapons in a game correspond to real weapons",
         "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-7.png"
     },
     { 
         "heuristica": 2,
         "esBuenEjemplo": true,
         "texto" : "En una app de colorear para niños, la acción de deshacer sigue el modelo mental de un cuaderno de colorear (una goma de borrar)",
-        "text" : "",
+        "text" : "In a coloring app for kids, the undo action follows the mental model of a coloring book (an eraser)",
         "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-8.png"
     },
     { 
