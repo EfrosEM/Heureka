@@ -51,9 +51,14 @@
     "preguntas-en": " preguntas en ",
 
 
+    "definicion": "Ver definición ➕",
     "vidas": "Vidas restantes",
     "crono": "Cronometro",
     "pregunta": "Pregunta ",
-    "de-10": " de 10"
-
+    "de-10": " de 10",
+    "encuentra-interfaz": "Encuentra una interfaz que ",
+    "cumpla": "👍 CUMPLA",
+    "incumpla": "👎 INCUMPLA",
+    "la-heuristica": " la heurística "
+    
 }

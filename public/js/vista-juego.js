@@ -43,6 +43,7 @@ function cambiarIdioma(nuevoIdioma) {
     // Recargar las traducciones con el nuevo idioma
     cargarIdioma(nuevoIdioma).then(() => {
         aplicarTraducciones();  // Aplicar las traducciones nuevamente
+        actualizarPregunta();
     }).catch((error) => {
         console.error('Error al cambiar el idioma:', error);
     });
@@ -78,6 +79,21 @@ function aplicarTraducciones() {
     $('[data-i18n]').each(function () {
         const key = $(this).data('i18n');
         if (translations[key]) {
+            if ($(this).is('input')) {
+                // Si el elemento es un input, cambiar el valor
+                $(this).val(translations[key]);
+            } else {
+                // Para otros elementos, cambiar el contenido de texto
+                $(this).text(translations[key]);
+            }
+        }
+    });
+}
+
+function actualizarTraducciones() {
+    $('[data-i18n]').each(function () {
+        const key = $(this).data('i18n');
+        if (translations[key]) {
             $(this).text(translations[key]);
         }
     });
@@ -108,7 +124,7 @@ function actualizarVidas() {
 
     $("#vidas").html(plantillaVidasCompilada(contexto));
     // Aplicar traducciones después de actualizar las vidas
-    aplicarTraducciones();
+    actualizarTraducciones();
 }
 
 function actualizarCronometro() {
@@ -121,7 +137,7 @@ function actualizarCronometro() {
 
     $("#cronometro").html(plantillaCronometroCompilada(contexto));
     // Aplicar traducciones después de actualizar las vidas
-    aplicarTraducciones();
+    actualizarTraducciones();
 }
 
 function mostrarNuevaPregunta() {
@@ -129,24 +145,17 @@ function mostrarNuevaPregunta() {
     // Iniciar cronómetro
     controlador.iniciarCronometro();
 
-    // Generar nueva pregunta
     const preguntaActual = controlador.nuevaPregunta();
+
+    // Obtener el contexto dinámico con las traducciones
+    const contexto = obtenerContexto(preguntaActual);
+
     const plantillaHeuristica = $("#plantilla-heuristica").html();
     const plantillaAyuda = $("#plantilla-ayuda").html();
     const plantillaRespuestas = $("#plantilla-respuestas").html();
     const plantillaHeuristicaCompilada = Handlebars.compile(plantillaHeuristica);
     const plantillaRespuestasCompilada = Handlebars.compile(plantillaRespuestas);
     const plantillaAyudaCompilada = Handlebars.compile(plantillaAyuda);
-
-    var contexto = {
-        "numPregunta": controlador.getNumPreguntadas(),
-        "cumpla": preguntaActual.esBuenEjemplo? " 👍CUMPLA" : "",
-        "incumpla": preguntaActual.esBuenEjemplo? "" : " 👎INCUMPLA",
-        "numHeuristica": preguntaActual.numHeuristica,
-        "nombreHeuristica": preguntaActual.nombreHeuristica,
-        "tarjetas": preguntaActual.tarjetasRespuesta,
-        "ayuda": preguntaActual.definicionHeuristica
-    };
 
     // Actualizar interfaz con pregunta
     $("#heuristica").html(plantillaHeuristicaCompilada(contexto));
@@ -160,9 +169,58 @@ function mostrarNuevaPregunta() {
     $(".tarjeta").click(clicTarjeta);
     // Manejar clic en "confirmar" respuesta
     $("#boton-accion").click(mostrarCorreccion);
-
     $("#boton-accion").removeClass("animar");
 }
+
+function obtenerContexto(preguntaActual) {
+    
+    // Obtener traducciones dinámicamente
+    const cumplaTexto = translations['cumpla'] || "👍 CUMPLA";  // Valor por defecto si no existe la traducción
+    const incumplaTexto = translations['incumpla'] || "👎 INCUMPLA";  // Valor por defecto si no existe la traducción
+
+    // Definir el contexto de la pregunta
+    var contexto = {
+        "numPregunta": controlador.getNumPreguntadas(),
+        "cumpla": preguntaActual.esBuenEjemplo ? cumplaTexto : "",
+        "incumpla": preguntaActual.esBuenEjemplo ? "" : incumplaTexto,
+        "numHeuristica": preguntaActual.numHeuristica,
+        "nombreHeuristica": preguntaActual.nombreHeuristica,
+        "tarjetas": preguntaActual.tarjetasRespuesta,
+        "ayuda": preguntaActual.definicionHeuristica
+    };
+
+    return contexto;
+}
+
+function actualizarPregunta() {
+
+    const preguntaActual = controlador.getPreguntaActual();
+    // Definir el contexto con la pregunta actual
+    var contexto = obtenerContexto(preguntaActual);
+
+    // Actualizar la interfaz con las nuevas traducciones sin avanzar en la pregunta
+    const plantillaHeuristica = $("#plantilla-heuristica").html();
+    const plantillaAyuda = $("#plantilla-ayuda").html();
+    const plantillaRespuestas = $("#plantilla-respuestas").html();
+
+    const plantillaHeuristicaCompilada = Handlebars.compile(plantillaHeuristica);
+    const plantillaRespuestasCompilada = Handlebars.compile(plantillaRespuestas);
+    const plantillaAyudaCompilada = Handlebars.compile(plantillaAyuda);
+
+    // Actualizar el DOM
+    $("#heuristica").html(plantillaHeuristicaCompilada(contexto));
+    $("#tarjetas").html(plantillaRespuestasCompilada(contexto));
+    $("#ayuda").html(plantillaAyudaCompilada(contexto));
+
+    // Manejar selección de respuesta
+    $(".tarjeta").click(clicTarjeta);
+    // Manejar clic en "confirmar" respuesta
+    $("#boton-accion").removeClass("animar");
+
+    // Aplicar las traducciones a los elementos que tienen data-i18n
+    aplicarTraducciones();
+}
+
 
 function mostrarCorreccion() {
 
@@ -229,15 +287,32 @@ function mostrarCorreccion() {
 function clicAyuda() {
     $(".audio-boton-auxiliar")[0].volume = 0.3;
     $(".audio-boton-auxiliar")[0].play();
-    if (!$("#ayuda").hasClass("animar")) {
-        $("#ayuda").attr("role", "alert");
-        $("#ayuda").addClass("animar");
-        $("#boton-ayuda").val("Ver definición ➖");
-    } else {
-        $("#ayuda").removeAttr("role");
-        $("#ayuda").removeClass("animar");
-        $("#boton-ayuda").val("Ver definición ➕");
+
+    const languageSelect = document.getElementById('language-select');
+    const selectedLanguage = languageSelect.value;
+        
+    if (selectedLanguage === "es") {   
+        if (!$("#ayuda").hasClass("animar")) {
+            $("#ayuda").attr("role", "alert");
+            $("#ayuda").addClass("animar");
+            $("#boton-ayuda").val("Ver definición ➖");
+        } else {
+            $("#ayuda").removeAttr("role");
+            $("#ayuda").removeClass("animar");
+            $("#boton-ayuda").val("Ver definición ➕");
+        }
+    } else if (selectedLanguage === "en") {
+        if (!$("#ayuda").hasClass("animar")) {
+            $("#ayuda").attr("role", "alert");
+            $("#ayuda").addClass("animar");
+            $("#boton-ayuda").val("Show definition ➖");
+        } else {
+            $("#ayuda").removeAttr("role");
+            $("#ayuda").removeClass("animar");
+            $("#boton-ayuda").val("Show definition ➕");
+        }
     }
+
 }
 
 function terminarPartida(haGanado) {

@@ -25,25 +25,19 @@ export class Partida {
         let tarjetas = respuestasAleatorias.tarjetas;
         let idCorrecta = respuestasAleatorias.idCorrecta;
 
-        // Obtener el idioma seleccionado
-        const languageSelect = document.getElementById('language-select');
-        const selectedLanguage = languageSelect.value;
-
-        // Obtener el nombre y la ayuda según el idioma seleccionado
-        let nombre, ayuda;
-        if (selectedLanguage === "es") {
-            nombre = this.infoHeuristicas[heuristica - 1].nombre;
-            ayuda = this.infoHeuristicas[heuristica - 1].ayuda;
-        } else if (selectedLanguage === "en") {
-            nombre = this.infoHeuristicas[heuristica - 1].name;
-            ayuda = this.infoHeuristicas[heuristica - 1].help;
-        }
-
+        let nombre, ayuda, name, help;
+        nombre = this.infoHeuristicas[heuristica - 1].nombre;
+        ayuda = this.infoHeuristicas[heuristica - 1].ayuda;
+        name = this.infoHeuristicas[heuristica - 1].name;
+        help = this.infoHeuristicas[heuristica - 1].help;
+        
         // Actualizar pregunta actual
         let pregunta = new Pregunta(
             heuristica,
             nombre, 
             ayuda,
+            name,
+            help,
             esBuenEjemplo, tarjetas, idCorrecta);
             
         this.preguntaActual = pregunta;

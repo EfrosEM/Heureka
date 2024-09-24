@@ -51,8 +51,13 @@
     "preguntas-en": " questions in ",
 
 
+    "definicion": "Show definition ➕",
     "vidas": "Lives remaining",
     "crono": "Chronometer",
     "pregunta": "Question ",
-    "de-10": "out of 10"
+    "de-10": "out of 10",
+    "encuentra-interfaz": "Find the interface that ",
+    "cumpla": "👍 SATISFIES",
+    "incumpla": "👎 VIOLATES",
+    "la-heuristica": " heuristic "
 }

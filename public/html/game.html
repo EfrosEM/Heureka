@@ -46,7 +46,7 @@
           <div tabindex="0" aria-live="polite" id="heuristica">
             <!-- Se compila aquí plantilla-heuristica -->
           </div>
-          <input class="boton" id="boton-ayuda" type="button" value="Ver definición ➕">
+          <input class="boton" id="boton-ayuda" type="button" data-i18n="definicion">
         </div>
 
         <script id="plantilla-heuristica" type="text/x-handlebars-template">
@@ -54,7 +54,11 @@
           <span id="num-pregunta">{{numPregunta}}</span>
           <span data-i18n="de-10" id="num-pregunta"></span>
           
-          <p tabindex="0">Encuentra una interfaz que<strong id="mal-ejemplo">{{cumpla}}{{incumpla}}</strong> la heurística {{numHeuristica}}:</p>
+          <p tabindex="0">
+            <span data-i18n="encuentra-interfaz"></span>
+            <strong id="mal-ejemplo">{{cumpla}}{{incumpla}}</strong> 
+            <span data-i18n="la-heuristica"></span> {{numHeuristica}}:
+          </p>
           <p id="nombre-heuristica" tabindex="0"><strong>{{nombreHeuristica}}</strong></p>
         </script>
 
