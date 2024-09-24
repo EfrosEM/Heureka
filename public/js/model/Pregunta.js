@@ -4,7 +4,7 @@ export class Pregunta {
         this.numHeuristica = numHeuristica;
         this.nombreHeuristica = nombreHeuristica;
         this.definicionHeuristica = definicionHeuristica;
-        this.nameHuristica = nameHeuristica;
+        this.nameHeuristica = nameHeuristica;
         this.helpHeuristica = helpHeuristica;
         this.esBuenEjemplo = esBuenEjemplo;
         this.tarjetasRespuesta = tarjetasRespuesta;

@@ -180,16 +180,30 @@ function obtenerContexto(preguntaActual) {
     const cumplaTexto = translations['cumpla'] || "👍 CUMPLA";  // Valor por defecto si no existe la traducción
     const incumplaTexto = translations['incumpla'] || "👎 INCUMPLA";  // Valor por defecto si no existe la traducción
 
-    // Definir el contexto de la pregunta
-    var contexto = {
-        "numPregunta": controlador.getNumPreguntadas(),
-        "cumpla": preguntaActual.esBuenEjemplo ? cumplaTexto : "",
-        "incumpla": preguntaActual.esBuenEjemplo ? "" : incumplaTexto,
-        "numHeuristica": preguntaActual.numHeuristica,
-        "nombreHeuristica": preguntaActual.nombreHeuristica,
-        "tarjetas": preguntaActual.tarjetasRespuesta,
-        "ayuda": preguntaActual.definicionHeuristica
-    };
+    const languageSelect = document.getElementById('language-select');
+    const selectedLanguage = languageSelect.value;
+        
+    if (selectedLanguage === "es") {   
+        var contexto = {
+            "numPregunta": controlador.getNumPreguntadas(),
+            "cumpla": preguntaActual.esBuenEjemplo ? cumplaTexto : "",
+            "incumpla": preguntaActual.esBuenEjemplo ? "" : incumplaTexto,
+            "numHeuristica": preguntaActual.numHeuristica,
+            "tarjetas": preguntaActual.tarjetasRespuesta,
+            "ayuda": preguntaActual.definicionHeuristica,
+            "nombreHeuristica": preguntaActual.nombreHeuristica
+        };
+    } else if (selectedLanguage === "en") {
+        var contexto = {
+            "numPregunta": controlador.getNumPreguntadas(),
+            "cumpla": preguntaActual.esBuenEjemplo ? cumplaTexto : "",
+            "incumpla": preguntaActual.esBuenEjemplo ? "" : incumplaTexto,
+            "numHeuristica": preguntaActual.numHeuristica,
+            "tarjetas": preguntaActual.tarjetasRespuesta,
+            "ayuda": preguntaActual.helpHeuristica,
+            "nombreHeuristica": preguntaActual.nameHeuristica
+        };
+    }
 
     return contexto;
 }
