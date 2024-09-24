@@ -44,6 +44,7 @@ function cambiarIdioma(nuevoIdioma) {
     cargarIdioma(nuevoIdioma).then(() => {
         aplicarTraducciones();  // Aplicar las traducciones nuevamente
         actualizarPregunta();
+        setBotonConfirmar();
     }).catch((error) => {
         console.error('Error al cambiar el idioma:', error);
     });
@@ -103,6 +104,7 @@ function setupPartida() {
     mostrarNuevaPregunta();
     actualizarCronometro();
     actualizarVidas();
+    setBotonConfirmar();
     setInterval(actualizarCronometro, 1000);
 }
 
@@ -329,7 +331,15 @@ function terminarPartida(haGanado) {
 }
 
 function setBotonTerminarPartida(haGanado) {
-    $("#boton-accion").val('Terminar partida');
+    const languageSelect = document.getElementById('language-select');
+    const selectedLanguage = languageSelect.value;
+        
+    if (selectedLanguage === "es") {   
+        $("#boton-accion").val('Terminar partida');
+    } else if (selectedLanguage === "en") {
+        $("#boton-accion").val('End game');
+    }
+    
     $("#boton-accion").off('click');
     $("#boton-accion").click(() => {
         terminarPartida(haGanado);
@@ -337,14 +347,28 @@ function setBotonTerminarPartida(haGanado) {
 }
 
 function setBotonSiguientePregunta() {
-    $("#boton-accion").val('Siguiente pregunta');
+    const languageSelect = document.getElementById('language-select');
+    const selectedLanguage = languageSelect.value;
+        
+    if (selectedLanguage === "es") {   
+        $("#boton-accion").val('Siguiente pregunta');
+    } else if (selectedLanguage === "en") {
+        $("#boton-accion").val('Next cuestion');
+    }
+    
     $("#boton-accion").off('click');
     $("#boton-accion").click(clicBotonSiguiente);
 }
 
 function setBotonConfirmar() {
-    // Cambiar texto del botón
-    $("#boton-accion").val('Confirmar respuesta');
+    const languageSelect = document.getElementById('language-select');
+    const selectedLanguage = languageSelect.value;
+        
+    if (selectedLanguage === "es") {   
+        $("#boton-accion").val('Confirmar respuesta');
+    } else if (selectedLanguage === "en") {
+        $("#boton-accion").val('Confirm response');
+    }
 
     // Cambiar manejador
     $("#boton-accion").off('click');
