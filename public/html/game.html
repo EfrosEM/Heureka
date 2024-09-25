@@ -125,7 +125,8 @@
               </svg>
             </div>
             <p id="etiqueta-correccion-{{id}}"></p>
-            <p>{{texto}}</p>
+            <!-- Aquí mostramos el texto dinámicamente según el idioma -->
+            <p class="texto-tarjeta" data-es="{{texto}}" data-en="{{text}}"></p>
             <img alt="" src={{imagen}}>
           </div>
         {{/each}}

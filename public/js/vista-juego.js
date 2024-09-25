@@ -44,6 +44,7 @@ function cambiarIdioma(nuevoIdioma) {
     cargarIdioma(nuevoIdioma).then(() => {
         aplicarTraducciones();  // Aplicar las traducciones nuevamente
         actualizarPregunta();
+        actualizarTextoTarjetas();
         setBotonConfirmar();
     }).catch((error) => {
         console.error('Error al cambiar el idioma:', error);
@@ -166,6 +167,7 @@ function mostrarNuevaPregunta() {
     $("#ayuda").html(plantillaAyudaCompilada(contexto));
 
     aplicarTraducciones();  // Aplicamos las traducciones a los elementos dinámicos
+    actualizarTextoTarjetas();
 
     // Manejar selección de respuesta
     $(".tarjeta").click(clicTarjeta);
@@ -235,10 +237,29 @@ function actualizarPregunta() {
 
     // Aplicar las traducciones a los elementos que tienen data-i18n
     aplicarTraducciones();
+    actualizarTextoTarjetas();
 }
 
+function actualizarTextoTarjetas() {
+    const idioma = document.getElementById("language-select").value;
+    const tarjetas = document.querySelectorAll('.texto-tarjeta');
+
+    tarjetas.forEach((tarjeta) => {
+        const textoEs = tarjeta.getAttribute('data-es');
+        const textoEn = tarjeta.getAttribute('data-en');
+
+        // Change text based on language
+        if (idioma === 'es') {
+            tarjeta.textContent = textoEs;
+        } else {
+            tarjeta.textContent = textoEn;
+        }
+    });
+}
 
 function mostrarCorreccion() {
+    const languageSelect = document.getElementById('language-select');
+    const selectedLanguage = languageSelect.value;
 
     // Pausar cronómetro
     controlador.pausarCronometro();
@@ -258,7 +279,13 @@ function mostrarCorreccion() {
     $(".tarjeta.active").css("border-color", "red");
     $(".tarjeta.active").css("background-color", "rgba(255,0,0, .1)");
     let idTarjetaSeleccionada = $(".tarjeta.active").attr("id");
-    $(`#etiqueta-correccion-${idTarjetaSeleccionada}`).html("Respuesta incorrecta.");
+
+    if (selectedLanguage === "es") {   
+        $(`#etiqueta-correccion-${idTarjetaSeleccionada}`).html("Respuesta incorrecta.");
+    } else if (selectedLanguage === "en") {
+        $(`#etiqueta-correccion-${idTarjetaSeleccionada}`).html("Wrong answer.");
+    }
+    
 
     // Marcar en verde respuesta correcta
     // (si es la seleccionada sobreescribe el rojo)
@@ -266,7 +293,12 @@ function mostrarCorreccion() {
     let correcta = $("#tarjetas").find(`#${idCorrecta}`);
     correcta.css("border-color", "green");
     correcta.css("background-color", "rgba(51, 170, 51, .1)");
-    $(`#etiqueta-correccion-${idCorrecta}`).html("Respuesta correcta.");
+
+    if (selectedLanguage === "es") {   
+        $(`#etiqueta-correccion-${idCorrecta}`).html("Respuesta correcta.");
+    } else if (selectedLanguage === "en") {
+        $(`#etiqueta-correccion-${idCorrecta}`).html("Correct answer.");
+    }
 
     // Animar tick en respuesta correcta
     $(".tick-contenedor").removeClass("animar");
@@ -367,7 +399,7 @@ function setBotonSiguientePregunta() {
     if (selectedLanguage === "es") {   
         $("#boton-accion").val('Siguiente pregunta');
     } else if (selectedLanguage === "en") {
-        $("#boton-accion").val('Next cuestion');
+        $("#boton-accion").val('Next question');
     }
     
     $("#boton-accion").off('click');
