@@ -2,7 +2,6 @@
     "new-game": "Nueva partida",
     "home": "Página principal",
     "sources": "Fuentes",
-    "login": "Iniciar sesión",
     "what-is": "¿Qué es Heureka?",
     "heureka-description1": "Heureka es un juego de preguntas y respuestas para aprender y memorizar las heurísticas de Nielsen.",
     "heureka-description2": "Se trata de 10 principios muy generales para diseñar interfaces usables, identificados por Jakob Nielsen:",
@@ -60,6 +59,14 @@
     "encuentra-interfaz": "Encuentra una interfaz que ",
     "cumpla": "👍 CUMPLA",
     "incumpla": "👎 INCUMPLA",
-    "la-heuristica": " la heurística "
+    "la-heuristica": " la heurística ",
     
+
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión",
+    "user": "Usuario",
+    "password": "Contraseña",
+    "welcome": "Accede a Heureka",
+    "account": "Crea una cuenta",
+    "signup": "Registrate"
 }
