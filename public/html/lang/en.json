@@ -68,5 +68,7 @@
     "password": "Password",
     "welcome": "Access Heureka",
     "account": "Create an account",
-    "signup": "Sign up"
+    "signup": "Sign up",
+    "no-account": "Don't have an account?",
+    "yes-account": "Already have an account?"
 }

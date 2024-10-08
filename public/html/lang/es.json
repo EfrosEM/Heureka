@@ -68,5 +68,7 @@
     "password": "Contraseña",
     "welcome": "Accede a Heureka",
     "account": "Crea una cuenta",
-    "signup": "Registrate"
+    "signup": "Registrate",
+    "no-account": "¿No tienes una cuenta?",
+    "yes-account": "¿Ya tienes una cuenta?"
 }

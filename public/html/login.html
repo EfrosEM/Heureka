@@ -26,19 +26,19 @@
 
     <main class="contenido">
       <div class="wrapper">
-        <form>
+        <form action="/users/login" method="POST">
             <h1 class='text-center mb-5' data-i18n="welcome"></h1>
             <div class="input-group mb-3">
               <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
               <div class='form-floating'>
-                  <input type="text" placeholder='ID' class='form-control'/>
+                  <input type="text" placeholder='ID' class='form-control' required/>
                   <label class="form-label" data-i18n="user"></label>
               </div>
             </div>
             <div class="input-group mb-4">
               <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
               <div class='form-floating'>
-                  <input type="password" placeholder='Password' class='form-control'/>
+                  <input type="password" placeholder='Password' class='form-control' required/>
                   <label class="form-label" data-i18n="password"></label>
               </div>
             </div>
@@ -46,13 +46,11 @@
               <button class='btn btn-primary btn-lg' data-i18n="login"></button>
             </div>
             <div class='text-center mb-3'>
-              <p>
-                  ¿No tienes una cuenta?&nbsp;
-                  <a class="icon-link" href='/signup.html'>
-                      Registrate
-                      <i class="bi bi-person-plus"></i>
-                  </a>
-              </p>
+              <p data-i18n="no-account" style="display: inline-block;"></p>
+              <a class="icon-link" href='/signup.html' style="display: inline-block;">
+                  <span data-i18n="signup"></span>
+                  <i class="bi bi-person-plus"></i>
+              </a>
             </div>
         </form>
     </div>
@@ -77,7 +75,6 @@
               alt="Nivel AA de conformidad con las recomendaciones de accesibilidad WCAG 2.1">
         </a>
       </div>
-      <div><a id="link-sitemap" lang="en" href="sitemap.html">Sitemap</a></div>
       <div id="creditos">
         <p data-i18n="creator"></p>
       </div>
