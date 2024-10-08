@@ -4,9 +4,44 @@ const tarjetas = require('./tarjetas.json');
 const heuristicas = require('./heuristicas.json');
 const fs = require('fs');
 
+const mongoose = require('mongoose');
+const session = require('express-session');
+const passport = require('passport');
+const flash = require('connect-flash');
+
 const app = express();
 
 const PORT = process.env.PORT || 5000;
+
+// TODO: Conectar a MongoDB
+mongoose.connect('mongodb://localhost/tu-base-de-datos', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => console.log('MongoDB conectado'))
+.catch(err => console.log(err));
+
+// Body parser para manejar datos de formularios
+app.use(express.urlencoded({ extended: true }));
+
+// Configurar sesiones
+app.use(session({
+    secret: 'secreto', // Llave secreta para sesiones
+    resave: true,
+    saveUninitialized: true
+}));
+
+// Passport middleware para autenticación
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Mensajes de error (flash)
+app.use(flash());
+
+// Rutas para la aplicación
+app.use('/', require('./routes/index'));
+app.use('/users', require('./routes/users'));
+
+require('./config/passport')(passport); // Configuración de Passport
 
 app.get('/configuracion-juego', function(req, res) {
   res.send({ tarjetas: tarjetas, heuristicas: heuristicas });
