@@ -26,31 +26,31 @@
 
     <main class="contenido">
       <div class="wrapper">
-        <form>
+        <form action="/users/signup" method="POST">
             <h1 class='text-center mb-5' data-i18n="account"></h1>
             <div class="input-group mb-3">
               <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
               <div class='form-floating'>
-                  <input type="text" placeholder='user' class='form-control'/>
+                  <input type="text" name='user' class='form-control'/>
                   <label class="form-label" data-i18n="user"></label>
               </div>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
                 <div class='form-floating'>
-                    <input type="text" placeholder='email' class='form-control'/>
+                    <input type="text" name='email' class='form-control'/>
                     <label class="form-label">Email</label>
                 </div>
             </div>
             <div class="input-group mb-4">
               <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
               <div class='form-floating'>
-                  <input type="password" placeholder='password' class='form-control'/>
+                  <input type="password" name='password' class='form-control'/>
                   <label class="form-label" data-i18n="password"></label>
               </div>
             </div>
             <div class='mb-3 d-grid'>
-              <button class='btn btn-primary btn-lg' data-i18n="signup"></button>
+              <button class='btn btn-primary btn-lg' type='submit' data-i18n="signup"></button>
             </div>
             <div class='text-center mb-3'>
               <p data-i18n="yes-account" style="display: inline-block;"></p>

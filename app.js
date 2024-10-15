@@ -14,14 +14,12 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-const uri = "mongodb+srv://eduem:<db_password>@cluster0.8yvyi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://eduem:eduem@cluster0.8yvyi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
-// TODO: Conectar a MongoDB
-mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => console.log('MongoDB conectado'))
-.catch(err => console.log(err));
+// Conectar a MongoDB
+mongoose.connect(uri)
+  .then(() => console.log('MongoDB conectado'))
+  .catch(err => console.log(err));
 
 // Body parser para manejar datos de formularios
 app.use(express.urlencoded({ extended: true }));

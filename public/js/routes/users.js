@@ -15,7 +15,7 @@ router.post('/signup', async (req, res) => {
     }
 
     // Verificar si el email ya existe
-    const usuarioExistente = await Usuario.findOne({ email });
+    const usuarioExistente = await Usuario.findOne({ email: email });
     if (usuarioExistente) {
         errors.push({ msg: 'El email ya está registrado' });
     }
@@ -24,12 +24,13 @@ router.post('/signup', async (req, res) => {
         res.status(400).json({ errors });
     } else {
         // Cifrar la contraseña
-        const hashedPassword = await bcrypt.hash(password, 10); // 10 es el número de saltos
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt); // 10 es el número de saltos
 
         // Crear nuevo usuario
         const usuario = new Usuario({
-            user,
-            email,
+            user: user,
+            email: email,
             password: hashedPassword
         });
 
