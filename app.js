@@ -8,13 +8,16 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const flash = require('connect-flash');
+const bodyParser = require('body-parser');
 
 const app = express();
 
 const PORT = process.env.PORT || 5000;
 
+const uri = "mongodb+srv://eduem:<db_password>@cluster0.8yvyi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
 // TODO: Conectar a MongoDB
-mongoose.connect('mongodb://localhost/tu-base-de-datos', {
+mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => console.log('MongoDB conectado'))
@@ -31,6 +34,9 @@ app.use(session({
 }));
 
 // Passport middleware para autenticación
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(session({ secret: 'secret', resave: true, saveUninitialized: true }));
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -38,10 +44,10 @@ app.use(passport.session());
 app.use(flash());
 
 // Rutas para la aplicación
-app.use('/', require('./routes/index'));
-app.use('/users', require('./routes/users'));
+app.use('/', require('./public/js/routes/index'));
+app.use('/users', require('./public/js/routes/users'));
 
-require('./config/passport')(passport); // Configuración de Passport
+//require('./config/passport')(passport); // Configuración de Passport
 
 app.get('/configuracion-juego', function(req, res) {
   res.send({ tarjetas: tarjetas, heuristicas: heuristicas });

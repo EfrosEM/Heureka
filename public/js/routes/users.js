@@ -14,12 +14,32 @@ router.post('/signup', async (req, res) => {
         errors.push({ msg: 'Por favor llena todos los campos' });
     }
 
+    // Verificar si el email ya existe
+    const usuarioExistente = await Usuario.findOne({ email });
+    if (usuarioExistente) {
+        errors.push({ msg: 'El email ya está registrado' });
+    }
+
     if (errors.length > 0) {
-        res.send('Errores en el registro');
+        res.status(400).json({ errors });
     } else {
-        const usuario = new Usuario({ user, email, password });
-        await usuario.save();
-        res.send('Usuario registrado');
+        // Cifrar la contraseña
+        const hashedPassword = await bcrypt.hash(password, 10); // 10 es el número de saltos
+
+        // Crear nuevo usuario
+        const usuario = new Usuario({
+            user,
+            email,
+            password: hashedPassword
+        });
+
+        try {
+            await usuario.save();
+            res.status(201).send('Usuario registrado');
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Error al registrar el usuario');
+        }
     }
 });
 
@@ -41,3 +61,4 @@ router.get('/logout', (req, res) => {
 });
 
 module.exports = router;
+
