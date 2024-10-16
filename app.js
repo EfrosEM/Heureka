@@ -23,6 +23,7 @@ mongoose.connect(uri)
 
 // Body parser para manejar datos de formularios
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Configurar sesiones
 app.use(session({
@@ -32,14 +33,10 @@ app.use(session({
 }));
 
 // Passport middleware para autenticación
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({ secret: 'secret', resave: true, saveUninitialized: true }));
-app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
-
-// Mensajes de error (flash)
-app.use(flash());
 
 // Rutas para la aplicación
 app.use('/', require('./public/js/routes/index'));
@@ -79,6 +76,10 @@ app.get('/error500.html', function(req, res) {
       res.status(500);
     }
   });
+});
+
+app.get('/signup', (req, res) => {
+  res.sendFile(__dirname + '/public/html/signup.html');  // Ajusta la ruta si es necesario
 });
 
 // Serve all client-side files

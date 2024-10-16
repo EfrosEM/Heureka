@@ -26,27 +26,27 @@
 
     <main class="contenido">
       <div class="wrapper">
-        <form action="/users/signup" method="POST">
+        <form action="/users/signup" method="POST" id="signup-form">
             <h1 class='text-center mb-5' data-i18n="account"></h1>
             <div class="input-group mb-3">
               <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
               <div class='form-floating'>
-                  <input type="text" name='user' class='form-control'/>
-                  <label class="form-label" data-i18n="user"></label>
+                  <input type="text" name='user' id='user' class='form-control' placeholder='User' required/>
+                  <label class="form-label" data-i18n="user" for="user"></label>
               </div>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
                 <div class='form-floating'>
-                    <input type="text" name='email' class='form-control'/>
-                    <label class="form-label">Email</label>
+                    <input type="email" name='email' id='email' class='form-control' placeholder='Email' required/>
+                    <label class="form-label" for="email">Email</label>
                 </div>
             </div>
             <div class="input-group mb-4">
               <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
               <div class='form-floating'>
-                  <input type="password" name='password' class='form-control'/>
-                  <label class="form-label" data-i18n="password"></label>
+                  <input type="password" name='password' id='password' class='form-control' placeholder='Password' required/>
+                  <label class="form-label" data-i18n="password" for="password"></label>
               </div>
             </div>
             <div class='mb-3 d-grid'>
@@ -60,6 +60,9 @@
               </a>
             </div>
         </form>
+
+        <!-- Contenedor para mostrar mensajes de éxito o error -->
+        <div id="message-container" class="mt-3"></div>
     </div>
     </main>
 
@@ -90,6 +93,74 @@
     <!-- Script para seleccionar el idioma de la página -->
     <script src="/js/i18n.js"></script>
     
+    <script>
+      // Escuchar el evento submit del formulario
+      document.getElementById('signup-form').addEventListener('submit', async function(event) {
+          event.preventDefault();  // Prevenir el envío tradicional del formulario
+
+          // Obtener los datos del formulario
+          const formData = new FormData(this);
+          const data = {
+              user: formData.get('user'),
+              email: formData.get('email'),
+              password: formData.get('password')
+          };
+
+          try {
+              // Enviar los datos por AJAX
+              const response = await fetch('/users/signup', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(data)
+              });
+
+              const result = await response.json();
+
+              // Función para mostrar la alerta
+              function showAlert(message, type) {
+                  let icon = "";
+                  if(type == "success"){
+                    icon = `<i class="bi bi-check-circle-fill"></i>`;
+                  }else{
+                    icon = `<i class="bi bi-exclamation-triangle-fill"></i>`;
+                  }
+
+                  const alertDiv = document.createElement('div');
+                  alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+                  alertDiv.role = 'alert';
+                  alertDiv.innerHTML = `${icon} ${message} <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`;
+
+                  // Añadir la alerta al contenedor
+                  const messageContainer = document.getElementById('message-container');
+                  // Limpia cualquier mensaje previo
+                  messageContainer.innerHTML = '';
+                  messageContainer.appendChild(alertDiv);
+
+                  // Hacer que desaparezca después de 3 segundos
+                  setTimeout(() => {
+                      alertDiv.remove();
+                  }, 10000);
+              }
+
+              // Manejar las respuestas
+              if (result.success) {
+                  // Mostrar alerta de éxito
+                  showAlert(result.msg, 'success');
+                  // Limpiar el formulario después del éxito
+                  this.reset();
+              } else {
+                  // Mostrar alerta de error
+                  showAlert(result.msg, 'danger');
+              }
+          } catch (error) {
+              // Manejo de errores de conexión
+              showAlert('Ocurrió un error en el registro', 'danger');
+          }
+      });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>

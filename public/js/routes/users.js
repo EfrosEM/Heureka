@@ -14,32 +14,35 @@ router.post('/signup', async (req, res) => {
         errors.push({ msg: 'Por favor llena todos los campos' });
     }
 
-    // Verificar si el email ya existe
-    const usuarioExistente = await Usuario.findOne({ email: email });
-    if (usuarioExistente) {
-        errors.push({ msg: 'El email ya está registrado' });
+    if (password.length < 5) {
+        errors.push({ msg: 'La contraseña debe tener al menos 5 caracteres' });
     }
 
     if (errors.length > 0) {
-        res.status(400).json({ errors });
+        return res.status(400).json({ success: false, msg: errors[0].msg });
     } else {
-        // Cifrar la contraseña
-        const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(password, salt); // 10 es el número de saltos
-
-        // Crear nuevo usuario
-        const usuario = new Usuario({
-            user: user,
-            email: email,
-            password: hashedPassword
-        });
-
         try {
-            await usuario.save();
-            res.status(201).send('Usuario registrado');
+            const usuarioExistente = await Usuario.findOne({ email: email });
+            if (usuarioExistente) {
+                return res.status(400).json({ success: false, msg: 'Ese email ya ha sido registrado' });
+            }
+
+            // Cifrar la contraseña
+            const salt = await bcrypt.genSalt(10);
+            const hashedPassword = await bcrypt.hash(password, salt);
+
+            const nuevoUsuario = new Usuario({
+                user: user,
+                email: email,
+                password: hashedPassword
+            });
+
+            await nuevoUsuario.save();
+
+            return res.status(200).json({ success: true, msg: 'Usuario registrado correctamente' });
         } catch (error) {
-            console.error(error);
-            res.status(500).send('Error al registrar el usuario');
+            console.error('Error en el registro:', error);
+            return res.status(500).json({ success: false, msg: 'Error al registrar usuario' });
         }
     }
 });
