@@ -6,11 +6,15 @@ function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     }
-    res.redirect('/login');
+    res.redirect('/login.html');
 }
 
 // Ruta protegida
-router.get('/index', ensureAuthenticated, (req, res) => {
+router.get('/', ensureAuthenticated, (req, res) => {
+    res.send('Home: Bienvenido!');
+});
+
+router.get('/index.html', ensureAuthenticated, (req, res) => {
     res.send('Home: Bienvenido!');
 });
 

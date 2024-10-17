@@ -39,8 +39,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Rutas para la aplicación
-app.use('/', require('./public/js/routes/index'));
-app.use('/users', require('./public/js/routes/users'));
+app.use('/', require('./routes/index'));
+app.use('/users', require('./routes/users'));
 
 //require('./config/passport')(passport); // Configuración de Passport
 
