@@ -11,11 +11,11 @@ router.post('/signup', async (req, res) => {
 
     // Validación
     if (!user || !email || !password) {
-        errors.push({ msg: 'Por favor llena todos los campos' });
+        errors.push({ msg: 'fields' });
     }
 
     if (password.length < 5) {
-        errors.push({ msg: 'La contraseña debe tener al menos 5 caracteres' });
+        errors.push({ msg: 'password' });
     }
 
     if (errors.length > 0) {
@@ -24,7 +24,7 @@ router.post('/signup', async (req, res) => {
         try {
             const usuarioExistente = await Usuario.findOne({ email: email });
             if (usuarioExistente) {
-                return res.status(400).json({ success: false, msg: 'Ese email ya ha sido registrado' });
+                return res.status(400).json({ success: false, msg: 'email' });
             }
 
             // Cifrar la contraseña
@@ -39,10 +39,10 @@ router.post('/signup', async (req, res) => {
 
             await nuevoUsuario.save();
 
-            return res.status(200).json({ success: true, msg: 'Usuario registrado correctamente' });
+            return res.status(200).json({ success: true, msg: 'success' });
         } catch (error) {
             console.error('Error en el registro:', error);
-            return res.status(500).json({ success: false, msg: 'Error al registrar usuario' });
+            return res.status(500).json({ success: false, msg: 'error' });
         }
     }
 });
