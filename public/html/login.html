@@ -29,7 +29,7 @@
         <form action="/users/login" method="POST" id="login-form">
             <h1 class='text-center mb-5' data-i18n="welcome"></h1>
             <div class="input-group mb-3">
-              <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+              <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
               <div class='form-floating'>
                   <input type="email" placeholder='Email' name='email' id='email' class='form-control' required/>
                   <label class="form-label" for="email">Email</label>
@@ -53,6 +53,9 @@
               </a>
             </div>
         </form>
+
+        <!-- Contenedor para mostrar mensajes de éxito o error -->
+        <div id="message-container"></div>
     </div>
     </main>
 
@@ -82,6 +85,8 @@
 
     <!-- Script para seleccionar el idioma de la página -->
     <script src="/js/i18n.js"></script>
+    <!-- Script para obtener mensajes de login del backend -->
+    <script src="/js/login.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>

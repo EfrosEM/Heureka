@@ -43,10 +43,23 @@ router.post('/signup', async (req, res) => {
 });
 
 // Ruta para iniciar sesión
-router.post('/login', passport.authenticate('local', {
-    successRedirect: '/index.html',  // Redirigir al index si el login es exitoso
-    failureRedirect: '/login.html'  // Redirigir al login si falla
-}));
+router.post('/login', (req, res, next) => {
+    passport.authenticate('local', (err, user, info) => {
+        if (err) {
+            return res.status(500).json({ success: false, msg: 'error' });
+        }
+        if (!user) {
+            // Devolver el mensaje de error según la razón (password o email incorrecto)
+            return res.status(400).json({ success: false, msg: info.message });  // 'info.message' contiene el mensaje del error
+        }
+        req.logIn(user, (err) => {
+            if (err) {
+                return res.status(500).json({ success: false, msg: 'error' });
+            }
+            return res.json({ success: true, msg: 'success' });
+        });
+    })(req, res, next);
+});
 
 // Ruta para cerrar sesión
 router.get('/logout', (req, res) => {

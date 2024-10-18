@@ -10,13 +10,13 @@ passport.use(new LocalStrategy({
     try {
         const user = await Usuario.findOne({ email });
         if (!user) {
-            return done(null, false, { message: 'Email no registrado' });
+            return done(null, false, { message: 'email' });
         }
 
         // Comparar la contraseña
         const isMatch = await user.comparePassword(password);
         if (!isMatch) {
-            return done(null, false, { message: 'Contraseña incorrecta' });
+            return done(null, false, { message: 'password' });
         }
 
         return done(null, user);
