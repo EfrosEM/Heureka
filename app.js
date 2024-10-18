@@ -24,25 +24,23 @@ mongoose.connect(uri)
 // Body parser para manejar datos de formularios
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Configurar sesiones
 app.use(session({
     secret: 'secreto', // Llave secreta para sesiones
-    resave: true,
-    saveUninitialized: true
+    resave: false,
+    saveUninitialized: false
 }));
 
-// Passport middleware para autenticación
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({ secret: 'secret', resave: true, saveUninitialized: true }));
+// Inicializar Passport
+require('./config/passport');  // Cargar configuración de Passport
 app.use(passport.initialize());
 app.use(passport.session());
 
 // Rutas para la aplicación
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
-
-//require('./config/passport')(passport); // Configuración de Passport
 
 app.get('/configuracion-juego', function(req, res) {
   res.send({ tarjetas: tarjetas, heuristicas: heuristicas });

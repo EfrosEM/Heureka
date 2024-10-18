@@ -26,20 +26,20 @@
 
     <main class="contenido">
       <div class="wrapper">
-        <form action="/users/login" method="POST">
+        <form action="/users/login" method="POST" id="login-form">
             <h1 class='text-center mb-5' data-i18n="welcome"></h1>
             <div class="input-group mb-3">
               <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
               <div class='form-floating'>
-                  <input type="text" placeholder='ID' class='form-control' required/>
-                  <label class="form-label" data-i18n="user"></label>
+                  <input type="email" placeholder='Email' name='email' id='email' class='form-control' required/>
+                  <label class="form-label" for="email">Email</label>
               </div>
             </div>
             <div class="input-group mb-4">
               <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
               <div class='form-floating'>
-                  <input type="password" placeholder='Password' class='form-control' required/>
-                  <label class="form-label" data-i18n="password"></label>
+                  <input type="password" placeholder='Password' name='password' id='password' class='form-control' required/>
+                  <label class="form-label" data-i18n="password" for="password"></label>
               </div>
             </div>
             <div class='mb-3 d-grid'>

@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const Usuario = require('../models/Usuario');
 
@@ -27,14 +26,10 @@ router.post('/signup', async (req, res) => {
                 return res.status(400).json({ success: false, msg: 'email' });
             }
 
-            // Cifrar la contraseña
-            const salt = await bcrypt.genSalt(10);
-            const hashedPassword = await bcrypt.hash(password, salt);
-
             const nuevoUsuario = new Usuario({
                 user: user,
                 email: email,
-                password: hashedPassword
+                password: password,
             });
 
             await nuevoUsuario.save();
@@ -48,13 +43,10 @@ router.post('/signup', async (req, res) => {
 });
 
 // Ruta para iniciar sesión
-router.post('/login', (req, res, next) => {
-    passport.authenticate('local', {
-        successRedirect: '/index',
-        failureRedirect: '/login',
-        failureFlash: true
-    })(req, res, next);
-});
+router.post('/login', passport.authenticate('local', {
+    successRedirect: '/index.html',  // Redirigir al index si el login es exitoso
+    failureRedirect: '/login.html'  // Redirigir al login si falla
+}));
 
 // Ruta para cerrar sesión
 router.get('/logout', (req, res) => {
