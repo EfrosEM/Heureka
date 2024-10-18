@@ -26,7 +26,7 @@
           <option value="es">Español</option>
           <option value="en">English</option>
         </select>
-        <button type="button" onclick="location.href='login.html'" class="btn text-danger" data-bs-toggle="tooltip"data-bs-placement="bottom" data-bs-title="Log Out">
+        <button type="button" id="logout-btn" class="btn text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Log out">
           <i class="bi bi-box-arrow-right h4"></i>
         </button> 
       </div>    
@@ -78,6 +78,8 @@
 
     <!-- Script para seleccionar el idioma de la página -->
     <script src="/js/i18n.js"></script>
+    <!-- Script para logout-->
+    <script src="/js/logout.js"></script>
     <!-- Script para inicializar tooltips de Bootstrap -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {

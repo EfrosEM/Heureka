@@ -63,9 +63,12 @@ router.post('/login', (req, res, next) => {
 
 // Ruta para cerrar sesión
 router.get('/logout', (req, res) => {
-    req.logout(function(err) {
-        if (err) { return next(err); }
-        res.redirect('/login');
+    req.logout((err) => {
+        if (err) {
+            return res.status(500).json({ success: false, msg: 'Error al cerrar sesión' });
+        }
+        // Redirigir a la página de login después de cerrar sesión
+        res.redirect('/login.html');
     });
 });
 
