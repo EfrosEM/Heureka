@@ -213,9 +213,18 @@ header {
     align-self: center;
     overflow-x: hidden;
   }
+
+  #lang {
+    align-self: center;
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: hidden;
+  }
   
   #div-extra, #nav{
-    width: 500px;
+    width: 600px;
   }
 }
 
@@ -274,6 +283,10 @@ footer {
   color: #242424;
 }
 
+.wrapper{
+  width: 400px;
+  margin: 50px auto;
+}
 
 header img {
   max-height: 100px;

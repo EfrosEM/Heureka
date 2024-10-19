@@ -4,9 +4,43 @@ const tarjetas = require('./tarjetas.json');
 const heuristicas = require('./heuristicas.json');
 const fs = require('fs');
 
+const mongoose = require('mongoose');
+const session = require('express-session');
+const passport = require('passport');
+const flash = require('connect-flash');
+const bodyParser = require('body-parser');
+
 const app = express();
 
 const PORT = process.env.PORT || 5000;
+
+const uri = "mongodb+srv://eduem:eduem@cluster0.8yvyi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
+// Conectar a MongoDB
+mongoose.connect(uri)
+  .then(() => console.log('MongoDB conectado'))
+  .catch(err => console.log(err));
+
+// Body parser para manejar datos de formularios
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Configurar sesiones
+app.use(session({
+    secret: 'secreto', // Llave secreta para sesiones
+    resave: false,
+    saveUninitialized: false
+}));
+
+// Inicializar Passport
+require('./config/passport');  // Cargar configuración de Passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Rutas para la aplicación
+app.use('/', require('./routes/index'));
+app.use('/users', require('./routes/users'));
 
 app.get('/configuracion-juego', function(req, res) {
   res.send({ tarjetas: tarjetas, heuristicas: heuristicas });
@@ -40,6 +74,10 @@ app.get('/error500.html', function(req, res) {
       res.status(500);
     }
   });
+});
+
+app.get('/signup', (req, res) => {
+  res.sendFile(__dirname + '/public/html/signup.html');  // Ajusta la ruta si es necesario
 });
 
 // Serve all client-side files

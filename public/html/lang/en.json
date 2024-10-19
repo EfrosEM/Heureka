@@ -1,7 +1,9 @@
 {
     "new-game": "New game",
-    "home": "Homepage",
+    "home": "Home",
     "sources": "Sources",
+    "standings": "Standings",
+    "profile": "Profile",
     "what-is": "What is Heureka?",
     "heureka-description1": "Heureka is a question and answer game to learn and memorize Nielsen's heuristics.",
     "heureka-description2": "These are 10 very general principles for designing usable interfaces, identified by Jakob Nielsen:",
@@ -59,5 +61,16 @@
     "encuentra-interfaz": "Find the interface that ",
     "cumpla": "👍 SATISFIES",
     "incumpla": "👎 VIOLATES",
-    "la-heuristica": " heuristic "
+    "la-heuristica": " heuristic ",
+
+
+    "login": "Log in",
+    "logout": "Log out",
+    "user": "User",
+    "password": "Password",
+    "welcome": "Access Heureka",
+    "account": "Create an account",
+    "signup": "Sign up",
+    "no-account": "Don't have an account?",
+    "yes-account": "Already have an account?"
 }
