@@ -121,7 +121,11 @@
 }
 
 #boton-ayuda {
-  margin-left: 10px;
+  color: #ffffff;
+	border-radius: 6px;
+  margin-left: 5px;
+  margin-top: 10px;
+  width: 160px;
 }
 
 .boton {
@@ -455,7 +459,6 @@ span.animar {
 #boton-accion {
   font-size: large;
   font-weight: bolder;
-  background-color: #5EB320;
   color: #ffffff;
   padding: 11px 19px;
 	border-radius: 6px;
