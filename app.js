@@ -40,6 +40,7 @@ app.use(passport.session());
 
 // Rutas para la aplicación
 app.use('/', require('./routes/index'));
+app.use('/', require('./routes/standings'));
 app.use('/users', require('./routes/users'));
 
 app.get('/configuracion-juego', function(req, res) {

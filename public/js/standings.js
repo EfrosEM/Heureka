@@ -1,0 +1,29 @@
+// Función para cargar el ranking de usuarios
+async function loadStandings() {
+    try {
+        // Hacer una llamada al servidor para obtener los standings
+        const response = await fetch('/standings');
+        const users = await response.json();
+
+        // Obtener el cuerpo de la tabla
+        const tableBody = document.getElementById('standings-table-body');
+        tableBody.innerHTML = ''; // Limpiar la tabla antes de llenarla
+
+        // Rellenar la tabla con los usuarios
+        users.forEach((user, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${user.user}</td>
+                <td>${user.email}</td>
+                <td>${user.points}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    } catch (error) {
+        console.error('Error al cargar los standings:', error);
+    }
+}
+
+// Cargar el ranking de usuarios cuando se cargue la página
+document.addEventListener('DOMContentLoaded', loadStandings);
