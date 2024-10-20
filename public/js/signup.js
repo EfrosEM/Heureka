@@ -8,6 +8,7 @@ document.getElementById('signup-form').addEventListener('submit', async function
         fields: "Por favor, llena todos los campos.",
         password: "La contraseña debe tener al menos 5 caracteres.",
         email: "Ese email ya ha sido registrado.",
+        user: "Ese nombre de usuario ya está en uso.",
         connection: "Ocurrió un error en el registro.",
         error: "Error al registrar usuario."
       },
@@ -16,6 +17,7 @@ document.getElementById('signup-form').addEventListener('submit', async function
         fields: "Please fill in all the fields.",
         password: "The password must have at least 5 characters.",
         email: "That email has already been registered.",
+        user: "That user name is already in use.",
         connection: "An error occurred while signing up.",
         error: "Error signing up user."
       }

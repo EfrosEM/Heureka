@@ -5,20 +5,20 @@ document.getElementById('login-form').addEventListener('submit', async function(
         es: {
             success: "Inicio de sesión exitoso.",
             error: "Error al iniciar sesión.",
-            email: "El email no se encuentra registrado.",
+            user: "Nombre de usuario no registrado.",
             password: "Contraseña incorrecta."
         },
         en: {
             success: "Login successful.",
             error: "Error logging in.",
-            email: "Email not registered.",
+            user: "User name not registered.",
             password: "Incorrect password."
         }
     };
 
     const formData = new FormData(this);
     const data = {
-        email: formData.get('email'),
+        user: formData.get('user'),
         password: formData.get('password')
     };
 

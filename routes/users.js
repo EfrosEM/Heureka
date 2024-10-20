@@ -21,15 +21,21 @@ router.post('/signup', async (req, res) => {
         return res.status(400).json({ success: false, msg: errors[0].msg });
     } else {
         try {
-            const usuarioExistente = await Usuario.findOne({ email: email });
-            if (usuarioExistente) {
+            const emailExistente = await Usuario.findOne({ email: email });
+            if (emailExistente) {
                 return res.status(400).json({ success: false, msg: 'email' });
+            }
+
+            const userExistente = await Usuario.findOne({ user: user });
+            if (userExistente) {
+                return res.status(400).json({ success: false, msg: 'user' });
             }
 
             const nuevoUsuario = new Usuario({
                 user: user,
                 email: email,
                 password: password,
+                points: 0,
             });
 
             await nuevoUsuario.save();

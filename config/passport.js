@@ -4,22 +4,22 @@ const Usuario = require('../models/Usuario');
 
 // Estrategia Local
 passport.use(new LocalStrategy({
-    usernameField: 'email',
+    usernameField: 'user',
     passwordField: 'password'
-}, async (email, password, done) => {
+}, async (user, password, done) => {
     try {
-        const user = await Usuario.findOne({ email });
-        if (!user) {
-            return done(null, false, { message: 'email' });
+        const usuario = await Usuario.findOne({ user });
+        if (!usuario) {
+            return done(null, false, { message: 'user' });
         }
 
         // Comparar la contraseña
-        const isMatch = await user.comparePassword(password);
+        const isMatch = await usuario.comparePassword(password);
         if (!isMatch) {
             return done(null, false, { message: 'password' });
         }
 
-        return done(null, user);
+        return done(null, usuario);
     } catch (error) {
         return done(error);
     }
