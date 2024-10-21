@@ -73,5 +73,11 @@
     "account": "Crea una cuenta",
     "signup": "Registrate",
     "no-account": "¿No tienes una cuenta?",
-    "yes-account": "¿Ya tienes una cuenta?"
+    "yes-account": "¿Ya tienes una cuenta?",
+
+
+    "user-profile": "Perfil de Usuario",
+    "user-name:": "Nombre de usuario:",
+    "points:": "Puntos:",
+    "edit": "Editar perfil"
 }

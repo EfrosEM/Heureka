@@ -44,4 +44,12 @@ router.get('/descripcion-diagrama.html', ensureAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, '../public/html/descripcion-diagrama.html'));
 });
 
+router.get('/standings.html', ensureAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/html/standings.html'));
+});
+
+router.get('/profile.html', ensureAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/html/profile.html'));
+});
+
 module.exports = router;

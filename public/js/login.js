@@ -69,7 +69,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
             // Redirigir a la página principal
             setTimeout(() => {
                 window.location.href = '/';
-            }, 2000);  // Redirigir después de 2 segundos
+            }, 1000);  // Redirigir después de 1 segundo
         } else {
             // Mostrar alerta de error
             showAlert(result.msg, 'danger');

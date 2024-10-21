@@ -78,5 +78,22 @@ router.get('/logout', (req, res) => {
     });
 });
 
+// Ruta para obtener los datos del perfil del usuario autenticado
+router.get('/profile', (req, res) => {
+    if (!req.isAuthenticated()) {
+        return res.status(401).json({ msg: 'No autorizado' });
+    }
+
+    // Si el usuario está autenticado, devolver los datos
+    const usuario = {
+        user: req.user.user,
+        email: req.user.email,
+        points: req.user.points,
+        // otros datos
+    };
+
+    res.json(usuario);
+});
+
 module.exports = router;
 

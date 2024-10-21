@@ -35,7 +35,31 @@
       </div>
     </header>
 
-    <main class="contenido" id="home">
+    <main class="contenido">
+      <div class="card mt-5" style="max-width: 600px; margin: 0 auto;">
+        <div class="card-header bg-dark text-white">
+          <h2 class="card-title mb-0" data-i18n="user-profile"></h2>
+        </div>
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="col-md-4"><strong><i class="bi bi-person-fill"></i> <span data-i18n="user-name:"></span></strong></div>
+            <div class="col-md-8" id="username"></div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-4"><strong><i class="bi bi-envelope-fill"></i> Email:</strong></div>
+            <div class="col-md-8" id="email"></div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-4"><strong><i class="bi bi-star-fill"></i> <span data-i18n="points:"></span></strong></div>
+            <div class="col-md-8" id="points"></div>
+          </div>
+          
+        </div>
+        <div class="card-footer text-center">
+          <button class="btn btn-outline-primary" id="edit-profile" type="button"><i class="bi bi-pencil-square"></i> <span data-i18n="edit"></span></button>
+          <button class="btn btn-outline-danger" id="logout-btn2" type="button"><i class="bi bi-box-arrow-right"></i> <span data-i18n="logout"></span></button>   
+        </div>
+      </div>
       
     </main>
 
@@ -68,6 +92,8 @@
     <script src="/js/i18n.js"></script>
     <!-- Script para logout-->
     <script src="/js/logout.js"></script>
+    <!-- Script para cargar datos de usuario-->
+    <script src="/js/profile.js"></script>
     <!-- Script para inicializar tooltips de Bootstrap -->
     <script>
       document.addEventListener('DOMContentLoaded', function () {

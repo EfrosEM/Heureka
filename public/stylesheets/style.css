@@ -220,11 +220,9 @@ header {
 
   #lang {
     align-self: center;
-    overflow-x: hidden;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    overflow-x: hidden;
   }
   
   #div-extra, #nav{
