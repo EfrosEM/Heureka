@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/Usuario'); // Asumiendo que el modelo se llama User
+const User = require('../models/Usuario');
 
 // Ruta para obtener el ranking de usuarios
 router.get('/standings', async (req, res) => {

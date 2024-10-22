@@ -231,7 +231,7 @@ header {
 }
 
 #nav a {
-  color: #242424;
+  color: white;
   text-decoration: none;
   font-size: 1.05em;
   padding: 10px 10px;
@@ -241,13 +241,13 @@ header {
 }
 
 #nav a:hover {
-  background-color: #e6e2df;
+  background-color: black;
   border-radius: 10px;
 }
 
 #nav a.active {
   font-weight: bold;
-  background-color: #e6e2df;
+  background-color: black;
   border-radius: 10px;
 }
 
@@ -270,7 +270,7 @@ footer {
 }
 
 #creditos {
-  color: #242424;
+  color: gray;
   font-size: smaller;
 }
 
@@ -282,7 +282,7 @@ footer {
   text-align: center;
   min-width: 44px;
   min-height: 44px;
-  color: #242424;
+  color: grey;
 }
 
 .wrapper{
