@@ -41,5 +41,10 @@ UsuarioSchema.methods.comparePassword = async function(candidatePassword) {
     return await bcrypt.compare(candidatePassword, this.password);
 };
 
+// Método para sumar puntos a los puntos actuales
+UsuarioSchema.methods.addPoints = async function(newPoints) {
+    this.points+=newPoints;
+};
+
 const Usuario = mongoose.model('Usuario', UsuarioSchema);
 module.exports = Usuario;

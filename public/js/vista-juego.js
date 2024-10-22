@@ -329,6 +329,8 @@ function mostrarCorreccion() {
         // Sonido respuesta correcta
         $("#audio-respuesta-correcta")[0].volume = 0.3;
         $("#audio-respuesta-correcta")[0].play();
+
+        addPoints();
     }
 }
 
@@ -470,4 +472,23 @@ function clicTarjeta(event) {
         $("#boton-accion").prop("disabled", false);
         $("#boton-accion").addClass("animar");
     }
+}
+
+async function addPoints(){
+
+    const points = controlador.calcularPuntos();
+
+    const data = {
+        points: points,
+    };
+
+    const response = await fetch('/points', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+
+    //TODO: Mostrar los puntos añadidos en la interfaz
 }

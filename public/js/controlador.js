@@ -49,4 +49,9 @@ export class Controlador {
     leerValorCronometro() {
         return this.partidaActual.leerValorCronometro();
     }
+
+    calcularPuntos() {
+        // TODO: Calcular la cantidad de puntos en función del tiempo/dificultad
+        return 50;
+    }
 }
