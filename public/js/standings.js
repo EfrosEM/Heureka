@@ -15,7 +15,6 @@ async function loadStandings() {
             row.innerHTML = `
                 <td>${index + 1}</td>
                 <td>${user.user}</td>
-                <td>${user.email}</td>
                 <td>${user.points}</td>
             `;
             tableBody.appendChild(row);

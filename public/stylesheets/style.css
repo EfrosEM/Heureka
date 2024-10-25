@@ -207,6 +207,13 @@ header {
   overflow-x: hidden;
 }
 
+#lang {
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 @media only screen and (min-width: 850px) {
   header {
     display: flex;
@@ -216,13 +223,6 @@ header {
   #nav {
     align-self: center;
     overflow-x: hidden;
-  }
-
-  #lang {
-    align-self: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
   }
   
   #div-extra, #nav{

@@ -6,6 +6,7 @@ document.getElementById('signup-form').addEventListener('submit', async function
       es: {
         success: "Usuario registrado correctamente.",
         fields: "Por favor, llena todos los campos.",
+        name: "El nombre de usuario no puede superar los 30 caracteres.",
         password: "La contraseña debe tener al menos 5 caracteres.",
         email: "Ese email ya ha sido registrado.",
         user: "Ese nombre de usuario ya está en uso.",
@@ -15,6 +16,7 @@ document.getElementById('signup-form').addEventListener('submit', async function
       en: {
         success: "User registered successfully.",
         fields: "Please fill in all the fields.",
+        name: "The username cannot exceed 30 characters.",
         password: "The password must have at least 5 characters.",
         email: "That email has already been registered.",
         user: "That user name is already in use.",

@@ -38,21 +38,22 @@
     </header>
 
     <main class="contenido">
-        <div class="container mt-4">
+        <div class="mt-4" style="max-width: 600px; margin: 0 auto;">
             <h1 data-i18n="standings"></h1>
-            <table class="table table-bordered table-hover mt-4 text-center">
-                <thead class="table-dark">
-                    <tr>
-                        <th><i class="bi bi-award-fill"></i></th>
-                        <th><i class="bi bi-person-fill"></i> <span data-i18n="user"></span></th>
-                        <th><i class="bi bi-envelope-fill"></i> Email</th>
-                        <th><i class="bi bi-star-fill"></i> <span data-i18n="points"></span></th>
-                    </tr>
-                </thead>
-                <tbody id="standings-table-body">
-                    <!-- Aquí se rellenarán los usuarios -->
-                </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover mt-3 text-center">
+                  <thead class="table-dark">
+                      <tr>
+                          <th><i class="bi bi-award-fill"></i></th>
+                          <th><i class="bi bi-person-fill"></i> <span data-i18n="user"></span></th>
+                          <th><i class="bi bi-star-fill"></i> <span data-i18n="points"></span></th>
+                      </tr>
+                  </thead>
+                  <tbody id="standings-table-body">
+                      <!-- Aquí se rellenarán los usuarios -->
+                  </tbody>
+              </table>
+            </div>
         </div>
     </main>
 

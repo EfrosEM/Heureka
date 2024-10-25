@@ -13,6 +13,10 @@ router.post('/signup', async (req, res) => {
         errors.push({ msg: 'fields' });
     }
 
+    if(user.length > 30) {
+        errors.push({ msg: 'name' });
+    }
+
     if (password.length < 5) {
         errors.push({ msg: 'password' });
     }
