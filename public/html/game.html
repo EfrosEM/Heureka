@@ -56,6 +56,8 @@
           </div>
         </div>
         <input class="boton bg-secondary" id="boton-ayuda" type="button" data-i18n="definicion">
+        <!-- Contenedor para mostrar puntos ganados -->
+        <div id="points-container"></div>
 
         <script id="plantilla-heuristica" type="text/x-handlebars-template">
           <span data-i18n="pregunta" id="num-pregunta"></span> 
@@ -82,8 +84,15 @@
           <div tabindex="0" id="vidas" aria-live="polite" role="region">
             <!-- Se compila aquí plantilla-vidas -->
           </div>
+          &nbsp;
+          &nbsp;
           <div tabindex="0" id="cronometro" role="timer">
             <!-- Se compila aquí plantilla-cronometro -->
+          </div>
+          &nbsp;
+          &nbsp;
+          <div tabindex="0" id="puntos" aria-live="polite" role="status">
+            <!-- Se compila aquí plantilla-puntos -->
           </div>
         </div>
       </div>
@@ -94,6 +103,10 @@
 
       <script id="plantilla-cronometro" type="text/x-handlebars-template">
         <span data-i18n="crono"></span>: ⏱️ {{cronometro}}
+      </script>
+
+      <script id="plantilla-puntos" type="text/x-handlebars-template">
+        <span data-i18n="points:"></span> ⭐ {{puntos}}
       </script>
 
       <div id="tarjetas-botones">

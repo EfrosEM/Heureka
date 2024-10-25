@@ -11,6 +11,7 @@ export class Partida {
         this.numVidasActuales = 3;
         this.numAcertadas = 0;
         this.cronometro = new Cronometro();
+        this.puntos = 0;
     }
 
     nuevaPregunta() {
@@ -160,5 +161,9 @@ export class Partida {
 
     leerValorCronometro() {
         return this.cronometro.leerValor();
+    }
+
+    addPuntos(newPuntos) {
+        this.puntos += newPuntos;
     }
 }

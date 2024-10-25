@@ -50,6 +50,14 @@ export class Controlador {
         return this.partidaActual.leerValorCronometro();
     }
 
+    getPuntosActuales() {
+        return this.partidaActual.puntos;
+    }
+
+    addPuntos(puntos) {
+        this.partidaActual.addPuntos(puntos);
+    }
+
     calcularPuntos() {
         // TODO: Calcular la cantidad de puntos en función del tiempo/dificultad
         return 50;

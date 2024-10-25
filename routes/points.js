@@ -4,7 +4,7 @@ const router = express.Router();
 // Ruta para sumar puntos al usuario
 router.post('/points', async (req, res) => {
     if (!req.isAuthenticated()) {
-        return res.status(401).json({ msg: 'No autorizado' });
+        return res.status(401).json({ msg: 'error' });
     }
 
     const { points } = req.body;

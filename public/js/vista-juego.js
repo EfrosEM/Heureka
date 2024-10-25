@@ -105,6 +105,7 @@ function setupPartida() {
     mostrarNuevaPregunta();
     actualizarCronometro();
     actualizarVidas();
+    actualizarPuntos();
     setBotonConfirmar();
     setInterval(actualizarCronometro, 1000);
 }
@@ -139,9 +140,23 @@ function actualizarCronometro() {
     };
 
     $("#cronometro").html(plantillaCronometroCompilada(contexto));
-    // Aplicar traducciones después de actualizar las vidas
+    // Aplicar traducciones después de actualizar el cronometro
     actualizarTraducciones();
 }
+
+function actualizarPuntos() {
+    const plantillaPuntos = $("#plantilla-puntos").html();
+    const plantillaPuntosCompilada = Handlebars.compile(plantillaPuntos);
+   
+    var contexto = {
+        "puntos" : controlador.getPuntosActuales()
+    };
+
+    $("#puntos").html(plantillaPuntosCompilada(contexto));
+    // Aplicar traducciones después de actualizar los puntos
+    actualizarTraducciones();
+}
+
 
 function mostrarNuevaPregunta() {
 
@@ -331,6 +346,7 @@ function mostrarCorreccion() {
         $("#audio-respuesta-correcta")[0].play();
 
         addPoints();
+        actualizarPuntos();
     }
 }
 
@@ -477,6 +493,7 @@ function clicTarjeta(event) {
 async function addPoints(){
 
     const points = controlador.calcularPuntos();
+    controlador.addPuntos(points);
 
     const data = {
         points: points,
@@ -490,5 +507,55 @@ async function addPoints(){
         body: JSON.stringify(data)
     });
 
-    //TODO: Mostrar los puntos añadidos en la interfaz
+    const result = await response.json();
+
+    // Manejar las respuestas
+    if (result.success) {
+        // Mostrar alerta de éxito
+        showAlert(result.msg, points, 'success');
+    } else {
+        // Mostrar alerta de error
+        showAlert(result.msg, points, 'danger');
+    }
+}
+
+// Función para mostrar la alerta
+function showAlert(messageKey, points, type) {
+    const language = document.getElementById('language-select').value;
+
+    const messages = {
+        es: {
+            success: " Puntos añadidos!",
+            error: "No autorizado",
+        },
+        en: {
+            success: " Points added!",
+            error: "Unauthorized",
+        }
+    };
+    
+    let message, icon;
+
+    if(type == "success"){
+        icon = `<i class="bi bi-star-fill"></i>`;
+        message = points + messages[language][messageKey];
+    } else {
+        icon = `<i class="bi bi-exclamation-triangle-fill"></i>`;
+        message = messages[language][messageKey];
+    }
+
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert alert-${type}`;
+    alertDiv.role = 'alert';
+    alertDiv.innerHTML = `<strong>${icon} ${message}</strong>`;
+
+    // Añadir la alerta al contenedor
+    const pointsContainer = document.getElementById('points-container');
+    pointsContainer.innerHTML = '';  // Limpiar mensajes previos
+    pointsContainer.appendChild(alertDiv);
+
+    // Hacer que desaparezca después de 10 segundos
+    setTimeout(() => {
+        alertDiv.remove();
+    }, 5000);
 }

@@ -558,3 +558,9 @@ table {
   border-radius: 5px;
   overflow: hidden;
 }
+
+#points-container {
+  max-height: 40px;
+  justify-self: flex-end;
+  
+}
