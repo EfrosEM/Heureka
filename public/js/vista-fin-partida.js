@@ -6,6 +6,7 @@ $(document).ready( () => {
         "acertadas" : getParameterByName('acertadas'),
         "total" : getParameterByName('total'),
         "tiempo" : getParameterByName('tiempo'),
+        "puntos" : getParameterByName('puntos'),
     };
 
     $(".feedback").html(plantillaFeedbackCompilada(contexto));

@@ -50,6 +50,9 @@
       <script id="plantilla-feedback" type="text/x-handlebars-template">
         {{#if acertadas}}
         <span data-i18n="has-acertado"></span> {{acertadas}} <span data-i18n="de"></span> {{total}} <span data-i18n="preguntas-en"></span> {{tiempo}}.
+        <div class="alert alert-primary mt-4" role="alert" style="width: fit-content; margin: 0 auto;">
+          <strong><span data-i18n="has-conseguido"></span> {{puntos}} <i class="bi bi-star-fill"></i></strong>
+        </div>
         {{else}}
         <span data-i18n="has-acertado"></span> 0 <span data-i18n="de"></span> 0 <span data-i18n="preguntas-en"></span> 0.
         {{/if}}

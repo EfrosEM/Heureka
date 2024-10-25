@@ -385,7 +385,8 @@ function terminarPartida(haGanado) {
     let queryString = 
         `?acertadas=${encodeURIComponent(controlador.getNumAcertadas())}`
         +`&total=${encodeURIComponent(controlador.getNumPreguntadas())}`
-        + `&tiempo=${encodeURIComponent(cronometroToString(controlador.leerValorCronometro()))}`;
+        +`&tiempo=${encodeURIComponent(cronometroToString(controlador.leerValorCronometro()))}`
+        +`&puntos=${encodeURIComponent(controlador.getPuntosActuales())}`;
 
     if (haGanado) {
         window.location.href = "has-ganado.html" + queryString;
