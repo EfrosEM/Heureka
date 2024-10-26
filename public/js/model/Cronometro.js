@@ -25,4 +25,8 @@ export class Cronometro {
 
         return { horas: horas, minutos: minutos, segundos: segundos };
     }
+
+    getSegundosTranscurridos() {
+        return this.segundosTranscurridos;
+    }
 }

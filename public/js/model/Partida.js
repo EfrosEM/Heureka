@@ -166,4 +166,8 @@ export class Partida {
     addPuntos(newPuntos) {
         this.puntos += newPuntos;
     }
+
+    getSegundos() {
+        return this.cronometro.getSegundosTranscurridos();
+    }
 }
