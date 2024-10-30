@@ -78,7 +78,8 @@
 
 
     "user-profile": "User Profile",
-    "user-name:": "User name:",
-    "points:": "Points:",
-    "edit": "Edit profile"
+    "user-name": "User name",
+    "edit": "Edit profile",
+    "save": "Save changes",
+    "cancel": "Cancel"
 }

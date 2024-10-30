@@ -99,5 +99,57 @@ router.get('/profile', (req, res) => {
     res.json(usuario);
 });
 
+// Ruta para editar perfil
+router.put('/edit', async (req, res) => {
+    const userId = req.user.id;
+    const { newUser, newEmail, newPassword } = req.body;
+
+    try {
+        // Buscar usuario por ID
+        const user = await Usuario.findById(userId);
+        if (!user) {
+            return res.status(404).json({ success: false, message: "found" });
+        }
+
+        // Actualizar los datos del usuario
+        if (newUser) {
+            if(newUser.length > 30) {
+                return res.status(400).json({ success: false, msg: "name" });
+            }
+
+            const userExistente = await Usuario.findOne({ user: newUser });
+            if (userExistente && userExistente._id.toString() !== userId) {
+                return res.status(400).json({ success: false, msg: 'user' });
+            }
+
+            user.user = newUser;
+        } 
+
+        if (newEmail) {
+            const emailExistente = await Usuario.findOne({ email: newEmail });
+            if (emailExistente && emailExistente._id.toString() !== userId) {
+                return res.status(400).json({ success: false, msg: 'email' });
+            }
+
+            user.email = newEmail;
+        }
+
+        if (newPassword) {
+            if (newPassword.length < 5) {
+                return res.status(400).json({ success: false, msg: "password" });
+            }
+
+            user.password = newPassword;
+        }
+
+        // Guardar los cambios en la base de datos
+        await user.save();
+        return res.status(200).json({ success: true, msg: 'success' });
+        
+    } catch (error) {
+        return res.status(500).json({ success: false, msg: 'error' });
+    }
+});
+
 module.exports = router;
 

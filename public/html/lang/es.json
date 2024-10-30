@@ -78,7 +78,8 @@
 
 
     "user-profile": "Perfil de Usuario",
-    "user-name:": "Nombre de usuario:",
-    "points:": "Puntos:",
-    "edit": "Editar perfil"
+    "user-name": "Nombre de usuario",
+    "edit": "Editar perfil",
+    "save": "Guardar cambios",
+    "cancel": "Cancelar"
 }
