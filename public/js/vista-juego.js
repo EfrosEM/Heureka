@@ -389,6 +389,8 @@ function terminarPartida(haGanado) {
         +`&puntos=${encodeURIComponent(controlador.getPuntosActuales())}`;
 
     if (haGanado) {
+        // Se añade un bonus de puntos por ganar la partida
+        addBonus(100);
         window.location.href = "has-ganado.html" + queryString;
     } else {
         window.location.href = "has-perdido.html" + queryString;
@@ -489,6 +491,23 @@ function clicTarjeta(event) {
         $("#boton-accion").prop("disabled", false);
         $("#boton-accion").addClass("animar");
     }
+}
+
+async function addBonus(bonus) {
+
+    controlador.addPuntos(bonus);
+
+    const data = {
+        points: bonus,
+    };
+
+    const response = await fetch('/points', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
 }
 
 async function addPoints(){
