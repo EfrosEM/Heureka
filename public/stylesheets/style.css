@@ -270,7 +270,7 @@ footer {
 }
 
 #creditos {
-  color: gray;
+  color: rgb(155, 155, 155);
   font-size: smaller;
 }
 
@@ -282,7 +282,7 @@ footer {
   text-align: center;
   min-width: 44px;
   min-height: 44px;
-  color: grey;
+  color: rgb(155, 155, 155);
 }
 
 .wrapper{

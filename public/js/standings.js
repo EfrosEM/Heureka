@@ -17,6 +17,14 @@ async function loadStandings() {
                 <td>${user.user}</td>
                 <td>${user.points}</td>
             `;
+            // Aplicar estilos en línea para los tres primeros puestos
+            if (index === 0) {
+                row.querySelectorAll('td').forEach(td => td.style.backgroundColor = 'gold');
+            } else if (index === 1) {
+                row.querySelectorAll('td').forEach(td => td.style.backgroundColor = 'silver');
+            } else if (index === 2) {
+                row.querySelectorAll('td').forEach(td => td.style.backgroundColor = '#cd7f32'); // Color bronce
+            }
             tableBody.appendChild(row);
         });
     } catch (error) {
