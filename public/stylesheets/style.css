@@ -188,7 +188,7 @@ html {
   padding: 0%;
 } 
 
- body {
+body {
   margin: 0%;
   min-width: 250px;
 } 
@@ -212,6 +212,24 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+#logo {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 165px;
+}
+
+#logo a {
+  font-size: 23px;
+  color: #b0c6d4;
+  text-decoration: none; /* Elimina el subrayado */
+  display: flex;
+  align-items: flex-end;
+}
+
+#logo img {
+  margin-right: 8px;
 }
 
 @media only screen and (min-width: 850px) {
@@ -562,5 +580,4 @@ table {
 #points-container {
   max-height: 40px;
   justify-self: flex-end;
-  
 }
