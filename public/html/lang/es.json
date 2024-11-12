@@ -71,9 +71,11 @@
     "user": "Usuario",
     "password": "Contraseña",
     "points": "Puntos",
-    "welcome": "Accede a Heureka",
+    "welcome": "Accede a tu cuenta",
     "account": "Crea una cuenta",
-    "signup": "Regístrate",
+    "signup": "Registrarse",
+    "registrate": "Regístrate",
+    "inicia-sesion": "Inicia sesión",
     "no-account": "¿No tienes una cuenta?",
     "yes-account": "¿Ya tienes una cuenta?",
 
