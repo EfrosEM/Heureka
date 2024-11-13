@@ -52,7 +52,7 @@
     "de": " de ",
     "preguntas-en": " preguntas en ",
     "has-conseguido": "Has obtenido una puntuación de",
-    "bonus": "Bonus por ganar la partida: + 100 puntos",
+    "bonus": "Bonus por ganar la partida: +100 puntos",
 
 
     "definicion": "Ver definición ➕",
@@ -82,6 +82,12 @@
 
     "user-profile": "Perfil de Usuario",
     "user-name": "Nombre de usuario",
+    "alta": "Fecha de registro",
+    "info": "Información de usuario",
+    "stats": "Estadísticas de juego",
+    "games": "Partidas ganadas",
+    "respuestas": "Respuestas correctas",
+    "time": "Tiempo jugado",
     "edit": "Editar perfil",
     "save": "Guardar cambios",
     "cancel": "Cancelar",

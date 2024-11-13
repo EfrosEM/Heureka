@@ -40,6 +40,12 @@ router.post('/signup', async (req, res) => {
                 email: email,
                 password: password,
                 points: 0,
+                alta: new Date(Date.now()),
+                games: 0,
+                wins: 0,
+                preguntas: 0,
+                aciertos: 0,
+                time: 0
             });
 
             await nuevoUsuario.save();
@@ -93,6 +99,12 @@ router.get('/profile', (req, res) => {
         user: req.user.user,
         email: req.user.email,
         points: req.user.points,
+        alta: req.user.alta.toLocaleDateString(),
+        games: req.user.games,
+        wins: req.user.wins,
+        preguntas: req.user.preguntas,
+        aciertos: req.user.aciertos,
+        time: req.user.time,
         // otros datos
     };
 

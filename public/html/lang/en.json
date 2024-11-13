@@ -52,7 +52,7 @@
     "de": " of ",
     "preguntas-en": " questions in ",
     "has-conseguido": "You have obtained a score of",
-    "bonus": "Bonus for winning the game: + 100 points",
+    "bonus": "Bonus for winning the game: +100 points",
 
 
     "definicion": "Show definition ➕",
@@ -82,6 +82,12 @@
 
     "user-profile": "User Profile",
     "user-name": "User name",
+    "alta": "Registration date",
+    "info": "User information",
+    "stats": "Game statistics",
+    "games": "Games won",
+    "respuestas": "Correct answers",
+    "time": "Time played",
     "edit": "Edit profile",
     "save": "Save changes",
     "cancel": "Cancel",

@@ -18,8 +18,34 @@ const UsuarioSchema = new mongoose.Schema({
         required: true
     },
     points: {
-        type: Number
-    }
+        type: Number,
+        required: true
+    },
+    alta: {
+        type: Date,
+        required: true
+    },
+    games: {
+        type: Number,
+        required: true
+    },
+    wins: {
+        type: Number,
+        required: true
+    },
+    preguntas: {
+        type: Number,
+        required: true
+    },
+    aciertos: {
+        type: Number,
+        required: true
+    },
+    time: {
+        type: Number,
+        required: true
+    },
+
 });
 
 // Método para encriptar la contraseña antes de guardar el usuario
