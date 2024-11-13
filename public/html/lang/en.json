@@ -84,5 +84,6 @@
     "user-name": "User name",
     "edit": "Edit profile",
     "save": "Save changes",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "confirm-password": "Confirm password"
 }

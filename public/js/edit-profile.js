@@ -4,6 +4,7 @@ const emailElement = document.getElementById("email");
 const editUsernameInput = document.getElementById("editUsername");
 const editEmailInput = document.getElementById("editEmail");
 const editPasswordInput = document.getElementById("editPassword");
+const confirmPasswordInput = document.getElementById("confirmPassword");
 
 const messages = {
     es: {
@@ -11,6 +12,7 @@ const messages = {
       found: "Usuario no encontrado.",
       name: "El nombre de usuario no puede superar los 30 caracteres.",
       password: "La contraseña debe tener al menos 5 caracteres.",
+      confirm: "Las contraseñas introducidas no coinciden.",
       email: "Ese email ya ha sido registrado.",
       user: "Ese nombre de usuario ya está en uso.",
       error: "Error al editar el perfil."
@@ -20,6 +22,7 @@ const messages = {
       found: "User not found.",
       name: "The username cannot exceed 30 characters.",
       password: "The password must have at least 5 characters.",
+      confirm: "The passwords do not match.",
       email: "That email has already been registered.",
       user: "That user name is already in use.",
       error: "Error editing profile."
@@ -41,10 +44,17 @@ document.getElementById("editProfileForm").addEventListener("submit", function (
     const newUsername = editUsernameInput.value;
     const newEmail = editEmailInput.value;
     const newPassword = editPasswordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
 
     // Enviar los datos al servidor si al menos uno de los campos no está vacío
     if (newUsername || newEmail || newPassword) {
-        actualizarUsuario(newUsername, newEmail, newPassword);
+        if (newPassword === confirmPassword) {
+            actualizarUsuario(newUsername, newEmail, newPassword);
+        } else {
+            showAlert("confirm", 'danger');
+            // Limpiar el formulario
+            document.getElementById("editProfileForm").reset();
+        }
     }
 
     // Cerrar el modal
