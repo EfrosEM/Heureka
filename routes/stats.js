@@ -13,6 +13,7 @@ router.post('/stats', async (req, res) => {
     req.user.addPreguntas(preguntas);
     req.user.addAciertos(aciertos);
     req.user.addTime(tiempo);
+    req.user.addGame();
 
     await req.user.save();
 
@@ -30,18 +31,6 @@ router.post('/win', async (req, res) => {
     req.user.addPoints(points);
     req.user.addWin();
 
-    await req.user.save();
-
-    return res.status(200).json({ success: true, msg: 'success' });
-});
-
-// Ruta para sumar partida jugada al total de partidas jugadas
-router.post('/game', async (req, res) => {
-    if (!req.isAuthenticated()) {
-        return res.status(401).json({ msg: 'error' });
-    }
-
-    req.user.addGame();
     await req.user.save();
 
     return res.status(200).json({ success: true, msg: 'success' });

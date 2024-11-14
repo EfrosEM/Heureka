@@ -1,5 +1,7 @@
 import {Controlador} from './controlador.js';
 
+const BONUS_PUNTOS = 100;
+
 let controlador = null;
 let translations = {};  // Aquí se almacenarán las traducciones cargadas
 
@@ -382,19 +384,29 @@ function clicAyuda() {
 }
 
 function terminarPartida(haGanado) {
+
+    const acertadas = controlador.getNumAcertadas();
+    const total = controlador.getNumPreguntadas();
+    const tiempo = controlador.leerValorCronometro();
+    const puntos = controlador.getPuntosActuales();
+
     let queryString = 
-        `?acertadas=${encodeURIComponent(controlador.getNumAcertadas())}`
-        +`&total=${encodeURIComponent(controlador.getNumPreguntadas())}`
-        +`&tiempo=${encodeURIComponent(cronometroToString(controlador.leerValorCronometro()))}`
-        +`&puntos=${encodeURIComponent(controlador.getPuntosActuales())}`;
+        `?acertadas=${encodeURIComponent(acertadas)}`
+        +`&total=${encodeURIComponent(total)}`
+        +`&tiempo=${encodeURIComponent(cronometroToString(tiempo))}`
+        +`&puntos=${encodeURIComponent(puntos)}`;
 
     if (haGanado) {
         // Se añade un bonus de puntos por ganar la partida
-        addWin(100);
-        addGame();
+        addWin(BONUS_PUNTOS);
+        // Se actualizan las estadísticas del usuario
+        actualizarStats(puntos, total, acertadas, tiempoEnSegundos(tiempo));
+
         window.location.href = "has-ganado.html" + queryString;
     } else {
-        addGame();
+        // Se actualizan las estadísticas del usuario
+        actualizarStats(puntos, total, acertadas, tiempoEnSegundos(tiempo));
+
         window.location.href = "has-perdido.html" + queryString;
     }
 }
@@ -471,6 +483,11 @@ function cronometroToString(HHMMSS) {
     return cadenaCronometro;
 }
 
+function tiempoEnSegundos(tiempo) {
+    const { horas, minutos, segundos } = tiempo;
+    return (horas * 3600) + (minutos * 60) + segundos;
+}
+
 function clicTarjeta(event) {
     // Efecto de sonido
     $("#audio-clic-tarjeta")[0].volume = 0.3;
@@ -510,14 +527,23 @@ async function addWin(bonus) {
     });
 }
 
-async function addGame() {
+async function actualizarStats(puntos, preguntas, aciertos, tiempo) {
+    const data = {
+        points: puntos,
+        preguntas: preguntas,
+        aciertos: aciertos,
+        tiempo: tiempo
+    };
 
-    const response = await fetch('/stats/game', {
+    const response = await fetch('/stats/stats', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
-        }
+        },
+        body: JSON.stringify(data)
     });
+
+    const result = await response.json();
 }
 
 async function addPoints(){
