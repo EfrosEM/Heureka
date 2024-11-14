@@ -12,7 +12,12 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css">
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
+
     
     <!-- Google Fonts -->
     <style>
@@ -54,12 +59,12 @@
         <div class="mt-4" style="max-width: 600px; margin: 0 auto;">
             <h1 data-i18n="standings"></h1>
             <div class="table-responsive mt-3">
-              <table class="table table-bordered table-hover text-center">
+              <table class="table table-striped table-bordered table-hover text-center" id="standings">
                   <thead class="table-dark">
                       <tr>
-                          <th><i class="bi bi-award-fill"></i></th>
-                          <th><i class="bi bi-person-fill"></i> <span data-i18n="user"></span></th>
-                          <th><i class="bi bi-star-fill"></i> <span data-i18n="points"></span></th>
+                          <th class="text-center"><i class="bi bi-award-fill"></i></th>
+                          <th class="text-center"><i class="bi bi-person-fill"></i> <span data-i18n="user"></span></th>
+                          <th class="text-center"><i class="bi bi-star-fill"></i> <span data-i18n="points"></span></th>
                       </tr>
                   </thead>
                   <tbody id="standings-table-body">

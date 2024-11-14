@@ -7,7 +7,13 @@ router.get('/standings', async (req, res) => {
   try {
     // Obtener los usuarios ordenados por puntos (de mayor a menor)
     const users = await User.find().sort({ points: -1 });
-    res.json(users);
+
+    const data = {
+      users: users,
+      usuarioActual: req.user.user,
+    }
+
+    res.json(data);
   } catch (err) {
     console.error(err);
     res.status(500).send('Error en el servidor');
