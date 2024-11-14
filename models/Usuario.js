@@ -68,8 +68,33 @@ UsuarioSchema.methods.comparePassword = async function(candidatePassword) {
 };
 
 // Método para sumar puntos a los puntos actuales
-UsuarioSchema.methods.addPoints = async function(newPoints) {
+UsuarioSchema.methods.addPoints = function(newPoints) {
     this.points+=newPoints;
+};
+
+// Método para añadir una nueva partida jugada al total de partidas jugadas
+UsuarioSchema.methods.addGame = function() {
+    this.games++;
+};
+
+// Método para añadir una nueva victoria al total de victorias
+UsuarioSchema.methods.addWin = function() {
+    this.wins++;
+};
+
+// Método para sumar las nuevas preguntas a las preguntas totales contestadas
+UsuarioSchema.methods.addPreguntas = function(newPreguntas) {
+    this.preguntas+=newPreguntas;
+};
+
+// Método para sumar los nuevos aciertos a los aciertos totales
+UsuarioSchema.methods.addAciertos = function(newAciertos) {
+    this.aciertos+=newAciertos;
+};
+
+// Método para sumar el tiempo de partida al tiempo jugado total
+UsuarioSchema.methods.addTime = function(newTime) {
+    this.time+=newTime;
 };
 
 const Usuario = mongoose.model('Usuario', UsuarioSchema);

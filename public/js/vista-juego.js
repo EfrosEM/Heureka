@@ -390,9 +390,11 @@ function terminarPartida(haGanado) {
 
     if (haGanado) {
         // Se añade un bonus de puntos por ganar la partida
-        addBonus(100);
+        addWin(100);
+        addGame();
         window.location.href = "has-ganado.html" + queryString;
     } else {
+        addGame();
         window.location.href = "has-perdido.html" + queryString;
     }
 }
@@ -493,15 +495,13 @@ function clicTarjeta(event) {
     }
 }
 
-async function addBonus(bonus) {
-
-    controlador.addPuntos(bonus);
+async function addWin(bonus) {
 
     const data = {
         points: bonus,
     };
 
-    const response = await fetch('/points', {
+    const response = await fetch('/stats/win', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -510,33 +510,22 @@ async function addBonus(bonus) {
     });
 }
 
+async function addGame() {
+
+    const response = await fetch('/stats/game', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+    });
+}
+
 async function addPoints(){
 
     const points = controlador.calcularPuntos();
     controlador.addPuntos(points);
 
-    const data = {
-        points: points,
-    };
-
-    const response = await fetch('/points', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    });
-
-    const result = await response.json();
-
-    // Manejar las respuestas
-    if (result.success) {
-        // Mostrar alerta de éxito
-        showAlert(result.msg, points, 'success');
-    } else {
-        // Mostrar alerta de error
-        showAlert(result.msg, points, 'danger');
-    }
+    showAlert('success', points, 'success');
 }
 
 // Función para mostrar la alerta
