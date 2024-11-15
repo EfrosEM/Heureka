@@ -19,11 +19,11 @@ async function loadStandings() {
             `;
             // Aplicar estilos en línea para los tres primeros puestos
             if (index === 0) {
-                row.querySelectorAll('td').forEach(td => td.style.backgroundColor = 'rgba(255, 215, 0, 0.7)'); // Oro
+                row.querySelectorAll('td').forEach(td => td.style.backgroundColor = 'rgba(96, 109, 130, 0.7)');
             } else if (index === 1) {
-                row.querySelectorAll('td').forEach(td => td.style.backgroundColor = 'rgba(192, 192, 192, 0.7)'); // Plata
+                row.querySelectorAll('td').forEach(td => td.style.backgroundColor = 'rgba(96, 109, 130, 0.5)');
             } else if (index === 2) {
-                row.querySelectorAll('td').forEach(td => td.style.backgroundColor = 'rgba(205, 127, 50, 0.7)'); // Bronce
+                row.querySelectorAll('td').forEach(td => td.style.backgroundColor = 'rgba(96, 109, 130, 0.3)');
             }
 
             // Resaltar al usuario actual
@@ -39,11 +39,25 @@ async function loadStandings() {
             paging: true,
             searching: true,
             ordering: true,
+            pageLength: 10,
             order: [], // Deshabilitar ordenamiento por defecto
             columnDefs: [
                 { targets: 0, type: 'num' } // Asegura que la primera columna se ordene como número
             ],
-            pageLength: 10, // Número de filas por página
+            language: {
+                entries: {
+                    _: 'users',
+                    1: 'user'
+                }
+            },
+            layout: {
+                topEnd: {
+                    search: {
+                        text: '<i class="bi bi-search"></i> _INPUT_',
+                        placeholder: 'Search...'
+                    }
+                },
+            }
         });
     } catch (error) {
         console.error('Error al cargar los standings:', error);

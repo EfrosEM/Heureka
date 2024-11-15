@@ -198,6 +198,7 @@ header {
   display: grid;
   grid-auto-rows: auto auto;
   padding: 5px 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 #nav {
@@ -276,7 +277,7 @@ footer {
   padding: 5px 10px;
   max-width: 100%;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; 
 }
 
 #iconos-validacion {
@@ -577,6 +578,23 @@ table {
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 0rem !important;
+}
+
+/* Estilo para los botones de paginación */
+.page-item .page-link {
+    color: #606d82;
+}
+
+/* Estilo para el botón activo */
+.page-item.active .page-link {
+    background-color: #606d82;
+    color: white;
+    border-color: #606d82;
+}
+
+/* Hover para los botones */
+.page-item .page-link:hover {
+    color: black;
 }
 
 .table-responsive {
