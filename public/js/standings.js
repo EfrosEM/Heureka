@@ -13,9 +13,9 @@ async function loadStandings() {
         users.forEach((user, index) => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${index === 0 ? '🏆' : index === 1 ? '🥈' : index === 2 ? '🥉' : index + 1}</td>
-                <td>${user.user}</td>
-                <td>${user.points}</td>
+                <td class="text-center">${index === 0 ? '🏆' : index === 1 ? '🥈' : index === 2 ? '🥉' : index + 1}</td>
+                <td class="text-center">${user.user}</td>
+                <td class="text-center">${user.points}</td>
             `;
             // Aplicar estilos en línea para los tres primeros puestos
             if (index === 0) {
