@@ -77,11 +77,6 @@
   }
 }
 
-#boton-jugar {
-  font-size: x-large;
-  padding: 10px 20px;
-}
-
 /* Móvil: pregunta y HUD apilados */
 #pregunta-HUD {
   display: grid;
@@ -206,19 +201,23 @@ header {
   flex-wrap: wrap;
   justify-content: center;
   overflow-x: hidden;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 #lang {
   align-self: center;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  height: 40px;
 }
 
 #logo {
   padding-top: 5px;
   padding-bottom: 5px;
-  width: 165px;
+  align-self: center;
+  display: flex;
+  justify-content: center;
 }
 
 #logo a {
@@ -227,7 +226,6 @@ header {
   color: #b0c6d4;
   text-decoration: none; /* Elimina el subrayado */
   display: flex;
-  align-items: flex-end;
 }
 
 #logo img {
