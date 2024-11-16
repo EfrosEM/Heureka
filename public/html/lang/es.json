@@ -10,7 +10,12 @@
     "heureka-description3": "No te preocupes por entenderlas ahora. Podrás consultarlas durante el juego.",
     "diagram": "Descripción diagrama",
     "play": "Jugar",
-    "creator": "Noelia Martínez Rojo y Eduardo Espinosa Meroño (Universidad de Murcia, 2024)",
+
+
+    "validacion": "Validación",
+    "links": "Enlaces",
+    "creditos": "Créditos",
+    "creator": "Noelia Martínez Rojo y Eduardo Espinosa Meroño (Universidad de Murcia)",
 
 
     "accesibilidad": "Accesibilidad",
@@ -83,6 +88,9 @@
     "user-profile": "Perfil de Usuario",
     "user-name": "Nombre de usuario",
     "alta": "Fecha de registro",
+    "rol": "Rol",
+    "alumno": "ALUMNO",
+    "profesor": "PROFESOR",
     "info": "Información de usuario",
     "stats": "Estadísticas de juego",
     "games": "Partidas jugadas",

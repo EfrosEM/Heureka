@@ -270,37 +270,34 @@ header {
 }
 
 footer {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 5px 10px;
-  max-width: 100%;
-  justify-content: space-between;
-  align-items: center; 
-}
-
-#iconos-validacion {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-#iconos-validacion, #creditos {
-  width: 350px;
-}
-
-#creditos {
   color: rgb(155, 155, 155);
-  font-size: smaller;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
-#link-sitemap {
-  font-size: smaller;
-  display: block;
-  text-align:center;
-  line-height: 44px;
-  text-align: center;
-  min-width: 44px;
-  min-height: 44px;
+footer a {
   color: rgb(155, 155, 155);
+}
+
+footer a:hover {
+  color: white;
+}
+
+footer img {
+  filter: grayscale(100%); /* Aplica escala de grises */
+  transition: filter 0.3s ease; /* Suaviza el cambio al quitar el filtro */
+}
+
+footer img:hover {
+  filter: grayscale(0%); /* Quita el efecto al pasar el mouse por encima */
+}
+
+footer h6 {
+  color: rgb(223, 223, 223);;
+}
+
+footer .logo {
+  font-family: 'Exo 2', sans-serif;
 }
 
 .wrapper{
