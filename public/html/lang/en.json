@@ -8,7 +8,8 @@
     "heureka-description1": "Heureka is a question and answer game to learn and memorize Nielsen's heuristics.",
     "heureka-description2": "These are 10 very general principles for designing usable interfaces, identified by Jakob Nielsen:",
     "heureka-description3": "Don't worry about understanding them now. You can consult them during the game.",
-    "diagram": "Diagram description",
+    "diagram-description": "Diagram description",
+    "diagram": "Diagram",
     "play": "Play Now",
 
 
@@ -45,6 +46,7 @@
 
 
     "mapa": "Sitemap",
+    "mapa-del-sitio": "Sitemap",
     "paginas": "These are the pages of the website:",
 
 

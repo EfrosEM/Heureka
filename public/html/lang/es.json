@@ -8,7 +8,8 @@
     "heureka-description1": "Heureka es un juego de preguntas y respuestas para aprender y memorizar las heurísticas de Nielsen.",
     "heureka-description2": "Se trata de 10 principios muy generales para diseñar interfaces usables, identificados por Jakob Nielsen:",
     "heureka-description3": "No te preocupes por entenderlas ahora. Podrás consultarlas durante el juego.",
-    "diagram": "Descripción diagrama",
+    "diagram-description": "Descripción del diagrama",
+    "diagram": "Diagrama",
     "play": "Jugar Ahora",
 
 
@@ -44,7 +45,8 @@
     "ejemplos": "Los ejemplos utilizados en el juego se han tomado de diversos artículos de la web de NNGroup, una empresa de investigación y consultoría de UX fundada por el propio Jakob Nielsen y Don Norman:",
 
 
-    "mapa": "Mapa del sitio",
+    "mapa": "Sitemap",
+    "mapa-del-sitio": "Mapa del sitio",
     "paginas": "Estas son las páginas del sitio web:",
 
 
