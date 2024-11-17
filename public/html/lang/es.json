@@ -101,6 +101,8 @@
     "respuestas": "Respuestas correctas",
     "time": "Tiempo jugado",
     "edit": "Editar perfil",
+    "delete": "Eliminar cuenta",
+    "delete-account": "Estás a punto de eliminar tu cuenta, por lo que se perderán todos tus datos. ¿Estás seguro de que quieres hacerlo?",
     "save": "Guardar cambios",
     "cancel": "Cancelar",
     "confirm-password": "Confirmar contraseña"

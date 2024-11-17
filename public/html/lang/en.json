@@ -101,6 +101,8 @@
     "respuestas": "Correct answers",
     "time": "Time played",
     "edit": "Edit profile",
+    "delete": "Delete account",
+    "delete-account": "You are about to delete your account, so all your data will be lost. Are you sure you want to do it?",
     "save": "Save changes",
     "cancel": "Cancel",
     "confirm-password": "Confirm password"

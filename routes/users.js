@@ -13,7 +13,7 @@ router.post('/signup', async (req, res) => {
         errors.push({ msg: 'fields' });
     }
 
-    if(user.length > 30) {
+    if (user.length > 30) {
         errors.push({ msg: 'name' });
     }
 
@@ -118,7 +118,7 @@ router.put('/edit', async (req, res) => {
 
         // Actualizar los datos del usuario
         if (newUser) {
-            if(newUser.length > 30) {
+            if (newUser.length > 30) {
                 return res.status(400).json({ success: false, msg: "name" });
             }
 
@@ -128,7 +128,7 @@ router.put('/edit', async (req, res) => {
             }
 
             user.user = newUser;
-        } 
+        }
 
         if (newEmail) {
             const emailExistente = await Usuario.findOne({ email: newEmail });
@@ -150,7 +150,22 @@ router.put('/edit', async (req, res) => {
         // Guardar los cambios en la base de datos
         await user.save();
         return res.status(200).json({ success: true, msg: 'success' });
-        
+
+    } catch (error) {
+        return res.status(500).json({ success: false, msg: 'error' });
+    }
+});
+
+// Ruta para eliminar usuario
+router.delete('/delete', async (req, res) => {
+    try {
+        // Obtener el ID del usuario autenticado
+        const userId = req.user.id;
+        // Eliminar usuario de la base de datos
+        await Usuario.findByIdAndDelete(userId);
+
+        return res.status(200).json({ success: true, msg: 'success' });
+
     } catch (error) {
         return res.status(500).json({ success: false, msg: 'error' });
     }
