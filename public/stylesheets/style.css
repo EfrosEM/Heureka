@@ -300,6 +300,19 @@ footer .logo {
   font-family: 'Exo 2', sans-serif;
 }
 
+.play-button i {
+  margin-right: 10px;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+.play-button:active {
+  transform: scale(0.95);
+}
+
 .wrapper{
   width: 450px;
   margin: 10px auto;
