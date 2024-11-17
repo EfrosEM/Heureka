@@ -5,8 +5,8 @@ const User = require('../models/Usuario');
 // Ruta para obtener el ranking de usuarios
 router.get('/standings', async (req, res) => {
   try {
-    // Obtener los usuarios ordenados por puntos (de mayor a menor)
-    const users = await User.find().sort({ points: -1 });
+    // Obtener los usuarios alumno ordenados por puntos (de mayor a menor)
+    const users = await User.find({ rol: 'ALUMNO' }).sort({ points: -1 });
 
     const data = {
       users: users,

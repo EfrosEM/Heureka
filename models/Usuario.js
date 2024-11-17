@@ -19,33 +19,45 @@ const UsuarioSchema = new mongoose.Schema({
     },
     points: {
         type: Number,
-        required: true
+        required: true,
+        default: 0
     },
     alta: {
         type: Date,
-        required: true
+        required: true,
+        default: Date.now
     },
     games: {
         type: Number,
-        required: true
+        required: true,
+        default: 0
     },
     wins: {
         type: Number,
-        required: true
+        required: true,
+        default: 0
     },
     preguntas: {
         type: Number,
-        required: true
+        required: true,
+        default: 0
     },
     aciertos: {
         type: Number,
-        required: true
+        required: true,
+        default: 0
     },
     time: {
         type: Number,
-        required: true
+        required: true,
+        default: 0
     },
-
+    rol: {
+        type: String,
+        required: true,
+        enum: ['ALUMNO', 'PROFESOR'],
+        default: 'ALUMNO'
+    }
 });
 
 // Método para encriptar la contraseña antes de guardar el usuario

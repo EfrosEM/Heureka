@@ -38,14 +38,7 @@ router.post('/signup', async (req, res) => {
             const nuevoUsuario = new Usuario({
                 user: user,
                 email: email,
-                password: password,
-                points: 0,
-                alta: new Date(Date.now()),
-                games: 0,
-                wins: 0,
-                preguntas: 0,
-                aciertos: 0,
-                time: 0
+                password: password
             });
 
             await nuevoUsuario.save();
