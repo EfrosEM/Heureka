@@ -98,7 +98,7 @@ router.get('/profile', (req, res) => {
         preguntas: req.user.preguntas,
         aciertos: req.user.aciertos,
         time: req.user.time,
-        // otros datos
+        rol: req.user.rol
     };
 
     res.json(usuario);

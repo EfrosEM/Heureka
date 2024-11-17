@@ -1,6 +1,6 @@
 {
   "name": "heureka",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatoinomana/heureka.git"
+    "url": "git+https://github.com/EfrosEM/Heureka.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gatoinomana/heureka/issues"
+    "url": "https://github.com/EfrosEM/Heureka/issues"
   },
-  "homepage": "https://github.com/gatoinomana/heureka#readme",
+  "homepage": "https://github.com/EfrosEM/Heureka#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.3.3",

@@ -5,9 +5,7 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
-const flash = require('connect-flash');
 const bodyParser = require('body-parser');
-const cargarDatosRouter = require('./routes/cargar-datos');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -22,9 +20,6 @@ mongoose.connect(uri)
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-// Ruta para cargar los datos en la base de datos
-app.use('/api', cargarDatosRouter);
 
 // Configurar sesiones
 app.use(session({
@@ -43,6 +38,7 @@ app.use('/', require('./routes/index'));
 app.use('/', require('./routes/standings'));
 app.use('/stats', require('./routes/stats'));
 app.use('/users', require('./routes/users'));
+app.use('/api', require('./routes/cargar-datos'));
 
 const Tarjeta = require('./models/Tarjeta');
 const Heuristica = require('./models/Heuristica');

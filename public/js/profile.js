@@ -51,7 +51,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         else {
             document.getElementById('aciertos').textContent = 0;
         }
-        
+
+        // Mostrar el rol del usuario
+        const language = localStorage.getItem('selectedLanguage');
+        if(usuario.rol === 'ALUMNO') {
+            if(language === 'en') {
+                document.getElementById('rol').innerHTML = '<span class="badge bg-success-subtle border border-success-subtle text-success-emphasis" data-i18n="alumno">STUDENT</span>'
+            }
+            else if(language === 'es') {
+                document.getElementById('rol').innerHTML = '<span class="badge bg-success-subtle border border-success-subtle text-success-emphasis" data-i18n="alumno">ALUMNO</span>'
+            }
+        }
+        else if(usuario.rol === 'PROFESOR') {
+            if(language === 'en') {
+                document.getElementById('rol').innerHTML = '<span class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis" data-i18n="profesor">TEACHER</span>'
+            }
+            else if(language === 'es') {
+                document.getElementById('rol').innerHTML = '<span class="badge bg-primary-subtle border border-primary-subtle text-primary-emphasis" data-i18n="profesor">PROFESOR</span>'
+            }
+        }
+
     } catch (error) {
         console.error('Error al obtener los datos del perfil:', error);
         window.location.href = '/login.html';  // Redirigir si no está autenticado
