@@ -83,8 +83,19 @@
     "signup": "Sign up",
     "registrate": "Sign up",
     "inicia-sesion": "Log in",
+    "forgot": "Forgot your password?",
     "no-account": "Don't have an account?",
     "yes-account": "Already have an account?",
+
+    
+    "recovery": "Account recovery",
+    "recover": "Recover password",
+    "email": "Enter the email associated with your account to recover your password.",
+    "volver": "Return to the",
+    "login-page": "Login page",
+    "reset": "Reset password",
+    "new-password": "Enter a new password:",
+    "nueva": "New password",
 
 
     "user-profile": "User Profile",

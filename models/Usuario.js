@@ -57,7 +57,9 @@ const UsuarioSchema = new mongoose.Schema({
         required: true,
         enum: ['ALUMNO', 'PROFESOR'],
         default: 'ALUMNO'
-    }
+    },
+    resetToken: String,
+    resetTokenExpiration: Date
 });
 
 // Método para encriptar la contraseña antes de guardar el usuario

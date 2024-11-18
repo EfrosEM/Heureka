@@ -83,8 +83,19 @@
     "signup": "Registrarse",
     "registrate": "Regístrate",
     "inicia-sesion": "Inicia sesión",
+    "forgot": "¿Has olvidado tu contraseña?",
     "no-account": "¿No tienes una cuenta?",
     "yes-account": "¿Ya tienes una cuenta?",
+
+    
+    "recovery": "Recuperación de cuenta",
+    "recover": "Recuperar contraseña",
+    "email": "Introduce el email asociado a tu cuenta para recuperar tu contraseña.",
+    "volver": "Volver a la página de",
+    "login-page": "Inicio de sesión",
+    "reset": "Restablecer contraseña",
+    "new-password": "Introduce una nueva contraseña:",
+    "nueva": "Nueva contraseña",
 
 
     "user-profile": "Perfil de Usuario",
