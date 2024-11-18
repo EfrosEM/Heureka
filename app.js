@@ -7,9 +7,13 @@ const session = require('express-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 
+// Variables de entorno
+require('dotenv').config();
+
 const app = express();
 const PORT = process.env.PORT || 5000;
-const uri = "mongodb+srv://eduem:eduem@cluster0.8yvyi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
+const uri = process.env.MONGODB_URI;
 
 // Conectar a MongoDB
 mongoose.connect(uri)

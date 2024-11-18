@@ -4,6 +4,8 @@ const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 const Usuario = require('../models/Usuario');
 
+const LINK = process.env.RECOVERY_LINK;
+
 // Ruta para recuperar contraseña
 router.post('/recovery', async (req, res) => {
     try {
@@ -26,15 +28,15 @@ router.post('/recovery', async (req, res) => {
   
       // Configura el transporte de correo
       const transporter = nodemailer.createTransport({
-        service: 'gmail', // O usa tu propio servicio SMTP
+        service: 'gmail',
         auth: {
-          user: 'heureka.help@gmail.com', // Tu correo
-          pass: 'ndno olwt sefo hhgo'       // Contraseña o clave de aplicación
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
         }
-      });
+    });
   
       // Configura el contenido del correo
-      const resetLink = `http://localhost:5000/reset-password.html?token=${token}`;
+      const resetLink = `${LINK}${token}`;
       const mailOptions = {
         to: user.email,
         subject: 'Restablecer contraseña',
