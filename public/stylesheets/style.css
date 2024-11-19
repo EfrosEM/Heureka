@@ -476,10 +476,6 @@ audio {
   line-height: 1.6;
 }
 
-#longdesc img {
-  max-width: 70%;
-}
-
 @media only screen and (min-width: 1000px) {
 
   #longdesc, #error, #fuentes h1, #fuentes p, #fuentes ul {
@@ -503,8 +499,19 @@ a.longdesc {
   font-size: x-small;
 }
 
+#longdesc img {
+  max-width: 100%;
+}
+
+#lista-heuristicas .list-group-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 #lista-heuristicas {
-  line-height: 1.8;
+  line-height: 1.5;
 }
 
 table {
