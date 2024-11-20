@@ -27,12 +27,13 @@ passport.use(new LocalStrategy({
 
 // Serialización del usuario
 passport.serializeUser((user, done) => {
-    done(null, user.id);
+    done(null, { id: user.id, rol: user.rol });
 });
 
 // Deserialización del usuario
-passport.deserializeUser(async (id, done) => {
+passport.deserializeUser(async (data, done) => {
     try {
+        const { id, rol } = data;
         const user = await Usuario.findById(id);
         done(null, user);
     } catch (error) {

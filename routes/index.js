@@ -11,44 +11,55 @@ function ensureAuthenticated(req, res, next) {
     res.redirect('/login.html');
 }
 
+// Middleware para verificar el rol del usuario
+function authorizeRoles(...allowedRoles) {
+    return (req, res, next) => {
+        if (!allowedRoles.includes(req.user.rol)) {
+            return res.redirect('/error403.html'); // El usuario no tiene permiso
+        }
+        next(); // El usuario tiene el rol permitido
+    };
+}
+
 // Rutas protegidas
-router.get('/', ensureAuthenticated, (req, res) => {
+router.get('/', ensureAuthenticated, authorizeRoles('PROFESOR','ALUMNO'), (req, res) => {
     res.sendFile(path.join(__dirname, '../public/html/index.html'));
 });
 
-router.get('/index.html', ensureAuthenticated, (req, res) => {
+router.get('/index.html', ensureAuthenticated, authorizeRoles('PROFESOR','ALUMNO'), (req, res) => {
+    console.log(`Rol del usuario en la ruta protegida: ${req.user.rol}`);
     res.sendFile(path.join(__dirname, '../public/html/index.html'));
 });
 
-router.get('/fuentes.html', ensureAuthenticated, (req, res) => {
+router.get('/fuentes.html', ensureAuthenticated, authorizeRoles('PROFESOR','ALUMNO'), (req, res) => {
     res.sendFile(path.join(__dirname, '../public/html/fuentes.html'));
 });
 
-router.get('/game.html', ensureAuthenticated, (req, res) => {
+router.get('/game.html', ensureAuthenticated, authorizeRoles('ALUMNO'), (req, res) => {
     res.sendFile(path.join(__dirname, '../public/html/game.html'));
 });
 
-router.get('/has-ganado.html', ensureAuthenticated, (req, res) => {
+router.get('/has-ganado.html', ensureAuthenticated, authorizeRoles('ALUMNO'), (req, res) => {
     res.sendFile(path.join(__dirname, '../public/html/has-ganado.html'));
 });
 
-router.get('/has-perdido.html', ensureAuthenticated, (req, res) => {
+router.get('/has-perdido.html', ensureAuthenticated, authorizeRoles('ALUMNO'), (req, res) => {
     res.sendFile(path.join(__dirname, '../public/html/has-perdido.html'));
 });
 
-router.get('/sitemap.html', ensureAuthenticated, (req, res) => {
+router.get('/sitemap.html', ensureAuthenticated, authorizeRoles('PROFESOR','ALUMNO'), (req, res) => {
     res.sendFile(path.join(__dirname, '../public/html/sitemap.html'));
 });
 
-router.get('/descripcion-diagrama.html', ensureAuthenticated, (req, res) => {
+router.get('/descripcion-diagrama.html', ensureAuthenticated, authorizeRoles('PROFESOR','ALUMNO'), (req, res) => {
     res.sendFile(path.join(__dirname, '../public/html/descripcion-diagrama.html'));
 });
 
-router.get('/standings.html', ensureAuthenticated, (req, res) => {
+router.get('/standings.html', ensureAuthenticated, authorizeRoles('PROFESOR','ALUMNO'), (req, res) => {
     res.sendFile(path.join(__dirname, '../public/html/standings.html'));
 });
 
-router.get('/profile.html', ensureAuthenticated, (req, res) => {
+router.get('/profile.html', ensureAuthenticated, authorizeRoles('PROFESOR','ALUMNO'), (req, res) => {
     res.sendFile(path.join(__dirname, '../public/html/profile.html'));
 });
 
