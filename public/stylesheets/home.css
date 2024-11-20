@@ -19,6 +19,7 @@ main {
     margin-bottom: 40px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     max-width: 1210px;
+    text-wrap: balance;
   }
 
   .hero-section h1 {
@@ -46,6 +47,7 @@ main {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     transition: transform 0.3s ease;
+    text-wrap: balance;
   }
 
   .card:hover {
