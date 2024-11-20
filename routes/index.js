@@ -27,7 +27,6 @@ router.get('/', ensureAuthenticated, authorizeRoles('PROFESOR','ALUMNO'), (req, 
 });
 
 router.get('/index.html', ensureAuthenticated, authorizeRoles('PROFESOR','ALUMNO'), (req, res) => {
-    console.log(`Rol del usuario en la ruta protegida: ${req.user.rol}`);
     res.sendFile(path.join(__dirname, '../public/html/index.html'));
 });
 

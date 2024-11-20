@@ -53,12 +53,13 @@
     "descripcion10": "Although it is best that the system can be used without documentation, it may be necessary to offer help and documentation. Any such information should be easy to search, focus on the user's task, list the steps to follow, and not be too long.",
     
 
-    "error": "An error has occured...",
-    "error403": "You do not have permission to access this page",
+    "error": "Error!",
+    "error403": "You do not have permission to access this page.",
     "error404": "The page you have tried to access does not exist.",
     "error500": "Our server had a problem loading the game.",
-    "dirigete": "Go to one of these pages:",
-    "recarga": "Reload the page or go to one of these pages:",
+    "dirigete": "Please, return to the Home page to continue:",
+    "recarga": "Please, reload the page or return to the Home page to continue:",
+    "return-home": "Return to Home",
 
 
     "ejemplos": "The examples used in the game have been taken from various articles on the NNGroup website, a UX research and consulting company founded by Jakob Nielsen himself and Don Norman:",

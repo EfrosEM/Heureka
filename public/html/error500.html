@@ -46,18 +46,18 @@
         </button> d 
       </div>    
     </header>
-    
-    <main class="contenido" id="error">
-      <h1 data-i18n="error"></h1>
-      <h2 data-i18n="error500"></h2>
-      <p data-i18n="recarga"></p>
-      <p>
-        <ul>
-          <li><a data-i18n="home" href="index.html"></a></li> 
-          <li><a data-i18n="new-game" href="game.html"></a></li>
-          <li><a data-i18n="sources" href="fuentes.html"></a></li>
-        </ul>
-      </p>
+
+    <!-- Main Content -->
+    <main class="contenido text-center" id="error">
+      <i class="bi bi-exclamation-octagon-fill text-danger" style="font-size: 8rem;"></i>
+      <h1 class="display-5 fw-bold" data-i18n="error"></h1>
+      <h2 class="text-secondary mb-4" data-i18n="error500"></h2>
+      <h6 class="text-muted mb-4" data-i18n="recarga"></h6>
+      <div class="d-flex justify-content-center">
+        <a href="index.html" class="btn btn-lg btn-secondary">
+          <i class="bi bi-house-door"></i> <span data-i18n="return-home"></span>
+        </a>
+      </div>
     </main>
     
     <footer class="bg-dark mt-4 py-4">
