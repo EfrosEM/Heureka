@@ -44,6 +44,7 @@ app.use('/stats', require('./routes/stats'));
 app.use('/recovery', require('./routes/recovery'));
 app.use('/users', require('./routes/users'));
 app.use('/api', require('./routes/cargar-datos'));
+app.use('/admin', require('./routes/admin'));
 
 const Tarjeta = require('./models/Tarjeta');
 const Heuristica = require('./models/Heuristica');

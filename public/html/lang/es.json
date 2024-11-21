@@ -136,5 +136,15 @@
     "delete-account": "Estás a punto de eliminar tu cuenta, por lo que se perderán todos tus datos. ¿Estás seguro de que quieres hacerlo?",
     "save": "Guardar cambios",
     "cancel": "Cancelar",
-    "confirm-password": "Confirmar contraseña"
+    "confirm-password": "Confirmar contraseña",
+
+
+    "usuarios": "Panel de Usuarios",
+    "tarjetas": "Tarjetas de juego",
+    "registro": "Registro",
+    "partidas": "Partidas",
+    "wins/losses": "Victorias/Derrotas",
+    "questions": "Preguntas",
+    "aciertos/fallos": "Aciertos/Fallos",
+    "tiempo": "Tiempo"
 }

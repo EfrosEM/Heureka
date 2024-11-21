@@ -136,5 +136,15 @@
     "delete-account": "You are about to delete your account, so all your data will be lost. Are you sure you want to do it?",
     "save": "Save changes",
     "cancel": "Cancel",
-    "confirm-password": "Confirm password"
+    "confirm-password": "Confirm password",
+
+
+    "usuarios": "Users Panel",
+    "tarjetas": "Game cards",
+    "registro": "Registration",
+    "partidas": "Games",
+    "wins/losses": "Wins/Losses",
+    "questions": "Questions",
+    "aciertos/fallos": "Right/Wrong",
+    "tiempo": "Time"
 }
