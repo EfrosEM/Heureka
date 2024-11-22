@@ -40,7 +40,7 @@ app.use(passport.session());
 // Rutas para la aplicación
 app.use('/', require('./routes/index'));
 app.use('/', require('./routes/standings'));
-app.use('/stats', require('./routes/stats'));
+app.use('/', require('./routes/stats'));
 app.use('/recovery', require('./routes/recovery'));
 app.use('/users', require('./routes/users'));
 app.use('/api', require('./routes/cargar-datos'));

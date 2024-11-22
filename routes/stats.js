@@ -7,7 +7,7 @@ router.post('/stats', async (req, res) => {
         return res.status(401).json({ msg: 'error' });
     }
 
-    const { points, preguntas, aciertos, tiempo } = req.body;
+    const { points, preguntas, aciertos, tiempo, bonus } = req.body;
 
     req.user.addPoints(points);
     req.user.addPreguntas(preguntas);
@@ -15,21 +15,11 @@ router.post('/stats', async (req, res) => {
     req.user.addTime(tiempo);
     req.user.addGame();
 
-    await req.user.save();
-
-    return res.status(200).json({ success: true, msg: 'success' });
-});
-
-// Ruta para sumar bonus de puntos al ganar partida
-router.post('/win', async (req, res) => {
-    if (!req.isAuthenticated()) {
-        return res.status(401).json({ msg: 'error' });
+    if (bonus > 0) {
+        // Sumamos el bonus y la victoria si ha ganado la partida
+        req.user.addPoints(bonus);
+        req.user.addWin();
     }
-
-    const { points } = req.body;
-
-    req.user.addPoints(points);
-    req.user.addWin();
 
     await req.user.save();
 

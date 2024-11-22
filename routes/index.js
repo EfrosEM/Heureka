@@ -62,4 +62,8 @@ router.get('/profile.html', ensureAuthenticated, authorizeRoles('PROFESOR','ALUM
     res.sendFile(path.join(__dirname, '../public/html/profile.html'));
 });
 
+router.get('/users.html', ensureAuthenticated, authorizeRoles('PROFESOR'), (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/html/users.html'));
+});
+
 module.exports = router;

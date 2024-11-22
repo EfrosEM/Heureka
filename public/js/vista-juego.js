@@ -397,15 +397,13 @@ function terminarPartida(haGanado) {
         +`&puntos=${encodeURIComponent(puntos)}`;
 
     if (haGanado) {
-        // Se añade un bonus de puntos por ganar la partida
-        addWin(BONUS_PUNTOS);
-        // Se actualizan las estadísticas del usuario
-        actualizarStats(puntos, total, acertadas, tiempoEnSegundos(tiempo));
+        // Se actualizan las estadísticas del usuario con un bonus de puntos por ganar la partida
+        actualizarStats(puntos, total, acertadas, tiempoEnSegundos(tiempo), BONUS_PUNTOS);
 
         window.location.href = "has-ganado.html" + queryString;
     } else {
         // Se actualizan las estadísticas del usuario
-        actualizarStats(puntos, total, acertadas, tiempoEnSegundos(tiempo));
+        actualizarStats(puntos, total, acertadas, tiempoEnSegundos(tiempo), 0);
 
         window.location.href = "has-perdido.html" + queryString;
     }
@@ -512,30 +510,16 @@ function clicTarjeta(event) {
     }
 }
 
-async function addWin(bonus) {
-
-    const data = {
-        points: bonus,
-    };
-
-    const response = await fetch('/stats/win', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    });
-}
-
-async function actualizarStats(puntos, preguntas, aciertos, tiempo) {
+async function actualizarStats(puntos, preguntas, aciertos, tiempo, bonus) {
     const data = {
         points: puntos,
         preguntas: preguntas,
         aciertos: aciertos,
-        tiempo: tiempo
+        tiempo: tiempo,
+        bonus: bonus
     };
 
-    const response = await fetch('/stats/stats', {
+    const response = await fetch('/stats', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

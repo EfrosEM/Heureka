@@ -71,7 +71,20 @@ function segundosToHHMMSS(segundos) {
     let minutos = Math.trunc(segundos / 60);
     segundos %= 60;
 
-    let cadena = horas + 'h ' + minutos + 'min ' + segundos + 's';
+    let cadena = '';
+
+    if(horas>0) {
+        cadena += horas + 'h ';
+    }
+    if(minutos>0) {
+        cadena += minutos + 'min ';
+    }
+    if(segundos>0) {
+        cadena += segundos + 's';
+    }
+    if(horas === 0 && minutos === 0 && segundos === 0) {
+        cadena += '0s';
+    }
 
     return cadena;
 }
