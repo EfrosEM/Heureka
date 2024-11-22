@@ -41,9 +41,6 @@ async function loadUsers() {
             ordering: true,
             pageLength: 10,
             order: [], // Deshabilitar ordenamiento por defecto
-            columnDefs: [
-                { targets: 0, type: 'num' } // Asegura que la primera columna se ordene como número
-            ],
             language: {
                 entries: {
                     _: 'users',

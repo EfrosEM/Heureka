@@ -141,11 +141,23 @@
 
     "users": "Users",
     "usuarios": "Users Panel",
-    "tarjetas": "Game cards",
     "registro": "Registration",
     "partidas": "Games",
     "wins/losses": "Wins/Losses",
     "questions": "Questions",
     "aciertos/fallos": "Right/Wrong",
-    "tiempo": "Time"
+    "tiempo": "Time",
+
+
+    "tarjetas": "Game cards",
+    "cards": "Game cards",
+    "text": "Description",
+    "imagen": "Image",
+    "cumple": "Satisfies",
+    "heuristica": "Heuristic",
+    "add-tarjeta": "Add game card",
+    "buen-ejemplo": "Is a good example",
+    "yes": "Yes",
+    "descripcion-espanol": "Description in Spanish",
+    "descripcion-ingles": "Description in English"
 }

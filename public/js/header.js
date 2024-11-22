@@ -11,24 +11,34 @@ async function loadHeader(){
         const language = localStorage.getItem('selectedLanguage');
 
         if(usuario.rol === "PROFESOR") {
-            const enlace = document.createElement('a');
+            const enlaceUsers = document.createElement('a');
+            const enlaceTarjetas = document.createElement('a');
 
             if(language === 'en') {
-                enlace.innerHTML = `
+                enlaceUsers.innerHTML = `
                     <i class="bi bi-people"></i> <span data-i18n="users">Users</span>
+                `;
+                enlaceTarjetas.innerHTML = `
+                    <i class="bi bi-card-heading"></i> <span data-i18n="cards">Game cards</span>
                 `;
             }
             else if(language === 'es') {
-                enlace.innerHTML = `
+                enlaceUsers.innerHTML = `
                     <i class="bi bi-people"></i> <span data-i18n="users">Usuarios</span>
                 `;
+                enlaceTarjetas.innerHTML = `
+                    <i class="bi bi-card-heading"></i> <span data-i18n="cards">Tarjetas</span>
+                `;
             }
-            enlace.href = "/users.html";
+            enlaceUsers.href = "/users.html";
+            enlaceTarjetas.href = "/tarjetas.html";
             
-            // si la pagina actual es la de usuarios, se le agrega la clase active
-            if(window.location.pathname.includes("users")) enlace.classList.add("active");
+            // si es la pagina actual, se le agrega la clase active
+            if(window.location.pathname.includes("users")) enlaceUsers.classList.add("active");
+            if(window.location.pathname.includes("tarjetas")) enlaceTarjetas.classList.add("active");
 
-            headerNav.appendChild(enlace);
+            headerNav.appendChild(enlaceUsers);
+            headerNav.appendChild(enlaceTarjetas);
         }
 }
 

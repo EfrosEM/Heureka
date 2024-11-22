@@ -141,11 +141,23 @@
 
     "users": "Usuarios",
     "usuarios": "Panel de Usuarios",
-    "tarjetas": "Tarjetas de juego",
     "registro": "Registro",
     "partidas": "Partidas",
     "wins/losses": "Victorias/Derrotas",
     "questions": "Preguntas",
     "aciertos/fallos": "Aciertos/Fallos",
-    "tiempo": "Tiempo"
+    "tiempo": "Tiempo",
+
+
+    "tarjetas": "Tarjetas de juego",
+    "cards": "Tarjetas",
+    "text": "Descripción",
+    "imagen": "Imagen",
+    "cumple": "Cumple",
+    "heuristica": "Heurística",
+    "add-tarjeta": "Añadir tarjeta",
+    "buen-ejemplo": "Es buen ejemplo",
+    "yes": "Sí",
+    "descripcion-espanol": "Descripción en español",
+    "descripcion-ingles": "Descripción en inglés"
 }

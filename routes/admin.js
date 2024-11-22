@@ -20,7 +20,10 @@ router.get('/users', async (req, res) => {
 router.get('/tarjetas', async (req, res) => {
     try {
         const tarjetas = await Tarjeta.find();
-        res.json(tarjetas);
+        const data = {
+            tarjetas: tarjetas,
+        }
+        res.json(data);
     } catch (error) {
         res.status(500).json({ message: 'Error al obtener las tarjetas' });
     }
