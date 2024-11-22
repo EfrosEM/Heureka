@@ -34,15 +34,15 @@ router.get('/fuentes.html', ensureAuthenticated, authorizeRoles('PROFESOR','ALUM
     res.sendFile(path.join(__dirname, '../public/html/fuentes.html'));
 });
 
-router.get('/game.html', ensureAuthenticated, authorizeRoles('ALUMNO'), (req, res) => {
+router.get('/game.html', ensureAuthenticated, authorizeRoles('PROFESOR','ALUMNO'), (req, res) => {
     res.sendFile(path.join(__dirname, '../public/html/game.html'));
 });
 
-router.get('/has-ganado.html', ensureAuthenticated, authorizeRoles('ALUMNO'), (req, res) => {
+router.get('/has-ganado.html', ensureAuthenticated, authorizeRoles('PROFESOR','ALUMNO'), (req, res) => {
     res.sendFile(path.join(__dirname, '../public/html/has-ganado.html'));
 });
 
-router.get('/has-perdido.html', ensureAuthenticated, authorizeRoles('ALUMNO'), (req, res) => {
+router.get('/has-perdido.html', ensureAuthenticated, authorizeRoles('PROFESOR','ALUMNO'), (req, res) => {
     res.sendFile(path.join(__dirname, '../public/html/has-perdido.html'));
 });
 

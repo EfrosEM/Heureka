@@ -25,7 +25,6 @@ async function loadUsers() {
                 <td class="text-center">${user.email}</td>
                 <td class="text-center">${fecha.toLocaleDateString()}</td>
                 <td class="text-center">${rol}</td>
-                <td class="text-center">${user.points}</td>
                 <td class="text-center">${tiempo}</td>
                 <td class="text-center">${user.games}</td>
                 <td class="text-center">${barraPartidas}</td>
