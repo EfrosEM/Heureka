@@ -5,7 +5,6 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
-const bodyParser = require('body-parser');
 
 // Variables de entorno
 require('dotenv').config();
@@ -23,7 +22,6 @@ mongoose.connect(uri)
 // Body parser para manejar datos de formularios
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 // Configurar sesiones
 app.use(session({
