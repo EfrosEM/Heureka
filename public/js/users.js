@@ -25,11 +25,11 @@ async function loadUsers() {
                 <td class="text-center">${user.email}</td>
                 <td class="text-center">${fecha.toLocaleDateString()}</td>
                 <td class="text-center">${rol}</td>
-                <td class="text-center">${tiempo}</td>
                 <td class="text-center">${user.games}</td>
                 <td class="text-center">${barraPartidas}</td>
                 <td class="text-center">${user.preguntas}</td>
                 <td class="text-center">${barraPreguntas}</td>
+                <td class="text-center">${tiempo}</td>
             `;
             tableBody.appendChild(row);
         });
