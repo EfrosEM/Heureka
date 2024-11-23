@@ -41,6 +41,13 @@ async function loadUsers() {
             ordering: true,
             pageLength: 10,
             order: [], // Deshabilitar ordenamiento por defecto
+            columnDefs: [
+                { 
+                    targets: [4, 6], type: 'num',  // Asegura que las columnas de partidas y preguntas se ordenen como número
+                    targets: [8], type: 'num-fmt', // Asegura que la columna de tiempo se ordene como número con formato
+                    targets: [2], type: 'date'     // Asegura que la columna de fecha se ordene como fecha
+                } 
+            ],
             language: {
                 entries: {
                     _: 'users',

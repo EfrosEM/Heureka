@@ -27,7 +27,7 @@ async function loadHeader(){
                     <i class="bi bi-people"></i> <span data-i18n="users">Usuarios</span>
                 `;
                 enlaceTarjetas.innerHTML = `
-                    <i class="bi bi-card-heading"></i> <span data-i18n="cards">Tarjetas</span>
+                    <i class="bi bi-card-image"></i> <span data-i18n="cards">Tarjetas</span>
                 `;
             }
             enlaceUsers.href = "/users.html";

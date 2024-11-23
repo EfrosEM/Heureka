@@ -40,9 +40,12 @@ async function loadTarjetas() {
             paging: true,
             searching: true,
             ordering: true,
-            pageLength: 5,
-            lengthMenu: [5, 10, 20, 50],
+            pageLength: 3,
+            lengthMenu: [3, 5, 10, 20, 50],
             order: [], // Deshabilitar ordenamiento por defecto
+            columnDefs: [
+                { targets: 3, type: 'string' } // Asegura que la columna de iconos se ordene como texto
+            ],
             layout: {
                 topEnd: {
                     search: {
