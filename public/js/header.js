@@ -19,7 +19,7 @@ async function loadHeader(){
                     <i class="bi bi-people"></i> <span data-i18n="users">Users</span>
                 `;
                 enlaceTarjetas.innerHTML = `
-                    <i class="bi bi-card-heading"></i> <span data-i18n="cards">Game cards</span>
+                    <i class="bi bi-card-image"></i> <span data-i18n="cards">Game cards</span>
                 `;
             }
             else if(language === 'es') {
