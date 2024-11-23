@@ -153,10 +153,9 @@
     "cards": "Tarjetas",
     "text": "Descripción",
     "imagen": "Imagen",
-    "cumple": "Cumple",
+    "cumple": "Cumple la heurística",
     "heuristica": "Heurística",
     "add-tarjeta": "Añadir tarjeta",
-    "buen-ejemplo": "Es buen ejemplo",
     "yes": "Sí",
     "descripcion-espanol": "Descripción en español",
     "descripcion-ingles": "Descripción en inglés"

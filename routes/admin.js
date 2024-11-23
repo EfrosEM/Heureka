@@ -1,7 +1,21 @@
 const express = require('express');
+const multer = require('multer');
+const path = require('path');
 const router = express.Router();
 const User = require('../models/Usuario');
 const Tarjeta = require('../models/Tarjeta');
+
+// Configurar Multer para guardar archivos en "public/images/tarjetas"
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, path.join(__dirname, '../public/images/tarjetas'));
+    },
+    filename: (req, file, cb) => {
+        cb(null, `${file.originalname}`);
+    },
+});
+  
+const upload = multer({ storage });
 
 // Ruta para obtener todos los usuarios
 router.get('/users', async (req, res) => {
@@ -30,14 +44,23 @@ router.get('/tarjetas', async (req, res) => {
 });
 
 // Ruta para agregar una nueva tarjeta
-router.post('/tarjetas', async (req, res) => {
-    const { heuristica, esBuenEjemplo, texto, text, imagen } = req.body;
+router.post('/tarjetas', upload.single('imagen'), async (req, res) => {
+    const { heuristica, esBuenEjemplo, texto, text } = req.body;
+    const imagePath = `images/tarjetas/${req.file.filename}`;
+
     try {
-        const newTarjeta = new Tarjeta({ heuristica, esBuenEjemplo, texto, text, imagen });
+        const newTarjeta = new Tarjeta({ 
+            heuristica: heuristica, 
+            esBuenEjemplo: esBuenEjemplo,
+            texto: texto,
+            text: text,
+            imagen: imagePath 
+        });
+
         await newTarjeta.save();
-        res.json({ message: 'Tarjeta creada exitosamente', tarjeta: newTarjeta });
+        res.status(201).json({ success: true, message: 'success', newTarjeta });
     } catch (error) {
-        res.status(500).json({ message: 'Error al crear la tarjeta' });
+        res.status(500).json({ success: false, message: 'error', error });
     }
 });
 

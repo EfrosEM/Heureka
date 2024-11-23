@@ -11,16 +11,16 @@ async function loadTarjetas() {
         
         const language = localStorage.getItem('selectedLanguage');
 
-        // Rellenar la tabla con los usuarios
+        // Rellenar la tabla con las tarjetas
         tarjetas.forEach((tarjeta) => {
             const texto = language === 'en' ? tarjeta.text : tarjeta.texto;
 
             let icono = "";
             if(tarjeta.esBuenEjemplo){
-                icono = '<h4><i class="bi bi-check-circle-fill text-success"></i></h4>';
+                icono = '<h2><i class="bi bi-check-circle-fill text-success"></i></h2>';
             }
             else{
-                icono = '<h4><i class="bi bi-x-circle-fill text-danger"></i></h4>';
+                icono = '<h2><i class="bi bi-x-circle-fill text-danger"></i></h2>';
             }
 
             const imagen = '<img src="' + tarjeta.imagen + '" class="img-thumbnail" alt="Imagen de la tarjeta" style="max-width: 200px; max-height: 200px;">';
@@ -54,7 +54,7 @@ async function loadTarjetas() {
         });
 
     } catch (error) {
-        console.error('Error al cargar los usuarios:', error);
+        console.error('Error al cargar las tarjetas:', error);
     }
 }
 

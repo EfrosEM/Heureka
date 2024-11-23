@@ -100,7 +100,7 @@
                   <button type="button" class="btn-close text-light" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <form id="addTarjetaForm">
+                <form id="addTarjetaForm" enctype="multipart/form-data" method="POST">
                   <!-- Selección de heurística y si es un buen ejemplo -->
                   <div class="row mb-3">
                     <!-- Selección de heurística -->
@@ -124,7 +124,7 @@
                     <!-- Selección si es buen ejemplo -->
                     <div class="col-md-6">
                       <label class="form-label">
-                        <strong><span data-i18n="buen-ejemplo"></span></strong>
+                        <strong><span data-i18n="cumple"></span></strong>
                       </label>
                       <div class="d-flex align-items-center">
                         <div class="form-check form-check-inline">
@@ -142,31 +142,27 @@
                       </div>
                     </div>
                   </div>
-                
                   <!-- Descripción en Español -->
                   <div class="mb-3">
                     <label for="addTexto" class="form-label">
                       <strong><span data-i18n="descripcion-espanol"></span></strong>
                     </label>
-                    <textarea class="form-control" id="addTexto" rows="3" placeholder="Escribe la descripción en Español"></textarea>
+                    <textarea class="form-control" id="addTexto" rows="3" name="texto" required></textarea>
                   </div>
-                
                   <!-- Descripción en Inglés -->
                   <div class="mb-3">
                     <label for="addText" class="form-label">
                       <strong><span data-i18n="descripcion-ingles"></span></strong>
                     </label>
-                    <textarea class="form-control" id="addText" rows="3" placeholder="Write the description in English"></textarea>
+                    <textarea class="form-control" id="addText" rows="3" required></textarea>
                   </div>
-                
                   <!-- Ruta de la imagen -->
                   <div class="mb-3">
                     <label for="addImagen" class="form-label">
                       <strong><span data-i18n="imagen"></span></strong>
                     </label>
-                    <input type="text" class="form-control" id="addImagen" placeholder="Ruta de la imagen">
+                    <input type="file" class="form-control" id="addImagen" name="imagen" required>
                   </div>
-                
                   <!-- Botones de acción -->
                   <div class="d-flex justify-content-end mt-4">
                     <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">
@@ -177,10 +173,11 @@
                     </button>
                   </div>
                 </form>
-                
               </div>
           </div>
       </div>
+      <!-- Contenedor de Toasts -->
+      <div id="toast-container" class="position-fixed top-0 end-0 p-3"></div>
     </div>
   </main>
 
@@ -233,17 +230,6 @@
     </div>
   </footer>
 
-  <!-- Script para seleccionar el idioma de la página -->
-  <script src="/js/i18n.js"></script>
-  <!-- Script para logout-->
-  <script src="/js/logout.js"></script>
-  <!-- Script para inicializar tooltips de Bootstrap -->
-  <script src="/js/tooltips.js"></script>
-  <!-- Script para el panel de administración -->
-  <script src="/js/tarjetas.js"></script>
-  <!-- Script para añadir al header enlaces en funcion del rol -->
-  <script src="/js/header.js"></script>
-
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <!-- jQuery -->
@@ -252,6 +238,19 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
   <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+
+  <!-- Script para seleccionar el idioma de la página -->
+  <script src="/js/i18n.js"></script>
+  <!-- Script para logout-->
+  <script src="/js/logout.js"></script>
+  <!-- Script para inicializar tooltips de Bootstrap -->
+  <script src="/js/tooltips.js"></script>
+  <!-- Script para el panel de administración -->
+  <script src="/js/tarjetas.js"></script>
+  <!-- Script para añadir tarjetas -->
+  <script src="/js/add-tarjeta.js"></script>
+  <!-- Script para añadir al header enlaces en funcion del rol -->
+  <script src="/js/header.js"></script>
 
 </body>
 </html>

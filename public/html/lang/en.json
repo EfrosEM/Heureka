@@ -153,10 +153,9 @@
     "cards": "Game cards",
     "text": "Description",
     "imagen": "Image",
-    "cumple": "Satisfies",
+    "cumple": "Satisfies the heuristic",
     "heuristica": "Heuristic",
     "add-tarjeta": "Add game card",
-    "buen-ejemplo": "Is a good example",
     "yes": "Yes",
     "descripcion-espanol": "Description in Spanish",
     "descripcion-ingles": "Description in English"
