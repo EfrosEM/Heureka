@@ -28,7 +28,6 @@ document.getElementById('addTarjetaForm').addEventListener('submit', async (even
         // Manejar las respuestas
         if (result.success) {
             showToast('success', 'success');
-            updateTarjetasTable();
         } else {
             showToast('error', 'danger');
         }
