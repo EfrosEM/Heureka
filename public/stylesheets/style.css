@@ -539,6 +539,10 @@ table {
   margin-bottom: 0rem !important;
 }
 
+th {
+  text-wrap: nowrap;
+}
+
 /* Estilo para los botones de paginación */
 .page-item .page-link {
     color: #606d82;
