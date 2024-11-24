@@ -71,7 +71,7 @@
 
 
     "ganado": "You have won!",
-    "perdido": "You have lost!",
+    "perdido": "You have lost...",
     "superado": "You have managed to pass all 10 questions without losing all your lives.",
     "agotado": "You have lost all the lives before finishing the 10 questions.",
     "play-again": "Play again",

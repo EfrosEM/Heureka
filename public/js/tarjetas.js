@@ -63,6 +63,11 @@ function showToast(messageKey, type) {
     // Iniciamos el toast con Bootstrap
     const toast = new bootstrap.Toast(toastDiv, { autohide: true, delay: 10000 });
     toast.show();
+
+    // Eliminamos el toast del DOM cuando desaparezca
+    toastDiv.addEventListener('hidden.bs.toast', () => {
+        toastDiv.remove();
+    });
 }
 
 // Cargar tarjetas

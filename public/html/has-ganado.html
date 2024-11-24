@@ -47,29 +47,65 @@
       </div>    
     </header>
     
-    <main class="contenido" id="home">
-
-      <h2 data-i18n="ganado"></h2>
-      <p data-i18n="superado"></p>
-
-      <p class="feedback"></p>
-      <script id="plantilla-feedback" type="text/x-handlebars-template">
-        {{#if acertadas}}
-        <span data-i18n="has-acertado"></span> {{acertadas}} <span data-i18n="de"></span> {{total}} <span data-i18n="preguntas-en"></span> {{tiempo}}.
-        <div class="alert alert-primary mt-4" role="alert" style="width: fit-content; margin: 0 auto;">
-          <strong><i class="bi bi-star-fill"></i> <span data-i18n="has-conseguido"></span> {{puntos}}</strong>
-        </div>
-        <div class="alert alert-warning mt-4" role="alert" style="width: fit-content; margin: 0 auto;">
-          <strong><i class="bi bi-trophy-fill"></i></i>  <span data-i18n="bonus"></span></strong>
-        </div>
-        {{else}}
-        <span data-i18n="has-acertado"></span> 0 <span data-i18n="de"></span> 0 <span data-i18n="preguntas-en"></span> 0.
-        {{/if}}
-      </script>
-
-      <div><img alt="" src="images/nielsen-has-ganado.jpeg"></div>
-      <button type="button" class="btn btn-secondary btn-lg" data-i18n="play-again" onclick="location.href='game.html'"></button>
-      <!--<input id="boton-jugar" class="boton" type="button" value="Volver a jugar" onclick="location.href='game.html'">-->
+    <main class="contenido py-5" id="home">
+      <!-- Título principal -->
+      <h2 class="display-5 text-success fw-bold" data-i18n="ganado"></h2>
+      <p class="lead text-secondary" data-i18n="superado"></p>
+    
+      <!-- Feedback con Handlebars -->
+      <div class="feedback mt-4">
+        <script id="plantilla-feedback" type="text/x-handlebars-template">
+          {{#if acertadas}}
+          <!-- Información del resultado -->
+          <p class="h5 mb-4">
+            <span data-i18n="has-acertado"></span> 
+            <span class="text-primary fw-bold">{{acertadas}}</span> 
+            <span data-i18n="de"></span> 
+            <span class="text-primary fw-bold">{{total}}</span> 
+            <span data-i18n="preguntas-en"></span> 
+            <span class="text-primary fw-bold">{{tiempo}}</span>.
+          </p>
+          
+          <!-- Puntos -->
+          <div class="alert alert-primary d-inline-block mx-auto me-2" role="alert" style="width: fit-content;">
+            <strong>
+              <i class="bi bi-star-fill text-warning"></i> 
+              <span data-i18n="has-conseguido"></span> 
+              <span class="text-primary fw-bold">{{puntos}}</span>
+            </strong>
+          </div>
+          
+          <!-- Bonus -->
+          <div class="alert alert-warning d-inline-block mx-auto mt-3" role="alert" style="width: fit-content;">
+            <strong>
+              <i class="bi bi-trophy-fill text-warning"></i>  
+              <span data-i18n="bonus"></span>
+            </strong>
+          </div>
+          {{else}}
+          <!-- Sin aciertos -->
+          <p class="h5 mb-4 text-danger">
+            <span data-i18n="has-acertado"></span> 0 
+            <span data-i18n="de"></span> 0 
+            <span data-i18n="preguntas-en"></span> 0.
+          </p>
+          {{/if}}
+        </script>
+      </div>
+    
+      <!-- Imagen de victoria -->
+      <div class="mb-4">
+        <img src="images/nielsen-has-ganado.jpeg" alt="" class="img-fluid rounded shadow">
+      </div>
+    
+      <!-- Botón para volver a jugar -->
+      <button 
+        type="button" 
+        class="btn btn-secondary btn-lg"
+        onclick="location.href='game.html'">
+        <i class="bi bi-arrow-repeat"></i> 
+        <span data-i18n="play-again"></span> 
+      </button>
     </main>
     
     <footer class="bg-dark mt-4 py-4">
@@ -116,6 +152,13 @@
       </div>
     </footer>
 
+    <!-- Handlebars -->
+    <script type='text/javascript' src='js/handlebars-v4.7.6.js'></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
     <!-- Script para seleccionar el idioma de la página -->
     <script src="/js/i18n.js"></script>
     <!-- Script para logout-->
@@ -129,12 +172,6 @@
     <!-- Script para mostrar la plantilla de feedback -->
     <script type="module" src="/js/vista-fin-partida.js"></script>
 
-    <!-- Handlebars -->
-    <script type='text/javascript' src='js/handlebars-v4.7.6.js'></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     
   </body>
 </html>

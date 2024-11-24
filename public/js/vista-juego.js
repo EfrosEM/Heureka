@@ -556,7 +556,7 @@ function showAlert(messageKey, points, type) {
     let message, icon;
 
     if(type == "success"){
-        icon = `<i class="bi bi-star-fill"></i>`;
+        icon = `<i class="bi bi-star-fill text-warning"></i>`;
         message = points + messages[language][messageKey];
     } else {
         icon = `<i class="bi bi-exclamation-triangle-fill"></i>`;

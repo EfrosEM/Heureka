@@ -71,7 +71,7 @@
 
 
     "ganado": "¡Has ganado!",
-    "perdido": "¡Has perdido!",
+    "perdido": "Has perdido...",
     "superado": "Has conseguido superar las 10 preguntas sin perder todas las vidas.",
     "agotado": "Has agotado todas las vidas antes de terminar las 10 preguntas.",
     "play-again": "Volver a jugar",
