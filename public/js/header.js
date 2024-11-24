@@ -16,7 +16,7 @@ async function loadHeader(){
 
             if(language === 'en') {
                 enlaceUsers.innerHTML = `
-                    <i class="bi bi-people"></i> <span data-i18n="users">Users</span>
+                    <i class="bi bi-person-vcard"></i> <span data-i18n="users">Users</span>
                 `;
                 enlaceTarjetas.innerHTML = `
                     <i class="bi bi-card-image"></i> <span data-i18n="cards">Game cards</span>
@@ -24,7 +24,7 @@ async function loadHeader(){
             }
             else if(language === 'es') {
                 enlaceUsers.innerHTML = `
-                    <i class="bi bi-people"></i> <span data-i18n="users">Usuarios</span>
+                    <i class="bi bi-person-vcard"></i> <span data-i18n="users">Usuarios</span>
                 `;
                 enlaceTarjetas.innerHTML = `
                     <i class="bi bi-card-image"></i> <span data-i18n="cards">Tarjetas</span>
