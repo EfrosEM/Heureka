@@ -167,7 +167,7 @@ router.delete('/delete', async (req, res) => {
         return res.status(200).json({ success: true, msg: 'success' });
 
     } catch (error) {
-        return res.status(500).json({ success: false, msg: 'error' });
+        return res.status(500).json({ success: false, msg: 'delete' });
     }
 });
 

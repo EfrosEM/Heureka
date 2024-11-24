@@ -15,7 +15,8 @@ const messages = {
       confirm: "Las contraseñas introducidas no coinciden.",
       email: "Ese email ya ha sido registrado.",
       user: "Ese nombre de usuario ya está en uso.",
-      error: "Error al editar el perfil."
+      error: "Error al editar el perfil.",
+      delete: "Error al eliminar la cuenta."
     },
     en: {
       success: "Profile updated successfully.",
@@ -25,7 +26,8 @@ const messages = {
       confirm: "The passwords do not match.",
       email: "That email has already been registered.",
       user: "That user name is already in use.",
-      error: "Error editing profile."
+      error: "Error editing profile.",
+      delete: "Error deleting account."
     }
 };
 
@@ -51,7 +53,7 @@ document.getElementById("editProfileForm").addEventListener("submit", function (
         if (newPassword === confirmPassword) {
             actualizarUsuario(newUsername, newEmail, newPassword);
         } else {
-            showAlert("confirm", 'danger');
+            showToast("confirm", 'danger');
             // Limpiar el formulario
             document.getElementById("editProfileForm").reset();
         }
@@ -85,7 +87,7 @@ async function actualizarUsuario(newUser, newEmail, newPassword) {
         // Manejar las respuestas
         if (result.success) {
             // Mostrar alerta de éxito
-            showAlert(result.msg, 'success');
+            showToast(result.msg, 'success');
             // Limpiar el formulario
             document.getElementById("editProfileForm").reset();
 
@@ -94,42 +96,56 @@ async function actualizarUsuario(newUser, newEmail, newPassword) {
             if(newEmail) emailElement.textContent = newEmail;
         } else {
             // Mostrar alerta de error
-            showAlert(result.msg, 'danger');
+            showToast(result.msg, 'danger');
             // Limpiar el formulario
             document.getElementById("editProfileForm").reset();
         }
 
     } catch (error) {
         console.error("Error al actualizar usuario:", error);
-        showAlert('error', 'danger');
+        showToast('error', 'danger');
     }
 }
 
-// Función para mostrar la alerta
-function showAlert(messageKey, type) {
+function showToast(messageKey, type) {
+    // Obtiene el mensaje según el idioma
     const language = document.getElementById('language-select').value;
     const message = messages[language][messageKey];
 
     let icon = "";
-    if(type == "success"){
-      icon = `<i class="bi bi-check-circle-fill"></i>`;
-    }else{
-      icon = `<i class="bi bi-exclamation-triangle-fill"></i>`;
+    if (type == "success") {
+        icon = `<i class="bi bi-check-circle"></i>`;
+    } else {
+        icon = `<i class="bi bi-exclamation-triangle"></i>`;
     }
 
-    const alertDiv = document.createElement('div');
-    alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
-    alertDiv.role = 'alert';
-    alertDiv.innerHTML = `${icon} ${message} <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>`;
+    // Creamos el elemento del toast
+    const toastDiv = document.createElement('div');
+    toastDiv.className = `toast text-bg-${type}`;
+    toastDiv.role = 'alert';
+    toastDiv.setAttribute('aria-live', 'assertive');
+    toastDiv.setAttribute('aria-atomic', 'true');
 
-    // Añadir la alerta al contenedor
-    const messageContainer = document.getElementById('message-container');
-    // Limpia cualquier mensaje previo
-    messageContainer.innerHTML = '';
-    messageContainer.appendChild(alertDiv);
+    // HTML del toast
+    toastDiv.innerHTML = `
+      <div class="d-flex">
+        <div class="toast-body">
+          ${icon} ${message}
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    `;
 
-    // Hacer que desaparezca después de 3 segundos
-    setTimeout(() => {
-      alertDiv.remove();
-    }, 10000);
-};
+    // Añadimos el toast al contenedor de toasts
+    const toastContainer = document.getElementById('toast-container');
+    toastContainer.appendChild(toastDiv);
+
+    // Iniciamos el toast con Bootstrap
+    const toast = new bootstrap.Toast(toastDiv, { autohide: true, delay: 10000 });
+    toast.show();
+
+    // Eliminamos el toast del DOM cuando desaparezca
+    toastDiv.addEventListener('hidden.bs.toast', () => {
+        toastDiv.remove();
+    });
+}
