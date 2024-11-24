@@ -1,6 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
 const router = express.Router();
 const User = require('../models/Usuario');
 const Tarjeta = require('../models/Tarjeta');
@@ -11,7 +12,7 @@ const storage = multer.diskStorage({
         cb(null, path.join(__dirname, '../public/images/tarjetas'));
     },
     filename: (req, file, cb) => {
-        cb(null, `${file.originalname}`);
+        cb(null, `${Date.now()}-${file.originalname}`);
     },
 });
   
@@ -67,8 +68,24 @@ router.post('/tarjetas', upload.single('imagen'), async (req, res) => {
 // Ruta para eliminar una tarjeta
 router.delete('/tarjetas/:id', async (req, res) => {
     try {
+        // Buscar la tarjeta para obtener la ruta de la imagen
+        const tarjeta = await Tarjeta.findById(req.params.id);
+        if (!tarjeta) {
+            return res.status(404).json({ success: false, msg: 'Tarjeta no encontrada' });
+        }
+
+        // Ruta completa de la imagen
+        const imagePath = path.join(__dirname, '..', 'public', tarjeta.imagen);
+        // Eliminar el archivo de la imagen
+        fs.unlink(imagePath, (err) => {
+            if (err) {
+                console.error('Error al eliminar la imagen:', err);
+            }
+        });
+        
         // Buscar y eliminar la tarjeta pasada como parámetro
         await Tarjeta.findByIdAndDelete(req.params.id);
+
         return res.status(200).json({ success: true, msg: 'success' });
     } catch (error) {
         res.status(500).json({ success: false, msg: 'error' });
