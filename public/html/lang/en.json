@@ -158,5 +158,9 @@
     "add-tarjeta": "Add game card",
     "yes": "Yes",
     "descripcion-espanol": "Description in Spanish",
-    "descripcion-ingles": "Description in English"
+    "descripcion-ingles": "Description in English",
+    "actions": "Actions",
+    "delete-tarjeta": "Delete game card",
+    "delete-tarjeta-confirm": "Are you sure you want to delete this game card?",
+    "eliminar": "Delete"
 }

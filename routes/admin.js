@@ -67,10 +67,11 @@ router.post('/tarjetas', upload.single('imagen'), async (req, res) => {
 // Ruta para eliminar una tarjeta
 router.delete('/tarjetas/:id', async (req, res) => {
     try {
+        // Buscar y eliminar la tarjeta pasada como parámetro
         await Tarjeta.findByIdAndDelete(req.params.id);
-        res.json({ message: 'Tarjeta eliminada exitosamente' });
+        return res.status(200).json({ success: true, msg: 'success' });
     } catch (error) {
-        res.status(500).json({ message: 'Error al eliminar la tarjeta' });
+        res.status(500).json({ success: false, msg: 'error' });
     }
 });
 

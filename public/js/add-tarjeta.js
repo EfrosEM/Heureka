@@ -27,65 +27,21 @@ document.getElementById('addTarjetaForm').addEventListener('submit', async (even
 
         // Manejar las respuestas
         if (result.success) {
-            showToast('success', 'success');
+            // Guarda el mensaje en sessionStorage
+            sessionStorage.setItem('toastMessage', 'add_success');
+            sessionStorage.setItem('toastType', 'success');
+
+            // Recargar la página
+            location.reload();
         } else {
-            showToast('error', 'danger');
+            showToast('add_error', 'danger');
         }
 
         // Limpiar el formulario
         document.getElementById('addTarjetaForm').reset();
     } catch (error) {
         console.error('Error al enviar la tarjeta:', error);
-        showToast('error', 'danger');
+        showToast('add_error', 'danger');
     }
 });
-
-const messages = {
-    es: {
-        success: "Tarjeta creada exitosamente.",
-        error: "Hubo un problema al crear la tarjeta."
-    },
-    en: {
-        success: "Game card created successfully.",
-        error: "There was a problem creating the game card.",
-    }
-};
-
-function showToast(messageKey, type) {
-    // Obtenemos el idioma actual seleccionado
-    const language = document.getElementById('language-select').value;
-    const message = messages[language][messageKey];
-
-    let icon = "";
-    if (type == "success") {
-        icon = `<i class="bi bi-check-circle"></i>`;
-    } else {
-        icon = `<i class="bi bi-exclamation-triangle"></i>`;
-    }
-
-    // Creamos el elemento del toast
-    const toastDiv = document.createElement('div');
-    toastDiv.className = `toast text-bg-${type}`;
-    toastDiv.role = 'alert';
-    toastDiv.setAttribute('aria-live', 'assertive');
-    toastDiv.setAttribute('aria-atomic', 'true');
-
-    // HTML del toast
-    toastDiv.innerHTML = `
-      <div class="d-flex">
-        <div class="toast-body">
-          ${icon} ${message}
-        </div>
-        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-    `;
-
-    // Añadimos el toast al contenedor de toasts
-    const toastContainer = document.getElementById('toast-container');
-    toastContainer.appendChild(toastDiv);
-
-    // Iniciamos el toast con Bootstrap
-    const toast = new bootstrap.Toast(toastDiv, { autohide: true, delay: 5000 });
-    toast.show();
-}
 

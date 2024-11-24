@@ -158,5 +158,9 @@
     "add-tarjeta": "Añadir tarjeta",
     "yes": "Sí",
     "descripcion-espanol": "Descripción en español",
-    "descripcion-ingles": "Descripción en inglés"
+    "descripcion-ingles": "Descripción en inglés",
+    "actions": "Acciones",
+    "delete-tarjeta": "Eliminar tarjeta",
+    "delete-tarjeta-confirm": "¿Estás seguro de que quieres eliminar esta tarjeta?",
+    "eliminar": "Eliminar"
 }

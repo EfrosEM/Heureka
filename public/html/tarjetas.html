@@ -53,13 +53,13 @@
   </header>
 
   <main class="contenido">
-    <div class="card mt-5 mb-5" style="max-width: 1000px; margin: 0 auto;">
+    <div class="card mt-5 mb-5" style="max-width: 1100px; margin: 0 auto;">
       <div class="card-header text-center bg-dark text-white">
         <h2><span data-i18n="tarjetas"></span></h2>
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table class="table table-striped table-bordered table-hover align-middle" id="tarjetas-table">
+          <table class="table table-striped table-hover align-middle" id="tarjetas-table">
             <thead class="table-dark">
               <tr>
                 <th class="text-center" style="padding-left:30px;">
@@ -69,10 +69,13 @@
                   <span data-i18n="text"></span>
                 </th>
                 <th class="text-center" style="padding-left:30px;">
+                  <span data-i18n="cumple"></span>
+                </th>
+                <th class="text-center" style="padding-left:30px;">
                   <span data-i18n="imagen"></span>
                 </th>
                 <th class="text-center" style="padding-left:30px;">
-                  <span data-i18n="cumple"></span>
+                  <span data-i18n="actions"></span>
                 </th>
               </tr>
             </thead>
@@ -176,9 +179,35 @@
               </div>
           </div>
       </div>
-      <!-- Contenedor de Toasts -->
-      <div id="toast-container" class="position-fixed top-0 end-0 p-3"></div>
     </div>
+
+    <!-- Modal para confirmar la eliminación de tarjeta -->
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-dark text-light" data-bs-theme="dark">
+            <h5 class="modal-title" id="confirmDeleteModalLabel">
+              <i class="bi bi-exclamation-triangle-fill text-danger"></i>&nbsp;&nbsp;<span data-i18n="delete-tarjeta"></span>
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <span data-i18n="delete-tarjeta-confirm"></span>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">
+              <i class="bi bi-x-lg"></i> <span data-i18n="cancel"></span>
+            </button>
+            <button type="button" class="btn btn-danger" id="confirmDeleteButton">
+              <i class="bi bi-trash"></i> <span data-i18n="eliminar"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toasts -->
+    <div id="toast-container" class="position-fixed top-0 end-0 p-3"></div>
   </main>
 
   <footer class="bg-dark mt-4 py-4">
@@ -249,6 +278,8 @@
   <script src="/js/tarjetas.js"></script>
   <!-- Script para añadir tarjetas -->
   <script src="/js/add-tarjeta.js"></script>
+  <!-- Script para borrar tarjetas -->
+  <script src="/js/delete-tarjeta.js"></script>
   <!-- Script para añadir al header enlaces en funcion del rol -->
   <script src="/js/header.js"></script>
 
