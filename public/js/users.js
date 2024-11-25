@@ -44,7 +44,7 @@ async function loadUsers() {
             columnDefs: [
                 { 
                     targets: [4, 6], type: 'num',  // Asegura que las columnas de partidas y preguntas se ordenen como número
-                    targets: [8], type: 'num-fmt', // Asegura que la columna de tiempo se ordene como número con formato
+                    targets: [8], type: 'time-uni', // Asegura que la columna de tiempo se ordene como número con formato
                     targets: [2], type: 'date'     // Asegura que la columna de fecha se ordene como fecha
                 } 
             ],
@@ -74,20 +74,12 @@ function segundosToHHMMSS(segundos) {
     let minutos = Math.trunc(segundos / 60);
     segundos %= 60;
 
-    let cadena = '';
+    if(horas < 10) horas = '0'+horas;
+    if(minutos < 10) minutos = '0'+minutos;
+    if(segundos < 10) segundos = '0'+segundos;
 
-    if(horas>0) {
-        cadena += horas + 'h ';
-    }
-    if(minutos>0) {
-        cadena += minutos + 'min ';
-    }
-    if(segundos>0) {
-        cadena += segundos + 's';
-    }
-    if(horas === 0 && minutos === 0 && segundos === 0) {
-        cadena += '0s';
-    }
+    let cadena = horas+':'+minutos+':'+segundos;
+
 
     return cadena;
 }
