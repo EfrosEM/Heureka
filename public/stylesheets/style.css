@@ -569,6 +569,6 @@ th {
   justify-self: flex-end;
 }
 
-.card {
+.card, .alert, .toast {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
