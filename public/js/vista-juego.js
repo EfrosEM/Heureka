@@ -1,6 +1,6 @@
 import {Controlador} from './controlador.js';
 
-const BONUS_PUNTOS = 100;
+const BONUS_PUNTOS = process.env.BONUS_POINTS;
 
 let controlador = null;
 let translations = {};  // Aquí se almacenarán las traducciones cargadas

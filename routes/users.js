@@ -13,11 +13,11 @@ router.post('/signup', async (req, res) => {
         errors.push({ msg: 'fields' });
     }
 
-    if (user.length > 30) {
+    if (user.length > process.env.USERNAME_MAX_LENGTH) {
         errors.push({ msg: 'name' });
     }
 
-    if (password.length < 5) {
+    if (password.length < process.env.PASSWORD_MIN_LENGTH) {
         errors.push({ msg: 'password' });
     }
 
@@ -118,7 +118,7 @@ router.put('/edit', async (req, res) => {
 
         // Actualizar los datos del usuario
         if (newUser) {
-            if (newUser.length > 30) {
+            if (newUser.length > process.env.USERNAME_MAX_LENGTH) {
                 return res.status(400).json({ success: false, msg: "name" });
             }
 
@@ -140,7 +140,7 @@ router.put('/edit', async (req, res) => {
         }
 
         if (newPassword) {
-            if (newPassword.length < 5) {
+            if (newPassword.length < process.env.PASSWORD_MIN_LENGTH) {
                 return res.status(400).json({ success: false, msg: "password" });
             }
 
