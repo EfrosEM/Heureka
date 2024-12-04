@@ -62,7 +62,7 @@ const UsuarioSchema = new mongoose.Schema({
     resetTokenExpiration: Date
 });
 
-// Método para encriptar la contraseña antes de guardar el usuario
+// Encriptar la contraseña antes de guardar el usuario
 UsuarioSchema.pre('save', async function(next) {
     if (!this.isModified('password')) {
         return next();
@@ -76,37 +76,37 @@ UsuarioSchema.pre('save', async function(next) {
     }
 });
 
-// Método para comparar la contraseña introducida con la almacenada en la base de datos
+// Comparar la contraseña introducida con la almacenada en la base de datos
 UsuarioSchema.methods.comparePassword = async function(candidatePassword) {
     return await bcrypt.compare(candidatePassword, this.password);
 };
 
-// Método para sumar puntos a los puntos actuales
+// Sumar puntos a los puntos actuales
 UsuarioSchema.methods.addPoints = function(newPoints) {
     this.points+=newPoints;
 };
 
-// Método para añadir una nueva partida jugada al total de partidas jugadas
+// Añadir una nueva partida jugada al total de partidas jugadas
 UsuarioSchema.methods.addGame = function() {
     this.games++;
 };
 
-// Método para añadir una nueva victoria al total de victorias
+// Añadir una nueva victoria al total de victorias
 UsuarioSchema.methods.addWin = function() {
     this.wins++;
 };
 
-// Método para sumar las nuevas preguntas a las preguntas totales contestadas
+// Sumar las nuevas preguntas a las preguntas totales contestadas
 UsuarioSchema.methods.addPreguntas = function(newPreguntas) {
     this.preguntas+=newPreguntas;
 };
 
-// Método para sumar los nuevos aciertos a los aciertos totales
+// Sumar los nuevos aciertos a los aciertos totales
 UsuarioSchema.methods.addAciertos = function(newAciertos) {
     this.aciertos+=newAciertos;
 };
 
-// Método para sumar el tiempo de partida al tiempo jugado total
+// Sumar el tiempo de partida al tiempo jugado total
 UsuarioSchema.methods.addTime = function(newTime) {
     this.time+=newTime;
 };

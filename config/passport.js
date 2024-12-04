@@ -33,7 +33,7 @@ passport.serializeUser((user, done) => {
 // Deserialización del usuario
 passport.deserializeUser(async (data, done) => {
     try {
-        const { id, rol } = data;
+        const { id } = data;
         const user = await Usuario.findById(id);
         done(null, user);
     } catch (error) {

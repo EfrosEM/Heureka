@@ -66,7 +66,7 @@ router.post('/cargar-admin', async (req, res) => {
 // Ruta para subir usuarios de prueba a la base de datos
 router.post('/cargar-usuarios', async (req, res) => {
     try {
-        for (i = 0; i < 20; i++) {
+        for (let i = 0; i < 20; i++) {
             const nuevoUsuario = new Usuario({
                 user: `user${i}`,
                 email: `user${i}@um.es`,
