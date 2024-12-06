@@ -124,11 +124,11 @@
 }
 
 html {
-  padding: 0%;
+  padding: 0;
 } 
 
 body {
-  margin: 0%;
+  margin: 0;
   min-width: 250px;
 } 
 
@@ -199,7 +199,7 @@ header {
   padding: 10px 10px;
   min-height: 44px;
   min-width: 44px;
-  margin: 0px 1.5px 0px 1.5px;
+  margin: 0 2px 0 2px;
 }
 
 #nav a:hover {
@@ -541,7 +541,7 @@ table {
   border-spacing: 0;
   border-radius: 5px;
   overflow: hidden;
-  margin-bottom: 0rem !important;
+  margin-bottom: 0 !important;
 }
 
 th {
