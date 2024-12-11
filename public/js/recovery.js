@@ -28,6 +28,7 @@ document.getElementById('recovery-form').addEventListener('submit', async functi
         }
     } catch (error) {
         // Manejo de errores de conexión
+        console.error("Error: ",error);
         showAlert('error', 'danger');
     }
 });

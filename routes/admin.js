@@ -27,6 +27,7 @@ router.get('/users', async (req, res) => {
         }
         res.json(data);
     } catch (error) {
+        console.error("Error al obtener usuarios:", error);
         res.status(500).json({ message: 'Error al obtener los usuarios' });
     }
 });
@@ -40,6 +41,7 @@ router.get('/tarjetas', async (req, res) => {
         }
         res.json(data);
     } catch (error) {
+        console.error("Erro al obtener tarjetas:", error);
         res.status(500).json({ message: 'Error al obtener las tarjetas' });
     }
 });
@@ -61,6 +63,7 @@ router.post('/tarjetas', upload.single('imagen'), async (req, res) => {
         await newTarjeta.save();
         res.status(201).json({ success: true, message: 'success', newTarjeta });
     } catch (error) {
+        console.error(error);
         res.status(500).json({ success: false, message: 'error', error });
     }
 });
@@ -88,6 +91,7 @@ router.delete('/tarjetas/:id', async (req, res) => {
 
         return res.status(200).json({ success: true, msg: 'success' });
     } catch (error) {
+        console.error(error);
         res.status(500).json({ success: false, msg: 'error' });
     }
 });

@@ -152,6 +152,7 @@ router.put('/edit', async (req, res) => {
         return res.status(200).json({ success: true, msg: 'success' });
 
     } catch (error) {
+        console.error('Error al editar perfil:', error);
         return res.status(500).json({ success: false, msg: 'error' });
     }
 });
@@ -167,6 +168,7 @@ router.delete('/delete', async (req, res) => {
         return res.status(200).json({ success: true, msg: 'success' });
 
     } catch (error) {
+        console.error('Error al eliminar usuario:', error);
         return res.status(500).json({ success: false, msg: 'delete' });
     }
 });

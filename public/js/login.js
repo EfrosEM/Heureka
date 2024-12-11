@@ -76,6 +76,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
         }
     } catch (error) {
         // Manejo de errores de conexión
+        console.error('Error al iniciar sesión:', error);
         showAlert('error', 'danger');
     }
 });

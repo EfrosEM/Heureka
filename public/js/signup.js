@@ -86,6 +86,7 @@ document.getElementById('signup-form').addEventListener('submit', async function
       }
     } catch (error) {
       // Manejo de errores de conexión
+      console.error("Error en el registro:", error);
       showAlert('connection', 'danger');
     }
 });
