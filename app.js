@@ -9,10 +9,15 @@ const passport = require('passport');
 // Variables de entorno
 require('dotenv').config();
 
-const app = express();
-const PORT = process.env.PORT || 5000;
+const {
+  PORT = 5000,
+  MONGODB_URI,
+  NODE_ENV,
+} = process.env;
 
-const uri = process.env.MONGODB_URI;
+const app = express();
+
+const uri = MONGODB_URI;
 
 // Conectar a MongoDB
 mongoose.connect(uri)
@@ -60,7 +65,7 @@ app.get('/configuracion-juego', async function(req, res) {
 })
 
 app.get('/tests.html', function(req, res) {
-  if (process.env.NODE_ENV === "dev") {
+  if (NODE_ENV === "dev") {
     res.sendFile(path.join(__dirname, '/public/html/tests.html'));
   } else {
     let filePath = path.join(__dirname, '/public/html/error403.html');

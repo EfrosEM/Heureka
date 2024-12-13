@@ -3,6 +3,11 @@ const router = express.Router();
 const passport = require('passport');
 const Usuario = require('../models/Usuario');
 
+const {
+    USERNAME_MAX_LENGTH = 20,
+    PASSWORD_MIN_LENGTH = 6,
+} = process.env;
+
 // Ruta para el registro
 router.post('/signup', async (req, res) => {
     const { user, email, password } = req.body;
@@ -13,11 +18,11 @@ router.post('/signup', async (req, res) => {
         errors.push({ msg: 'fields' });
     }
 
-    if (user.length > process.env.USERNAME_MAX_LENGTH) {
+    if (user.length > USERNAME_MAX_LENGTH) {
         errors.push({ msg: 'name' });
     }
 
-    if (password.length < process.env.PASSWORD_MIN_LENGTH) {
+    if (password.length < PASSWORD_MIN_LENGTH) {
         errors.push({ msg: 'password' });
     }
 
@@ -118,7 +123,7 @@ router.put('/edit', async (req, res) => {
 
         // Actualizar los datos del usuario
         if (newUser) {
-            if (newUser.length > process.env.USERNAME_MAX_LENGTH) {
+            if (newUser.length > USERNAME_MAX_LENGTH) {
                 return res.status(400).json({ success: false, msg: "name" });
             }
 
@@ -140,7 +145,7 @@ router.put('/edit', async (req, res) => {
         }
 
         if (newPassword) {
-            if (newPassword.length < process.env.PASSWORD_MIN_LENGTH) {
+            if (newPassword.length < PASSWORD_MIN_LENGTH) {
                 return res.status(400).json({ success: false, msg: "password" });
             }
 
