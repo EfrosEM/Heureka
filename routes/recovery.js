@@ -4,11 +4,7 @@ const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 const Usuario = require('../models/Usuario');
 
-const {
-  RECOVERY_LINK,
-  EMAIL_USER,
-  EMAIL_PASS,
-} = process.env;
+const { RECOVERY_LINK, EMAIL_USER, EMAIL_PASS } = require('../config/config');
 
 // Ruta para recuperar contraseña
 router.post('/recovery', async (req, res) => {

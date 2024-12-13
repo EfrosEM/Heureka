@@ -6,21 +6,12 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 
-// Variables de entorno
-require('dotenv').config();
-
-const {
-  PORT = 5000,
-  MONGODB_URI,
-  NODE_ENV,
-} = process.env;
+const { PORT, MONGODB_URI, NODE_ENV } = require('./config/config');
 
 const app = express();
 
-const uri = MONGODB_URI;
-
 // Conectar a MongoDB
-mongoose.connect(uri)
+mongoose.connect(MONGODB_URI)
   .then(() => console.log('MongoDB conectado'))
   .catch(err => console.log(err));
 

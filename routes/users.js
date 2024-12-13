@@ -3,10 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 const Usuario = require('../models/Usuario');
 
-const {
-    USERNAME_MAX_LENGTH = 20,
-    PASSWORD_MIN_LENGTH = 6,
-} = process.env;
+const { USERNAME_MAX_LENGTH, PASSWORD_MIN_LENGTH } = require('../config/config.js');
 
 // Ruta para el registro
 router.post('/signup', async (req, res) => {
