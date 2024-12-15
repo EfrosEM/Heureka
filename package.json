@@ -7,7 +7,7 @@
     "test": "qunit",
     "start": "node app",
     "dev-unix": "export NODE_ENV=dev && nodemon app",
-    "dev-windows": "set NODE_ENV=dev && nodemon app"
+    "dev-windows": "set NODE_ENV=dev&& nodemon app"
   },
   "repository": {
     "type": "git",
