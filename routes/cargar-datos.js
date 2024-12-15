@@ -4,8 +4,8 @@ const Tarjeta = require('../models/Tarjeta');
 const Heuristica = require('../models/Heuristica');
 const Usuario = require('../models/Usuario');
 
-const tarjetas = require('../tarjetas.json'); // Archivo con las tarjetas
-const heuristicas = require('../heuristicas.json'); // Archivo con las heurísticas
+const tarjetas = require('../data/tarjetas.json'); // Archivo con las tarjetas
+const heuristicas = require('../data/heuristicas.json'); // Archivo con las heurísticas
 
 // Ruta para subir tarjetas y heurísticas a la base de datos
 router.post('/cargar-datos', async (req, res) => {
