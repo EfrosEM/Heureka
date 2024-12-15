@@ -1,4 +1,4 @@
-import { Partida } from './model/Partida.js';
+import { Partida } from '../model/Partida.js';
 
 export class Controlador {
 

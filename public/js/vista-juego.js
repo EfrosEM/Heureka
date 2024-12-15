@@ -1,4 +1,4 @@
-import {Controlador} from './controlador.js';
+import {Controlador} from './controller/controlador.js';
 
 const BONUS_PUNTOS = 100;
 
