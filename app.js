@@ -6,13 +6,16 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 
-const { PORT, MONGODB_URI, NODE_ENV } = require('./config/config');
+const { PORT, MONGODB_URI, NODE_ENV, DB_NAME } = require('./config/config');
 
 const app = express();
 
+// Configuración de la base de datos
+const options = {dbName: DB_NAME};
+
 // Conectar a MongoDB
-mongoose.connect(MONGODB_URI)
-  .then(() => console.log('MongoDB conectado'))
+mongoose.connect(MONGODB_URI, options)
+  .then(() => console.log('MongoDB conectado a ' + DB_NAME))
   .catch(err => console.log(err));
 
 // Body parser para manejar datos de formularios
