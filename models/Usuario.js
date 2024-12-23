@@ -58,6 +58,12 @@ const UsuarioSchema = new mongoose.Schema({
         enum: ['ALUMNO', 'PROFESOR'],
         default: 'ALUMNO'
     },
+    nivel: {
+        type: String,
+        required: true,
+        enum: ['PRINCIPIANTE', 'INTERMEDIO', 'AVANZADO'],
+        default: 'PRINCIPIANTE'
+    },
     resetToken: String,
     resetTokenExpiration: Date
 });
@@ -110,6 +116,15 @@ UsuarioSchema.methods.addAciertos = function(newAciertos) {
 UsuarioSchema.methods.addTime = function(newTime) {
     this.time+=newTime;
 };
+
+
+UsuarioSchema.methods.avanzarNivel = function() {
+    if(this.nivel == 'PRINCIPIANTE') {
+        this.nivel = 'INTERMEDIO';
+    } else if(this.nivel == 'INTERMEDIO') {
+        this.nivel = 'AVANZADO';
+    }
+}
 
 const Usuario = mongoose.model('Usuario', UsuarioSchema);
 module.exports = Usuario;
