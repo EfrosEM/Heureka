@@ -71,6 +71,16 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         }
 
+        if(usuario.nivel === 'PRINCIPIANTE') {
+            document.getElementById('level').innerHTML = '<i class="bi bi-star-fill text-warning"></i> <i class="bi bi-star-fill" style="color: #b8b8b8"></i> <i class="bi bi-star-fill" style="color: #b8b8b8"></i>';
+        }
+        else if(usuario.nivel === 'INTERMEDIO') {
+            document.getElementById('level').innerHTML = '<i class="bi bi-star-fill text-warning"></i> <i class="bi bi-star-fill text-warning"></i> <i class="bi bi-star-fill" style="color: #b8b8b8"></i>';
+        }
+        else if(usuario.nivel === 'AVANZADO') {
+            document.getElementById('level').innerHTML = '<i class="bi bi-star-fill text-warning"></i> <i class="bi bi-star-fill text-warning"></i> <i class="bi bi-star-fill text-warning"></i>';
+        }
+
     } catch (error) {
         console.error('Error al obtener los datos del perfil:', error);
         window.location.href = '/login.html';  // Redirigir si no está autenticado

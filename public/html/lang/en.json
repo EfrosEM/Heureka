@@ -124,6 +124,7 @@
     "rol": "Role",
     "alumno": "STUDENT",
     "profesor": "TEACHER",
+    "level": "Levels completed",
     "info": "User information",
     "stats": "Game statistics",
     "games": "Games played",

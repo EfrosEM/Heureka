@@ -100,7 +100,8 @@ router.get('/profile', (req, res) => {
         preguntas: req.user.preguntas,
         aciertos: req.user.aciertos,
         time: req.user.time,
-        rol: req.user.rol
+        rol: req.user.rol,
+        nivel: req.user.nivel
     };
 
     res.json(usuario);

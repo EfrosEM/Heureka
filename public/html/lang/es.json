@@ -124,6 +124,7 @@
     "rol": "Rol",
     "alumno": "ALUMNO",
     "profesor": "PROFESOR",
+    "level": "Niveles completados",
     "info": "Información de usuario",
     "stats": "Estadísticas de juego",
     "games": "Partidas jugadas",
