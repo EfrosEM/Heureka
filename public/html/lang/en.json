@@ -163,5 +163,12 @@
     "actions": "Actions",
     "delete-tarjeta": "Delete game card",
     "delete-tarjeta-confirm": "Are you sure you want to delete this game card?",
-    "eliminar": "Delete"
+    "eliminar": "Delete",
+
+
+    "principiante": "Beginner",
+    "intermedio": "Intermediate",
+    "avanzado": "Advanced",
+    "nivel": "Select the level of the game",
+    "comenzar": "Start"
 }

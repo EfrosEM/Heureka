@@ -70,4 +70,8 @@ router.get('/tarjetas.html', ensureAuthenticated, authorizeRoles('PROFESOR'), (r
     res.sendFile(path.join(__dirname, '../public/html/tarjetas.html'));
 });
 
+router.get('/level-select.html', ensureAuthenticated, authorizeRoles('PROFESOR','ALUMNO'), (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/html/level-select.html'));
+});
+
 module.exports = router;

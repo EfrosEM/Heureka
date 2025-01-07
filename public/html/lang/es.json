@@ -163,5 +163,12 @@
     "actions": "Acciones",
     "delete-tarjeta": "Eliminar tarjeta",
     "delete-tarjeta-confirm": "¿Estás seguro de que quieres eliminar esta tarjeta?",
-    "eliminar": "Eliminar"
+    "eliminar": "Eliminar",
+
+
+    "principiante": "Principiante",
+    "intermedio": "Intermedio",
+    "avanzado": "Avanzado",
+    "nivel": "Selecciona el nivel de dificultad",
+    "comenzar": "Comenzar"
 }
