@@ -33,5 +33,38 @@ async function loadLevels() {
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const startGameButton = document.getElementById("startGame");
+  
+    startGameButton.addEventListener("click", () => {
+      // Seleccionar el nivel
+      const selectedLevel = document.querySelector('input[name="engine"]:checked');
+  
+      if (selectedLevel) {
+        // Determinar la página de redirección según el nivel seleccionado
+        let targetPage = "";
+        switch (selectedLevel.id) {
+          case "beginner":
+            targetPage = "/game.html";
+            break;
+          case "intermediate":
+            targetPage = "/game-intermediate.html";
+            break;
+          case "advanced":
+            targetPage = "/game-advanced.html";
+            break;
+          default:
+            alert("Selecciona un nivel válido.");
+            return;
+        }
+  
+        // Redirigir a la página correspondiente
+        window.location.href = targetPage;
+      } else {
+        alert("Por favor, selecciona un nivel de dificultad antes de comenzar.");
+      }
+    });
+  });  
+
 // Ejecutar la función cuando el DOM esté cargado
 document.addEventListener('DOMContentLoaded', loadLevels);
