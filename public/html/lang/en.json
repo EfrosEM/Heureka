@@ -169,6 +169,6 @@
     "principiante": "Beginner",
     "intermedio": "Intermediate",
     "avanzado": "Advanced",
-    "nivel": "Select the level of the game",
+    "nivel": "Select the difficulty level",
     "comenzar": "Start"
 }
