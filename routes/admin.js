@@ -96,4 +96,23 @@ router.delete('/tarjetas/:id', async (req, res) => {
     }
 });
 
+// Ruta para eliminar un usuario
+router.delete('/users/:id', async (req, res) => {
+    try { 
+        // Buscar la tarjeta para obtener la ruta de la imagen
+        const user = await User.findById(req.params.id);
+        if (!user) {
+            return res.status(404).json({ success: false, msg: 'user no encontrado' });
+        }
+
+        // Buscar y eliminar el usuario pasado como parámetro
+        await User.findByIdAndDelete(req.params.id);
+
+        return res.status(200).json({ success: true, msg: 'success' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, msg: 'error' });
+    }
+});
+
 module.exports = router;

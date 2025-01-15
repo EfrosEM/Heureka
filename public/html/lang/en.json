@@ -148,6 +148,8 @@
     "questions": "Questions",
     "aciertos/fallos": "Right/Wrong",
     "tiempo": "Time",
+    "delete-usuario": "Delete user",
+    "delete-usuario-confirm": "Are you sure you want to delete this user?",
 
 
     "tarjetas": "Game cards",

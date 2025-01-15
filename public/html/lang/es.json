@@ -148,6 +148,8 @@
     "questions": "Preguntas",
     "aciertos/fallos": "Aciertos/Fallos",
     "tiempo": "Tiempo",
+    "delete-usuario": "Eliminar usuario",
+    "delete-usuario-confirm": "¿Estás seguro de que quieres eliminar este usuario?",
 
 
     "tarjetas": "Tarjetas de juego",

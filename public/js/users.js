@@ -1,9 +1,81 @@
+const messages = {
+    es: {
+        delete_success: "Usuario eliminado exitosamente.",
+        delete_error: "Hubo un problema al eliminar el usuario.",
+    },
+    en: {
+        delete_success: "User deleted successfully.",
+        delete_error: "There was a problem deleting the user.",
+    }
+};
+
+const language = localStorage.getItem('selectedLanguage');
+
+// Verifica si hay un mensaje en sessionStorage
+const toastMessage = sessionStorage.getItem('toastMessage');
+const toastType = sessionStorage.getItem('toastType');
+
+if (toastMessage) {
+    // Muestra el toast con el mensaje almacenado
+    showToast(toastMessage, toastType);
+  
+    // Limpia el mensaje para que no se repita
+    sessionStorage.removeItem('toastMessage');
+    sessionStorage.removeItem('toastType');
+}
+
+function showToast(messageKey, type) {
+    // Obtiene el mensaje según el idioma
+    const message = messages[language][messageKey];
+
+    let icon = "";
+    if (type == "success") {
+        icon = `<i class="bi bi-check-circle"></i>`;
+    } else {
+        icon = `<i class="bi bi-exclamation-triangle"></i>`;
+    }
+
+    // Creamos el elemento del toast
+    const toastDiv = document.createElement('div');
+    toastDiv.className = `toast text-bg-${type}`;
+    toastDiv.role = 'alert';
+    toastDiv.setAttribute('aria-live', 'assertive');
+    toastDiv.setAttribute('aria-atomic', 'true');
+
+    // HTML del toast
+    toastDiv.innerHTML = `
+      <div class="d-flex">
+        <div class="toast-body">
+          ${icon} ${message}
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    `;
+
+    // Añadimos el toast al contenedor de toasts
+    const toastContainer = document.getElementById('toast-container');
+    toastContainer.appendChild(toastDiv);
+
+    // Iniciamos el toast con Bootstrap
+    const toast = new bootstrap.Toast(toastDiv, { autohide: true, delay: 10000 });
+    toast.show();
+
+    // Eliminamos el toast del DOM cuando desaparezca
+    toastDiv.addEventListener('hidden.bs.toast', () => {
+        toastDiv.remove();
+    });
+}
+
 // Cargar usuarios
 async function loadUsers() {
     try {
         // Hacer una llamada al servidor para obtener los usuarios
         const response = await fetch('/admin/users');
         const {users} = await response.json();
+
+        // Hacer una llamada al servidor para obtener el usuario actual
+        const res = await fetch('/users/profile');
+        const usuario = await res.json();
 
         // Obtener el cuerpo de la tabla
         const tableBody = document.getElementById('user-table-body');
@@ -14,6 +86,21 @@ async function loadUsers() {
 
             const barraPartidas = getBarraPartidas(user);
             const barraPreguntas = getBarraPreguntas(user);
+
+            let botones ="";
+            if(user.user != usuario.user) { // No mostrar botones para el usuario actual
+                botones = `
+                    <button class="btn btn-secondary btn-sm" onclick="infoUser('${user._id}')">
+                        <i class="bi bi-search"></i>
+                    </button>
+                    <button class="btn btn-secondary btn-sm" onclick="editUser('${user._id}')">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                    <button class="btn btn-danger btn-sm" onclick="deleteUser('${user._id}')">
+                        <i class="bi bi-trash3-fill"></i>
+                    </button>
+                `;
+            }
 
             let rol = rolUsuario(user.rol);
             let fecha = new Date(user.alta);
@@ -30,6 +117,7 @@ async function loadUsers() {
                 <td class="text-center">${user.preguntas}</td>
                 <td class="text-center">${barraPreguntas}</td>
                 <td class="text-center">${tiempo}</td>
+                <td class="text-center">${botones}</td>
             `;
             tableBody.appendChild(row);
         });
@@ -45,7 +133,8 @@ async function loadUsers() {
                 { 
                     targets: [4, 6], type: 'num',  // Asegura que las columnas de partidas y preguntas se ordenen como número
                     targets: [8], type: 'time-uni', // Asegura que la columna de tiempo se ordene como número con formato
-                    targets: [2], type: 'date'     // Asegura que la columna de fecha se ordene como fecha
+                    targets: [2], type: 'date',    // Asegura que la columna de fecha se ordene como fecha
+                    orderable: false, targets: 9  // Deshabilitar ordenamiento en la columna de acciones
                 } 
             ],
             language: {
