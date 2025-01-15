@@ -97,7 +97,7 @@ router.delete('/tarjetas/:id', async (req, res) => {
 });
 
 // Ruta para eliminar un usuario
-router.delete('/users/:id', async (req, res) => {
+router.delete('/user/:id', async (req, res) => {
     try { 
         // Buscar la tarjeta para obtener la ruta de la imagen
         const user = await User.findById(req.params.id);
@@ -107,6 +107,19 @@ router.delete('/users/:id', async (req, res) => {
 
         // Buscar y eliminar el usuario pasado como parámetro
         await User.findByIdAndDelete(req.params.id);
+
+        return res.status(200).json({ success: true, msg: 'success' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, msg: 'error' });
+    }
+});
+
+// Ruta para eliminar todos los usuarios menos los administradores
+router.delete('/users', async (req, res) => {
+    try {
+        // Buscar y eliminar todos los usuarios menos los administradores
+        await User.deleteMany({ rol: { $ne: 'PROFESOR' } });
 
         return res.status(200).json({ success: true, msg: 'success' });
     } catch (error) {

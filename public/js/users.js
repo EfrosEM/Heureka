@@ -2,14 +2,18 @@ const messages = {
     es: {
         delete_success: "Usuario eliminado exitosamente.",
         delete_error: "Hubo un problema al eliminar el usuario.",
+        delete_all_success: "Todos los usuarios han sido eliminados exitosamente.",
+        delete_all_error: "Hubo un problema al eliminar los usuarios.",
+        password_error: "Contraseña incorrecta.",
     },
     en: {
         delete_success: "User deleted successfully.",
         delete_error: "There was a problem deleting the user.",
+        delete_all_success: "All users have been deleted successfully.",
+        delete_all_error: "There was a problem deleting the users.",
+        password_error: "Incorrect password.",
     }
 };
-
-const language = localStorage.getItem('selectedLanguage');
 
 // Verifica si hay un mensaje en sessionStorage
 const toastMessage = sessionStorage.getItem('toastMessage');
@@ -26,6 +30,7 @@ if (toastMessage) {
 
 function showToast(messageKey, type) {
     // Obtiene el mensaje según el idioma
+    const language = localStorage.getItem('selectedLanguage');
     const message = messages[language][messageKey];
 
     let icon = "";

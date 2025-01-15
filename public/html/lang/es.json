@@ -150,6 +150,12 @@
     "tiempo": "Tiempo",
     "delete-usuario": "Eliminar usuario",
     "delete-usuario-confirm": "¿Estás seguro de que quieres eliminar este usuario?",
+    "delete-usuarios": "Eliminar usuarios",
+    "atencion": "¡ATENCIÓN!",
+    "delete-usuarios-confirm1": "Estás a punto de eliminar",
+    "todos": "TODOS",
+    "delete-usuarios-confirm2": "los usuarios a excepción de los administradores. ¿Estás seguro de que quieres hacerlo?",
+    "introduce-contraseña": "Introduce tu contraseña para confirmar la acción:",
 
 
     "tarjetas": "Tarjetas de juego",

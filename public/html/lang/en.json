@@ -150,6 +150,12 @@
     "tiempo": "Time",
     "delete-usuario": "Delete user",
     "delete-usuario-confirm": "Are you sure you want to delete this user?",
+    "delete-usuarios": "Delete users",
+    "atencion": "ATTENTION!",
+    "delete-usuarios-confirm1": "You are about to delete",
+    "todos": "ALL",
+    "delete-usuarios-confirm2": "users except administrators. Are you sure you want to do it?",
+    "introduce-contraseña": "Enter your password to confirm the action:",
 
 
     "tarjetas": "Game cards",

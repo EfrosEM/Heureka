@@ -100,6 +100,11 @@
           </table>
         </div>
       </div>
+      <div class="card-footer text-end bg-dark text-white">
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteUsersModal">
+          <i class="bi bi-person-x-fill"></i>&nbsp;&nbsp;<span data-i18n="delete-usuarios"></span>
+        </button>
+      </div>
     </div>
 
     <!-- Modal para eliminar usuario -->
@@ -121,6 +126,41 @@
             </button>
             <button type="button" class="btn btn-danger" id="confirmDeleteButton">
               <i class="bi bi-trash"></i> <span data-i18n="eliminar"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para eliminar todos los usuarios -->
+    <div class="modal fade" id="deleteUsersModal" tabindex="-1" aria-labelledby="deleteUsersModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-dark text-light" data-bs-theme="dark">
+            <h5 class="modal-title" id="confirmDeleteModalLabel">
+              <i class="bi bi-exclamation-triangle-fill text-danger"></i>&nbsp;&nbsp;<span data-i18n="delete-usuarios"></span>
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <span class="text-danger fw-bold" data-i18n="atencion"></span>
+            <span class="fw-bold" data-i18n="delete-usuarios-confirm1"></span>
+            <span class="text-danger fw-bold" data-i18n="todos"></span>
+            <span class="fw-bold" data-i18n="delete-usuarios-confirm2"></span>
+
+            <div class="mb-3 mt-4">
+              <label for="password" class="form-label">
+                <strong><i class="bi bi-lock-fill"></i> <span data-i18n="introduce-contraseña"></span></strong>
+              </label>
+              <input type="password" class="form-control" id="password">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">
+              <i class="bi bi-x-lg"></i> <span data-i18n="cancel"></span>
+            </button>
+            <button type="button" class="btn btn-danger" id="confirmDeleteAllButton">
+              <i class="bi bi-trash"></i> <span data-i18n="delete-usuarios"></span>
             </button>
           </div>
         </div>

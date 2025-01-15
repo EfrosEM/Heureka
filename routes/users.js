@@ -176,5 +176,31 @@ router.delete('/delete', async (req, res) => {
     }
 });
 
+// Ruta para comprobación de contraseña
+router.post('/check-password', async (req, res) => {
+    const userId = req.user.id;
+    const { password } = req.body;
+
+    try {
+        // Buscar usuario por ID
+        const user = await Usuario.findById(userId);
+        if (!user) {
+            return res.status(404).json({ success: false, message: "found" });
+        }
+
+        // Comparar la contraseña
+        const isMatch = await user.comparePassword(password);
+        if (isMatch) {
+            return res.status(200).json({ success: true, msg: 'success' });
+        } else {
+            return res.status(400).json({ success: false, msg: 'password' });
+        }
+
+    } catch (error) {
+        console.error('Error al comprobar contraseña:', error);
+        return res.status(500).json({ success: false, msg: 'error' });
+    }
+});
+
 module.exports = router;
 
