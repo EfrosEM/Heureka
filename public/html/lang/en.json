@@ -156,6 +156,7 @@
     "todos": "ALL",
     "delete-usuarios-confirm2": "users except administrators. Are you sure you want to do it?",
     "introduce-contraseña": "Enter your password to confirm the action:",
+    "editar-usuario": "Edit user data",
 
 
     "tarjetas": "Game cards",

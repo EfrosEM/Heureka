@@ -107,6 +107,61 @@
       </div>
     </div>
 
+    <!-- Modal para editar usuario -->
+    <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header bg-dark" data-bs-theme="dark">
+                  <h5 class="modal-title text-light" id="editProfileModalLabel">
+                    <i class="bi bi-pencil-square"></i>&nbsp;&nbsp;<span data-i18n="editar-usuario"></span>
+                  </h5>
+                  <button type="button" class="btn-close text-light" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <form id="editProfileForm">
+                    <div class="row mb-3">
+                      <div class="mb-3">
+                          <label for="editUsername" class="form-label">
+                            <strong><i class="bi bi-person-fill"></i> <span data-i18n="user-name"></span></strong>
+                          </label>
+                          <input type="text" class="form-control" id="editUsername" required>
+                      </div>
+                      <div class="mb-3">
+                          <label for="editEmail" class="form-label">
+                            <strong><i class="bi bi-envelope-fill"></i> Email</strong>
+                          </label>
+                          <input type="email" class="form-control" id="editEmail" required>
+                      </div>
+                      <div class="mb-3 col-md-6">
+                        <label for="editPoints" class="form-label">
+                          <strong><i class="bi bi-star-fill"></i> <span data-i18n="points"></span></strong>
+                        </label>
+                        <input type="number" class="form-control" id="editPoints" required>
+                      </div>
+                      <div class="mb-3 col-md-6">
+                          <label for="editRol" class="form-label">
+                            <strong><i class="bi bi-gear-fill"></i> <span data-i18n="rol"></span></strong>
+                          </label>
+                          <select class="form-select" id="editRol" required>
+                            <option value="PROFESOR" data-i18n="profesor"></option>
+                            <option value="ALUMNO" data-i18n="alumno"></option>
+                          </select>
+                      </div>
+                    </div>
+                      <div class="text-end mt-4">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                          <i class="bi bi-x-lg"></i>&nbsp;&nbsp;<span data-i18n="cancel"></span>
+                        </button>
+                        <button type="submit" class="btn btn-primary" id="saveUserButton">
+                          <i class="bi bi-save"></i>&nbsp;&nbsp;<span data-i18n="save"></span>
+                        </button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+    </div>
+
     <!-- Modal para eliminar usuario -->
     <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -239,6 +294,8 @@
   <script src="/js/users.js"></script>
   <!-- Script para eliminar usuarios -->
   <script src="/js/delete-user.js"></script>
+  <!-- Script para editar usuarios -->
+  <script src="/js/edit-user.js"></script>
   <!-- Script para añadir al header enlaces en funcion del rol -->
   <script src="/js/header.js"></script>
 

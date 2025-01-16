@@ -128,4 +128,34 @@ router.delete('/users', async (req, res) => {
     }
 });
 
+// Ruta para obtener un usuario por su ID
+router.get('/user/:id', async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        if (!user) {
+            return res.status(404).json({ success: false, msg: 'Usuario no encontrado' });
+        }
+
+        res.status(200).json({ success: true, user: user });
+    } catch (error) {
+        console.error("Error al obtener usuario:", error);
+        res.status(500).json({ message: 'Error al obtener el usuario' });
+    }
+}); 
+
+// Ruta para editar un usuario
+router.put('/user/:id', async (req, res) => {
+    const { user, email, points, rol } = req.body;
+    try {
+        const updatedUser = await User.findByIdAndUpdate(req.params.id, { user, email, points, rol }, { new: true });
+        if (!updatedUser) {
+            return res.status(404).json({ success: false, msg: 'Usuario no encontrado' });
+        }
+        res.status(200).json({ success: true, updatedUser });
+    } catch (error) {
+        console.error("Error al editar usuario:", error);
+        res.status(500).json({ success: false, message: 'Error al editar el usuario' });
+    }
+});
+
 module.exports = router;

@@ -5,6 +5,8 @@ const messages = {
         delete_all_success: "Todos los usuarios han sido eliminados exitosamente.",
         delete_all_error: "Hubo un problema al eliminar los usuarios.",
         password_error: "Contraseña incorrecta.",
+        edit_success: "Datos del usuario actualizados exitosamente.",
+        edit_error: "Hubo un problema al actualizar los datos del usuario.",
     },
     en: {
         delete_success: "User deleted successfully.",
@@ -12,6 +14,8 @@ const messages = {
         delete_all_success: "All users have been deleted successfully.",
         delete_all_error: "There was a problem deleting the users.",
         password_error: "Incorrect password.",
+        edit_success: "User data updated successfully.",
+        edit_error: "There was a problem updating the user data.",
     }
 };
 
