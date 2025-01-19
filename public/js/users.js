@@ -99,9 +99,6 @@ async function loadUsers() {
             let botones ="";
             if(user.user != usuario.user) { // No mostrar botones para el usuario actual
                 botones = `
-                    <button class="btn btn-secondary btn-sm" onclick="infoUser('${user._id}')">
-                        <i class="bi bi-search"></i>
-                    </button>
                     <button class="btn btn-secondary btn-sm" onclick="editUser('${user._id}')">
                         <i class="bi bi-pencil-square"></i>
                     </button>
