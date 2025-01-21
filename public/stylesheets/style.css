@@ -577,3 +577,17 @@ th {
 .card, .alert, .toast {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
+
+.alert-container {
+  display: inline-block; /* Ajusta al ancho del contenido más grande */
+  margin: 0 auto; /* Centra horizontalmente el contenedor */
+  text-align: center; /* Centra el texto dentro del contenedor */
+}
+
+.alert {
+  display: block; /* Las alertas estarán una encima de la otra */
+  padding: 10px; /* Espaciado interno (padding) */
+  margin-bottom: 10px; /* Separación entre las alertas */
+  width: 100%; /* Ajusta dinámicamente al ancho del contenedor */
+  box-sizing: border-box; /* Incluye padding en el ancho total */
+}

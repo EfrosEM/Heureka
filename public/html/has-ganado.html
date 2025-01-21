@@ -66,22 +66,25 @@
             <span class="text-primary fw-bold">{{tiempo}}</span>.
           </p>
           
-          <!-- Puntos -->
-          <div class="alert alert-primary d-inline-block mx-auto me-2" role="alert" style="width: fit-content;">
-            <strong>
-              <i class="bi bi-star-fill text-warning"></i> 
-              <span data-i18n="has-conseguido"></span> 
-              <span class="text-primary fw-bold">{{puntos}}</span>
-            </strong>
+          <div class="alert-container">
+            <!-- Puntos -->
+            <div class="alert alert-primary" role="alert">
+              <strong>
+                <i class="bi bi-star-fill text-warning"></i> 
+                <span data-i18n="has-conseguido"></span> 
+                <span class="text-primary fw-bold">{{puntos}}</span>
+              </strong>
+            </div>
+            
+            <!-- Bonus -->
+            <div class="alert alert-warning mt-3" role="alert">
+              <strong>
+                <i class="bi bi-trophy-fill text-warning"></i>  
+                <span data-i18n="bonus"></span>
+              </strong>
+            </div>
           </div>
-          
-          <!-- Bonus -->
-          <div class="alert alert-warning d-inline-block mx-auto mt-3" role="alert" style="width: fit-content;">
-            <strong>
-              <i class="bi bi-trophy-fill text-warning"></i>  
-              <span data-i18n="bonus"></span>
-            </strong>
-          </div>
+
           {{else}}
           <!-- Sin aciertos -->
           <p class="h5 mb-4 text-danger">
