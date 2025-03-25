@@ -1,6 +1,6 @@
 import {Controlador} from './controller/controlador.js';
 
-const BONUS_PUNTOS = 100;
+const BONUS_PUNTOS = calcularBonusPuntos(); // Bonus de puntos por ganar la partida
 
 let controlador = null;
 let translations = {};  // Aquí se almacenarán las traducciones cargadas
@@ -53,6 +53,27 @@ function cambiarIdioma(nuevoIdioma) {
     });
 }
 
+// Obtener la dificultad del juego desde la URL
+function obtenerDificultadDesdeURL() {
+    let path = window.location.pathname; // Obtiene la ruta actual, ej. "/game-intermediate.html"
+    
+    if (path.includes("game-intermediate")) return "intermedio";
+    if (path.includes("game-advanced")) return "avanzado";
+    return "principiante"; // Si es "game.html" o cualquier otro caso
+}
+
+// Calcular bonus de puntos por ganar la partida
+function calcularBonusPuntos() {
+    const dificultad = obtenerDificultadDesdeURL();
+    if (dificultad === "intermedio") {
+        return 200;
+    } else if (dificultad === "avanzado") {
+        return 300;
+    } else {
+        return 100;
+    }
+}
+
 function inicializarPagina() {
     // Deshabilitar botón por defecto
     $("#boton-accion").prop("disabled", true);
@@ -68,7 +89,8 @@ function inicializarPagina() {
             $('#cargando').hide();
             let mazoTarjetas = result.tarjetas;
             let infoHeuristicas = result.heuristicas;
-            controlador = new Controlador(mazoTarjetas, infoHeuristicas);
+            let dificultad = obtenerDificultadDesdeURL(); // Obtiene la dificultad desde la URL
+            controlador = new Controlador(mazoTarjetas, infoHeuristicas, dificultad);
             setupPartida();
         },
         error: function(xhr, status, error) {
@@ -389,12 +411,14 @@ function terminarPartida(haGanado) {
     const total = controlador.getNumPreguntadas();
     const tiempo = controlador.leerValorCronometro();
     const puntos = controlador.getPuntosActuales();
+    const bonus = haGanado ? BONUS_PUNTOS : 0;
 
     let queryString = 
         `?acertadas=${encodeURIComponent(acertadas)}`
         +`&total=${encodeURIComponent(total)}`
         +`&tiempo=${encodeURIComponent(cronometroToString(tiempo))}`
-        +`&puntos=${encodeURIComponent(puntos)}`;
+        +`&puntos=${encodeURIComponent(puntos)}`
+        +`&bonus=${encodeURIComponent(bonus)}`;
 
     if (haGanado) {
         // Se actualizan las estadísticas del usuario con un bonus de puntos por ganar la partida

@@ -7,12 +7,14 @@ $(document).ready( () => {
     const total = getParameterByName('total');
     const tiempo = getParameterByName('tiempo');
     const puntos = getParameterByName('puntos');
+    const bonus = getParameterByName('bonus');
 
     var contexto = {
         "acertadas" : acertadas,
         "total" : total,
         "tiempo" : tiempo,
         "puntos" : puntos,
+        "bonus" : bonus
     };
 
     $(".feedback").html(plantillaFeedbackCompilada(contexto));

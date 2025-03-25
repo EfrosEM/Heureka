@@ -2,8 +2,8 @@ import { Partida } from '../model/Partida.js';
 
 export class Controlador {
 
-    constructor(mazoTarjetas, infoHeuristicas) {
-        this.partidaActual = new Partida(mazoTarjetas, infoHeuristicas);
+    constructor(mazoTarjetas, infoHeuristicas, dificultad) {
+        this.partidaActual = new Partida(mazoTarjetas, infoHeuristicas, dificultad);
         this.ultimoTiempoRespuesta = 0;  // Tiempo en segundos del último cálculo de puntos
     }
 
@@ -60,9 +60,20 @@ export class Controlador {
     }
 
     calcularPuntos() {
-        // TODO: Calcular la cantidad de puntos en función de la dificultad
+        // Calcular la cantidad de puntos en función de la dificultad
+        let puntosDificultad = 100;
+        let minimosDificultad = 10;
+        if (this.partidaActual.dificultad == "intermedio") {
+            puntosDificultad = 200;
+            minimosDificultad = 50;
+        }
+        else if (this.partidaActual.dificultad == "avanzado") {
+            puntosDificultad = 300;
+            minimosDificultad = 100;
+        }
+
         // Puntos base (máximos que se pueden obtener si se responde rápido)
-        const puntosBase = 100;
+        const puntosBase = puntosDificultad;
 
         // Leer el tiempo actual de partida
         const tiempoActual = this.partidaActual.getSegundos();
@@ -75,7 +86,7 @@ export class Controlador {
         let puntosObtenidos = Math.round(puntosBase * (1 - penalizacion));
 
         // Asegurar un mínimo de puntos
-        puntosObtenidos = Math.max(10, puntosObtenidos);
+        puntosObtenidos = Math.max(minimosDificultad, puntosObtenidos);
 
         // Actualizar el último tiempo de respuesta para la próxima pregunta
         this.ultimoTiempoRespuesta = tiempoActual;

@@ -3,7 +3,7 @@ import { Cronometro } from './Cronometro.js';
 
 export class Partida {
 
-    constructor(mazoTarjetas, infoHeuristicas) {
+    constructor(mazoTarjetas, infoHeuristicas, dificultad) {
         this.mazoTarjetas = mazoTarjetas;
         this.infoHeuristicas = infoHeuristicas;
         this.preguntasHechas = [];
@@ -12,6 +12,7 @@ export class Partida {
         this.numAcertadas = 0;
         this.cronometro = new Cronometro();
         this.puntos = 0;
+        this.dificultad = dificultad;
     }
 
     nuevaPregunta() {

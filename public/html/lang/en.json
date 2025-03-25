@@ -79,7 +79,8 @@
     "de": " of ",
     "preguntas-en": " questions in ",
     "has-conseguido": "You have obtained a score of",
-    "bonus": "Bonus for winning the game: +100 points",
+    "bonus": "Bonus for winning the game: +",
+    "puntos": "points",
 
 
     "definicion": "Show definition ➕",
