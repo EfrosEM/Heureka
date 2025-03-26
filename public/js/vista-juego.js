@@ -137,13 +137,28 @@ function setupPartida() {
 function actualizarVidas() {
     const plantillaVidas = $("#plantilla-vidas").html();
     const plantillaVidasCompilada = Handlebars.compile(plantillaVidas);
+    const dificultad = obtenerDificultadDesdeURL();
 
     let cadenaVidas = "";
-    switch(controlador.getNumVidasActuales()) {
-        case 0: cadenaVidas = "<span id=\"ultima-vida\">💀</span>💀💀"; break;
-        case 1: cadenaVidas = "❤️<span id=\"ultima-vida\">💀</span>💀"; break;
-        case 2: cadenaVidas = "❤️❤️<span id=\"ultima-vida\">💀</span>"; break;
-        case 3: cadenaVidas = "❤️❤️❤️"; break;
+
+    if (dificultad === "principiante") {
+        switch(controlador.getNumVidasActuales()) {
+            case 0: cadenaVidas = "<span id=\"ultima-vida\">💀</span>💀💀"; break;
+            case 1: cadenaVidas = "❤️<span id=\"ultima-vida\">💀</span>💀"; break;
+            case 2: cadenaVidas = "❤️❤️<span id=\"ultima-vida\">💀</span>"; break;
+            case 3: cadenaVidas = "❤️❤️❤️"; break;
+        }
+    }else if (dificultad === "intermedio") {
+        switch(controlador.getNumVidasActuales()) {
+            case 0: cadenaVidas = "<span id=\"ultima-vida\">💀</span>💀"; break;
+            case 1: cadenaVidas = "❤️<span id=\"ultima-vida\">💀</span>"; break;
+            case 2: cadenaVidas = "❤️❤️"; break;
+        }
+    }else if (dificultad === "avanzado") {
+        switch(controlador.getNumVidasActuales()) {
+            case 0: cadenaVidas = "<span id=\"ultima-vida\">💀</span>"; break;
+            case 1: cadenaVidas = "❤️"; break;
+        }
     }
 
     var contexto = {

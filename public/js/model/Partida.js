@@ -8,11 +8,20 @@ export class Partida {
         this.infoHeuristicas = infoHeuristicas;
         this.preguntasHechas = [];
         this.preguntaActual = null;
-        this.numVidasActuales = 3;
         this.numAcertadas = 0;
         this.cronometro = new Cronometro();
         this.puntos = 0;
         this.dificultad = dificultad;
+        // Número de vidas iniciales
+        if (dificultad == "principiante") {
+            this.numVidasActuales = 3;
+        }
+        else if (dificultad == "intermedio") {
+            this.numVidasActuales = 2;
+        }
+        else if (dificultad == "avanzado") {
+            this.numVidasActuales = 1;
+        }
     }
 
     nuevaPregunta() {
