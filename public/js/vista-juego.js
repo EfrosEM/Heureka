@@ -427,6 +427,7 @@ function terminarPartida(haGanado) {
     const tiempo = controlador.leerValorCronometro();
     const puntos = controlador.getPuntosActuales();
     const bonus = haGanado ? BONUS_PUNTOS : 0;
+    const avanzarNivel = haGanado;
 
     let queryString = 
         `?acertadas=${encodeURIComponent(acertadas)}`
@@ -437,12 +438,12 @@ function terminarPartida(haGanado) {
 
     if (haGanado) {
         // Se actualizan las estadísticas del usuario con un bonus de puntos por ganar la partida
-        actualizarStats(puntos, total, acertadas, tiempoEnSegundos(tiempo), BONUS_PUNTOS);
+        actualizarStats(puntos, total, acertadas, tiempoEnSegundos(tiempo), BONUS_PUNTOS, avanzarNivel);
 
         window.location.href = "has-ganado.html" + queryString;
     } else {
         // Se actualizan las estadísticas del usuario
-        actualizarStats(puntos, total, acertadas, tiempoEnSegundos(tiempo), 0);
+        actualizarStats(puntos, total, acertadas, tiempoEnSegundos(tiempo), 0, avanzarNivel);
 
         window.location.href = "has-perdido.html" + queryString;
     }
@@ -549,13 +550,14 @@ function clicTarjeta(event) {
     }
 }
 
-async function actualizarStats(puntos, preguntas, aciertos, tiempo, bonus) {
+async function actualizarStats(puntos, preguntas, aciertos, tiempo, bonus, avanzarNivel) {
     const data = {
         points: puntos,
         preguntas: preguntas,
         aciertos: aciertos,
         tiempo: tiempo,
-        bonus: bonus
+        bonus: bonus,
+        avanzar: avanzarNivel,
     };
 
     const response = await fetch('/stats', {
