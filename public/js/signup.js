@@ -1,4 +1,7 @@
-const { USERNAME_MAX_LENGTH, PASSWORD_MIN_LENGTH } = require('../config/config.js');
+//const { USERNAME_MAX_LENGTH, PASSWORD_MIN_LENGTH } = require('../../config/config.js');
+// FIXME
+const USERNAME_MAX_LENGTH = 30; // Máximo de caracteres para el nombre de usuario
+const PASSWORD_MIN_LENGTH = 8; // Mínimo de caracteres para la contraseña
 
 // Escuchar el evento submit del formulario
 document.getElementById('signup-form').addEventListener('submit', async function(event) {
