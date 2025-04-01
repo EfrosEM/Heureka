@@ -591,3 +591,15 @@ th {
   width: 100%; /* Ajusta dinámicamente al ancho del contenedor */
   box-sizing: border-box; /* Incluye padding en el ancho total */
 }
+
+.legend-label {
+  display: inline-block;
+  width: inherit;
+  padding: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: inherit;
+  border-bottom: inherit;
+  max-width: 100%;
+  margin-bottom: 5px;
+}

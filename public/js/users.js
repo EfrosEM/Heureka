@@ -99,10 +99,10 @@ async function loadUsers() {
             let botones ="";
             if(user.user != usuario.user) { // No mostrar botones para el usuario actual
                 botones = `
-                    <button class="btn btn-secondary btn-sm" onclick="editUser('${user._id}')">
+                    <button class="btn btn-secondary btn-sm" onclick="editUser('${user._id}')" aria-label="Edit user">
                         <i class="bi bi-pencil-square"></i>
                     </button>
-                    <button class="btn btn-danger btn-sm" onclick="deleteUser('${user._id}')">
+                    <button class="btn btn-danger btn-sm" onclick="deleteUser('${user._id}')" aria-label="Delete user">
                         <i class="bi bi-trash3-fill"></i>
                     </button>
                 `;
