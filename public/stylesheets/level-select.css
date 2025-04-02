@@ -84,8 +84,6 @@
   }
   
   .radio-input {
-    clip: rect(0 0 0 0);
-    -webkit-clip-path: inset(100%);
     clip-path: inset(100%);
     height: 1px;
     overflow: hidden;
