@@ -81,19 +81,22 @@ async function loadTarjetas() {
         const tableBody = document.getElementById('tarjetas-table-body');
         tableBody.innerHTML = ''; // Limpiar la tabla antes de llenarla
 
+        let n = 0;
+
         // Rellenar la tabla con las tarjetas
         tarjetas.forEach((tarjeta) => {
             const texto = language === 'en' ? tarjeta.text : tarjeta.texto;
 
+
             let icono = "";
             if(tarjeta.esBuenEjemplo){
-                icono = '<h2><i class="bi bi-check-circle-fill text-success"></i></h2>';
+                icono = '<i class="bi bi-check-circle-fill text-success h2"></i>';
             }
             else{
-                icono = '<h2><i class="bi bi-x-circle-fill text-danger"></i></h2>';
+                icono = '<i class="bi bi-x-circle-fill text-danger h2"></i>';
             }
 
-            const imagen = '<img src="' + tarjeta.imagen + '" class="img-thumbnail" alt="Imagen de la tarjeta" style="max-width: 200px; max-height: 200px;">';
+            const imagen = '<img src="' + tarjeta.imagen + '" class="img-thumbnail" alt="Imagen de la tarjeta '+n+'" style="max-width: 200px; max-height: 200px;">';
 
             const row = document.createElement('tr');
             row.innerHTML = `
@@ -101,9 +104,10 @@ async function loadTarjetas() {
                 <td class="text-center">${texto}</td>
                 <td class="text-center">${icono}</td>
                 <td class="text-center">${imagen}</td>
-                <td class="text-center"><button class="btn btn-danger" onclick="deleteTarjeta('${tarjeta._id}')"><i class="bi bi-trash3-fill"></i></button></td>
+                <td class="text-center"><button class="btn btn-danger" onclick="deleteTarjeta('${tarjeta._id}')" aria-label="Borrar tarjeta"><i class="bi bi-trash3-fill"></i></button></td>
             `;
             tableBody.appendChild(row);
+            n++;
         });
         
         // Inicializar DataTables después de llenar la tabla

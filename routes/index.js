@@ -38,6 +38,14 @@ router.get('/game.html', ensureAuthenticated, authorizeRoles('PROFESOR','ALUMNO'
     res.sendFile(path.join(__dirname, '../public/html/game.html'));
 });
 
+router.get('/game-intermediate.html', ensureAuthenticated, authorizeRoles('PROFESOR','ALUMNO'), (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/html/game-intermediate.html'));
+});
+
+router.get('/game-advanced.html', ensureAuthenticated, authorizeRoles('PROFESOR','ALUMNO'), (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/html/game-advanced.html'));
+});
+
 router.get('/has-ganado.html', ensureAuthenticated, authorizeRoles('PROFESOR','ALUMNO'), (req, res) => {
     res.sendFile(path.join(__dirname, '../public/html/has-ganado.html'));
 });
@@ -68,6 +76,10 @@ router.get('/users.html', ensureAuthenticated, authorizeRoles('PROFESOR'), (req,
 
 router.get('/tarjetas.html', ensureAuthenticated, authorizeRoles('PROFESOR'), (req, res) => {
     res.sendFile(path.join(__dirname, '../public/html/tarjetas.html'));
+});
+
+router.get('/level-select.html', ensureAuthenticated, authorizeRoles('PROFESOR','ALUMNO'), (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/html/level-select.html'));
 });
 
 module.exports = router;

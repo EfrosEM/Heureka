@@ -79,7 +79,8 @@
     "de": " of ",
     "preguntas-en": " questions in ",
     "has-conseguido": "You have obtained a score of",
-    "bonus": "Bonus for winning the game: +100 points",
+    "bonus": "Bonus for winning the game: +",
+    "puntos": "points",
 
 
     "definicion": "Show definition ➕",
@@ -124,6 +125,7 @@
     "rol": "Role",
     "alumno": "STUDENT",
     "profesor": "TEACHER",
+    "level": "Levels unlocked",
     "info": "User information",
     "stats": "Game statistics",
     "games": "Games played",
@@ -147,6 +149,15 @@
     "questions": "Questions",
     "aciertos/fallos": "Right/Wrong",
     "tiempo": "Time",
+    "delete-usuario": "Delete user",
+    "delete-usuario-confirm": "Are you sure you want to delete this user?",
+    "delete-usuarios": "Delete users",
+    "atencion": "ATTENTION!",
+    "delete-usuarios-confirm1": "You are about to delete",
+    "todos": "ALL",
+    "delete-usuarios-confirm2": "users except administrators. Are you sure you want to do it?",
+    "introduce-contraseña": "Enter your password to confirm the action:",
+    "editar-usuario": "Edit user data",
 
 
     "tarjetas": "Game cards",
@@ -162,5 +173,12 @@
     "actions": "Actions",
     "delete-tarjeta": "Delete game card",
     "delete-tarjeta-confirm": "Are you sure you want to delete this game card?",
-    "eliminar": "Delete"
+    "eliminar": "Delete",
+
+
+    "principiante": "Beginner",
+    "intermedio": "Intermediate",
+    "avanzado": "Advanced",
+    "nivel": "Select the difficulty level",
+    "comenzar": "Start"
 }

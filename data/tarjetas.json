@@ -4,14 +4,14 @@
         "esBuenEjemplo": true,
         "texto" : "Marcar con un tic y cambiar el color de las opciones seleccionadas",
         "text" : "Mark and change the color of the selected options",
-        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-1.png"
+        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-1.webp"
     },
     {
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "Indicador de progreso para que el usuario sepa que el sistema sigue funcionando",
         "text" : "Progress indicator to let the user know that the system is still running",
-        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-2.png"
+        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-2.webp"
     },
     { 
         "heuristica": 1,
@@ -25,84 +25,84 @@
         "esBuenEjemplo": true,
         "texto" : "Mostrar el mensaje 'Pocas unidades' al pasar el ratón por una talla",
         "text" : "Display 'Low Stock' message when hovering over a size",
-        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-4.png"
+        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-4.webp"
     },
     { 
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "Mostrar las tallas agotadas tachadas y con un color más apagado",
         "text" : "Show sold-out sizes crossed out and in a duller color",
-        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-4.png"
+        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-4.webp"
     },
     { 
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "Una barra superior indicando cuánto dinero queda para conseguir gastos de envío gratis",
         "text" : "A top bar indicating how much money is left to get free shipping",
-        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-5.png"
+        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-5.webp"
     },
     { 
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "Seguir mostrando los artículos agotados de la lista de deseos, señalizándolos como tal",
         "text" : "Continue to display out-of-stock wish list items, marking them as such",
-        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-6.png"
+        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-6.webp"
     },
     { 
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "Cuando pulsas el botón para llamar al ascensor, se ilumina",
         "text" : "When you press the button to call the elevator, it lights up",
-        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-7.png"
+        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-7.webp"
     },
     { 
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "Encima del ascensor se indica por qué piso va",
         "text" : "Above the elevator it indicates in which floor it is",
-        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-8.png"
+        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-8.webp"
     },
     { 
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "Barra superior del móvil indicando nivel de señal Wi-Fi, batería, etc.",
         "text" : "Top bar of the mobile indicating Wi-Fi signal level, battery, etc.",
-        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-9.png"
+        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-9.webp"
     },
     { 
         "heuristica": 1,
         "esBuenEjemplo": true,
         "texto" : "En un videojuego se indica permanentemente el estado de salud con corazones",
         "text" : "In a video game, the health status is permanently indicated with hearts",
-        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-10.png"
+        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-10.webp"
     },
     { 
         "heuristica": 2,
         "esBuenEjemplo": true,
         "texto" : "La web de un hospital usa lenguaje sencillo para describir los tipos de atención médica",
         "text" : "A hospital website uses simple language to describe types of medical care",
-        "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-1.png"
+        "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-1.webp"
     },
     { 
         "heuristica": 2,
         "esBuenEjemplo": true,
         "texto" : "La interfaz de una brújula digital imita el aspecto de una brújula real",
         "text" : "The interface of a digital compass mimics the look of a real compass",
-        "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-2.png"
+        "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-2.webp"
     },
     { 
         "heuristica": 2,
         "esBuenEjemplo": true,
         "texto" : "Los botones de volumen de los auriculares están colocados de forma análoga al resultado: arriba el de subir y abajo el de bajar",
         "text" : "The volume buttons on the headphones are placed in the same way as the result: above is the volume up button and below is the volume down button",
-        "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-3.png"
+        "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-3.webp"
     },
     { 
         "heuristica": 2,
         "esBuenEjemplo": true,
         "texto" : "Seleccionar texto en una web de artículos simula el subrayar con rotulador fosforito sobre papel",
         "text" : "Selecting text on a web page of articles simulates highlighting with a highlighter pen on paper",
-        "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-4.png"
+        "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-4.webp"
     },
     { 
         "heuristica": 2,
@@ -116,210 +116,210 @@
         "esBuenEjemplo": true,
         "texto" : "Marcar como favorita una página de un libro electrónico se señaliza simulando una esquina de papel doblada",
         "text" : "Bookmarking a page in an e-book is indicated by simulating a folded paper corner",
-        "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-6.png"
+        "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-6.webp"
     },
     { 
         "heuristica": 2,
         "esBuenEjemplo": true,
         "texto" : "Las armas de un juego se corresponden a armas reales",
         "text" : "Weapons in a game correspond to real weapons",
-        "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-7.png"
+        "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-7.webp"
     },
     { 
         "heuristica": 2,
         "esBuenEjemplo": true,
         "texto" : "En una app de colorear para niños, la acción de deshacer sigue el modelo mental de un cuaderno de colorear (una goma de borrar)",
         "text" : "In a coloring app for kids, the undo action follows the mental model of a coloring book (an eraser)",
-        "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-8.png"
+        "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-8.webp"
     },
     { 
         "heuristica": 2,
         "esBuenEjemplo": true,
         "texto" : "En un juego de cocinar para niños, se pone la pasta en la olla arrastrándola y se se cocina haciendo clic en el fogón",
         "text" : "In a cooking game for kids, you put the pasta into the pot by dragging it and cook it by clicking on the stove",
-        "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-9.png"
+        "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-9.webp"
     },
     { 
         "heuristica": 2,
         "esBuenEjemplo": false,
         "texto" : "Una web sobre software legal usa lenguaje enrevesado, excesivamente técnico",
         "text" : "A website about legal software uses convoluted, overly technical language",
-        "imagen" : "images/tarjetas/heuristica-2-mal-ejemplo-1.png"
+        "imagen" : "images/tarjetas/heuristica-2-mal-ejemplo-1.webp"
     },
     { 
         "heuristica": 2,
         "esBuenEjemplo": false,
         "texto" : "La forma de pasar imágenes en una galería no es estándar ni simula la vida real. Los botones son semicírculos grises no parecen flechas",
         "text" : "The way you scroll through images in a gallery is not standard and does not simulate real life. The buttons are grey semicircles and do not look like arrows",
-        "imagen" : "images/tarjetas/heuristica-2-mal-ejemplo-2.png"
+        "imagen" : "images/tarjetas/heuristica-2-mal-ejemplo-2.webp"
     },
     { 
         "heuristica": 2,
         "esBuenEjemplo": false,
         "texto" : "La web de una oficina de aduanas tiene notificaciones complejas y difíciles de entender en la página principal",
         "text" : "A customs office website has complex and difficult to understand notifications on the main page",
-        "imagen" : "images/tarjetas/heuristica-2-mal-ejemplo-3.png"
+        "imagen" : "images/tarjetas/heuristica-2-mal-ejemplo-3.webp"
     },
     { 
         "heuristica": 3,
         "esBuenEjemplo": true,
         "texto" : "Los navegadores tienen un botón para volver a la página anterior",
         "text" : "Browsers have a button to return to the previous page",
-        "imagen" : "images/tarjetas/heuristica-3-buen-ejemplo-1.png"
+        "imagen" : "images/tarjetas/heuristica-3-buen-ejemplo-1.webp"
     },
     { 
         "heuristica": 3,
         "esBuenEjemplo": true,
         "texto" : "Un proceso de creación con un botón para cancelarlo en cualquier momento",
         "text" : "A creation process with a button to cancel it at any time",
-        "imagen" : "images/tarjetas/heuristica-3-buen-ejemplo-2.png"
+        "imagen" : "images/tarjetas/heuristica-3-buen-ejemplo-2.webp"
     },
     { 
         "heuristica": 3,
         "esBuenEjemplo": true,
         "texto" : "Un juego de ajedrez que permite deshacer el último movimiento",
         "text" : "A chess game that allows you to undo your last move",
-        "imagen" : "images/tarjetas/heuristica-3-buen-ejemplo-3.png"
+        "imagen" : "images/tarjetas/heuristica-3-buen-ejemplo-3.webp"
     },
     { 
         "heuristica": 4,
         "esBuenEjemplo": true,
         "texto" : "Un videojuego sigue la convención en Xbox de usar el botón A para saltar",
         "text" : "A video game follows the Xbox convention of using the A button to jump",
-        "imagen" : "images/tarjetas/heuristica-4-buen-ejemplo-1.png"
+        "imagen" : "images/tarjetas/heuristica-4-buen-ejemplo-1.webp"
     },
     { 
         "heuristica": 4,
         "esBuenEjemplo": true,
         "texto" : "Amazon sigue la convención en comercios electrónicos de poner el carrito en la esquina superior derecha",
         "text" : "Amazon follows the e-commerce convention of placing the cart in the upper right corner",
-        "imagen" : "images/tarjetas/heuristica-4-buen-ejemplo-2.png"
+        "imagen" : "images/tarjetas/heuristica-4-buen-ejemplo-2.webp"
     },
     { 
         "heuristica": 4,
         "esBuenEjemplo": false,
         "texto" : "Un videojuego no sigue la convención en Xbox de usar el botón A para saltar",
         "text" : "A video game does not follow the Xbox convention of using the A button to jump",
-        "imagen" : "images/tarjetas/heuristica-4-mal-ejemplo-1.png"
+        "imagen" : "images/tarjetas/heuristica-4-mal-ejemplo-1.webp"
     },
     { 
         "heuristica": 4,
         "esBuenEjemplo": false,
         "texto" : "Un título estático utiliza el mismo estilo (fondo amarillo) usado en el resto de la web solo para elementos accionables (botones, enlaces...)",
         "text" : "A static title uses the same style (yellow background) used in the rest of the website only for actionable elements (buttons, links...)",
-        "imagen" : "images/tarjetas/heuristica-4-mal-ejemplo-2.png"
+        "imagen" : "images/tarjetas/heuristica-4-mal-ejemplo-2.webp"
     },
     { 
         "heuristica": 5,
         "esBuenEjemplo": true,
         "texto" : "Diálogo de confirmación antes de salir de un juego",
         "text" : "Confirmation dialog before leaving a game",
-        "imagen" : "images/tarjetas/heuristica-5-buen-ejemplo-1.png"
+        "imagen" : "images/tarjetas/heuristica-5-buen-ejemplo-1.webp"
     },
     { 
         "heuristica": 5,
         "esBuenEjemplo": true,
         "texto" : "Un selector de fechas de ida y vuelta que imposibilita escoger una fecha de vuelta anterior a la de ida",
         "text" : "A round trip date selector that makes it impossible to choose a return date prior to the departure date",
-        "imagen" : "images/tarjetas/heuristica-5-buen-ejemplo-2.png"
+        "imagen" : "images/tarjetas/heuristica-5-buen-ejemplo-2.webp"
     },
     { 
         "heuristica": 5,
         "esBuenEjemplo": true,
         "texto" : "Para evitar que los usuarios se equivoquen al teclear una palabra difícil, Amazon muestra sugerencias de búsqueda clicables conforme tecleas un término de búsqueda",
         "text" : "To prevent users from mistyping a difficult word, Amazon displays clickable search suggestions as you type a search term",
-        "imagen" : "images/tarjetas/heuristica-5-buen-ejemplo-3.png"
+        "imagen" : "images/tarjetas/heuristica-5-buen-ejemplo-3.webp"
     },
     { 
         "heuristica": 5,
         "esBuenEjemplo": true,
         "texto" : "Al poner un recordatorio en una app de notas, las fechas por defecto son las opciones más comunes",
         "text" : "When setting a reminder in a notes app, default dates are the most common options",
-        "imagen" : "images/tarjetas/heuristica-5-buen-ejemplo-4.png"
+        "imagen" : "images/tarjetas/heuristica-5-buen-ejemplo-4.webp"
     },
     { 
         "heuristica": 5,
         "esBuenEjemplo": true,
         "texto" : "Conforme tecleas un número de teléfono, los números se separan en el formato adecuado para que te sea más fácil comprobar que es correcto",
         "text" : "As you type a phone number, the numbers are separated into the proper format to make it easier for you to check that it is correct",
-        "imagen" : "images/tarjetas/heuristica-5-buen-ejemplo-5.png"
+        "imagen" : "images/tarjetas/heuristica-5-buen-ejemplo-5.webp"
     },
     { 
         "heuristica": 5,
         "esBuenEjemplo": true,
         "texto" : "Como en iOS cambiar el zoom requiere reiniciar el móvil (una acción muy costosa), se muestra una previsualización del cambio",
         "text" : "Since changing the zoom on iOS requires restarting the phone (a very expensive action), a preview of the change is shown",
-        "imagen" : "images/tarjetas/heuristica-5-buen-ejemplo-6.png"
+        "imagen" : "images/tarjetas/heuristica-5-buen-ejemplo-6.webp"
     },
     { 
         "heuristica": 5,
         "esBuenEjemplo": true,
         "texto" : "Al intentar borrar unas fotos, el diálogo de confirmación indica el número de fotos que se borrarían y tiene un botón con la palabra \"Borrar\", más clara que \"Aceptar\"",
         "text" : "When trying to delete some photos, the confirmation dialog indicates the number of photos that would be deleted and has a button with the word \"Delete\" on it, which is clearer than \"OK\"",
-        "imagen" : "images/tarjetas/heuristica-5-buen-ejemplo-7.png"
+        "imagen" : "images/tarjetas/heuristica-5-buen-ejemplo-7.webp"
     },
     { 
         "heuristica": 5,
         "esBuenEjemplo": true,
         "texto" : "Gmail muestra un diálogo para deshacer la acción después de realizar cualquier acción destructiva, como borrar un correo",
         "text" : "Gmail displays an undo dialog after performing any destructive action, such as deleting an email",
-        "imagen" : "images/tarjetas/heuristica-5-buen-ejemplo-8.png"
+        "imagen" : "images/tarjetas/heuristica-5-buen-ejemplo-8.webp"
     },
     { 
         "heuristica": 5,
         "esBuenEjemplo": true,
         "texto" : "Twitter te avisa de cuántos caracteres te quedan antes de que te pases",
         "text" : "Twitter tells you how many characters you have left before you go over",
-        "imagen" : "images/tarjetas/heuristica-5-buen-ejemplo-9.png"
+        "imagen" : "images/tarjetas/heuristica-5-buen-ejemplo-9.webp"
     },
     { 
         "heuristica": 6,
         "esBuenEjemplo": true,
         "texto" : "Para que los usuarios no tengan que recordar el nombre completo de un producto, Amazon muestra sugerencias de búsqueda clicables conforme tecleas un término de búsqueda",
         "text" : "To help users avoid having to remember the full name of a product, Amazon displays clickable search suggestions as you type a search term",
-        "imagen" : "images/tarjetas/heuristica-6-buen-ejemplo-1.png"
+        "imagen" : "images/tarjetas/heuristica-6-buen-ejemplo-1.webp"
     },
     { 
         "heuristica": 6,
         "esBuenEjemplo": true,
         "texto" : "Un juego muestra permanentemente los controles contextuales en una esquina de la pantalla",
         "text" : "A game permanently displays contextual controls in a corner of the screen",
-        "imagen" : "images/tarjetas/heuristica-6-buen-ejemplo-2.png"
+        "imagen" : "images/tarjetas/heuristica-6-buen-ejemplo-2.webp"
     },
     { 
         "heuristica": 6,
         "esBuenEjemplo": true,
         "texto" : "Google muestra el historial de búsquedas al hacer clic en la barra de búsqueda",
         "text" : "Google shows search history when you click on the search bar",
-        "imagen" : "images/tarjetas/heuristica-6-buen-ejemplo-3.png"
+        "imagen" : "images/tarjetas/heuristica-6-buen-ejemplo-3.webp"
     },
     { 
         "heuristica": 6,
         "esBuenEjemplo": true,
         "texto" : "Amazon personaliza la página principal con los últimos artículos vistos por el usuario",
         "text" : "Amazon personalizes the home page with the latest items viewed by the user",
-        "imagen" : "images/tarjetas/heuristica-6-buen-ejemplo-4.png"
+        "imagen" : "images/tarjetas/heuristica-6-buen-ejemplo-4.webp"
     },
     { 
         "heuristica": 6,
         "esBuenEjemplo": true,
         "texto" : "Windows XP mostraba los últimos programas usados en el menú de inicio",
         "text" : "Windows XP displayed the last used programs in the start menu",
-        "imagen" : "images/tarjetas/heuristica-6-buen-ejemplo-5.png"
+        "imagen" : "images/tarjetas/heuristica-6-buen-ejemplo-5.webp"
     },
     { 
         "heuristica": 6,
         "esBuenEjemplo": false,
         "texto" : "El menú de una app de correo electrónico tiene iconos difíciles de asociar a su función",
         "text" : "The menu of an email app has icons that are difficult to associate with their function",
-        "imagen" : "images/tarjetas/heuristica-6-mal-ejemplo-1.png"
+        "imagen" : "images/tarjetas/heuristica-6-mal-ejemplo-1.webp"
     },
     { 
         "heuristica": 7,
         "esBuenEjemplo": true,
         "texto" : "En el juego Counter Strike se puede habilitar el cambio rápido entre armas con las teclas 1, 2, 3 y 4",
         "text" : "In the game Counter Strike you can enable quick switching between weapons with the 1, 2, 3 and 4 keys",
-        "imagen" : "images/tarjetas/heuristica-7-buen-ejemplo-1.png"
+        "imagen" : "images/tarjetas/heuristica-7-buen-ejemplo-1.webp"
     },
     { 
         "heuristica": 7,
@@ -333,105 +333,105 @@
         "esBuenEjemplo": true,
         "texto" : "Acceso directo a acciones comunes manteniendo pulsado un elemento, en lugar de tener que navegar a su vista detallada",
         "text" : "Shortcut to common actions by long-pressing an item, instead of having to navigate to its detailed view",
-        "imagen" : "images/tarjetas/heuristica-7-buen-ejemplo-3.png"
+        "imagen" : "images/tarjetas/heuristica-7-buen-ejemplo-3.webp"
     },
     { 
         "heuristica": 7,
         "esBuenEjemplo": true,
         "texto" : "Los programas de Mac muestran los atajos de teclado junto a cada opción del menú",
         "text" : "Mac programs display keyboard shortcuts next to each menu option",
-        "imagen" : "images/tarjetas/heuristica-7-buen-ejemplo-4.png"
+        "imagen" : "images/tarjetas/heuristica-7-buen-ejemplo-4.webp"
     },
     { 
         "heuristica": 7,
         "esBuenEjemplo": true,
         "texto" : "Gmail muestra los atajos de teclado al mantener el ratón encima de cada icono",
         "text" : "Gmail shows keyboard shortcuts when you hover over each icon",
-        "imagen" : "images/tarjetas/heuristica-7-buen-ejemplo-5.png"
+        "imagen" : "images/tarjetas/heuristica-7-buen-ejemplo-5.webp"
     },
     { 
         "heuristica": 7,
         "esBuenEjemplo": true,
         "texto" : "Cuando el usuario intenta deshacer, se le avisa de un atajo gestual para deshacer",
         "text" : "When the user attempts to undo, they are prompted with a gesture shortcut to undo",
-        "imagen" : "images/tarjetas/heuristica-7-buen-ejemplo-6.png"
+        "imagen" : "images/tarjetas/heuristica-7-buen-ejemplo-6.webp"
     },
     { 
         "heuristica": 7,
         "esBuenEjemplo": true,
         "texto" : "Trello incluye un botón en el menú superior para acceder a su herramienta de automatización",
         "text" : "Trello includes a button in the top menu to access its automation tool",
-        "imagen" : "images/tarjetas/heuristica-7-buen-ejemplo-7.png"
+        "imagen" : "images/tarjetas/heuristica-7-buen-ejemplo-7.webp"
     },
     { 
         "heuristica": 7,
         "esBuenEjemplo": true,
         "texto" : "Al acceder al menú de ayuda, Slack muestra una opción para ver atajos de teclado",
         "text" : "When accessing the help menu, Slack displays an option to view keyboard shortcuts",
-        "imagen" : "images/tarjetas/heuristica-7-buen-ejemplo-8.png"
+        "imagen" : "images/tarjetas/heuristica-7-buen-ejemplo-8.webp"
     },
     { 
         "heuristica": 8,
         "esBuenEjemplo": true,
         "texto" : "Mario Kart 8 Deluxe tiene una pantalla de juego minimalista (solo muestra la información pertinente), pero estéticamente agradable",
         "text" : "Mario Kart 8 Deluxe has a minimalistic game screen (it only displays relevant information), but it is aesthetically pleasing",
-        "imagen" : "images/tarjetas/heuristica-8-buen-ejemplo-1.png"
+        "imagen" : "images/tarjetas/heuristica-8-buen-ejemplo-1.webp"
     },
     { 
         "heuristica": 9,
         "esBuenEjemplo": true,
         "texto" : "Un juego de móvil muestra un mensaje de error informativo al intentar realizar una acción no disponible",
         "text" : "A mobile game displays an informative error message when trying to perform an unavailable action",
-        "imagen" : "images/tarjetas/heuristica-9-buen-ejemplo-1.png"
+        "imagen" : "images/tarjetas/heuristica-9-buen-ejemplo-1.webp"
     },
     { 
         "heuristica": 9,
         "esBuenEjemplo": true,
         "texto" : "El autocorrector de Google ayuda a que los niños encuentren lo que buscan aunque cometan errores de ortografía",
         "text" : "Google's autocorrect helps kids find what they're looking for even if they make spelling mistakes",
-        "imagen" : "images/tarjetas/heuristica-9-buen-ejemplo-2.png"
+        "imagen" : "images/tarjetas/heuristica-9-buen-ejemplo-2.webp"
     },
     { 
         "heuristica": 9,
         "esBuenEjemplo": true,
         "texto" : "Si te pasas del número máximo de caracteres, Twitter subraya en rojo los que sobran e indica el número con un signo negativo",
         "text" : "If you go over the maximum number of characters, Twitter underlines the extra characters in red and indicates the number with a negative sign",
-        "imagen" : "images/tarjetas/heuristica-9-buen-ejemplo-3.png"
+        "imagen" : "images/tarjetas/heuristica-9-buen-ejemplo-3.webp"
     },
     { 
         "heuristica": 9,
         "esBuenEjemplo": true,
         "texto" : "Al cometer un error en un formulario, se indica visualmente que hay un error y se explica el problema en un mensaje de error",
         "text" : "When you make a mistake on a form, it is visually indicated that there is an error and the problem is explained in an error message",
-        "imagen" : "images/tarjetas/heuristica-9-buen-ejemplo-4.png"
+        "imagen" : "images/tarjetas/heuristica-9-buen-ejemplo-4.webp"
     },
     { 
         "heuristica": 9,
         "esBuenEjemplo": true,
         "texto" : "Una página de error 404 explica qué ha ocurrido y qué se puede hacer a continuación",
         "text" : "A 404 error page explains what happened and what can be done next",
-        "imagen" : "images/tarjetas/heuristica-9-buen-ejemplo-5.png"
+        "imagen" : "images/tarjetas/heuristica-9-buen-ejemplo-5.webp"
     },
     { 
         "heuristica": 9,
         "esBuenEjemplo": true,
         "texto" : "Cuando una búsqueda en una web de vuelos no produce ningún resultado, se explica el error y se muestran botones para eliminar algunos filtros de búsqueda",
         "text" : "When a search on a flight website does not produce any results, the error is explained and buttons are displayed to remove some search filters.",
-        "imagen" : "images/tarjetas/heuristica-9-buen-ejemplo-6.png"
+        "imagen" : "images/tarjetas/heuristica-9-buen-ejemplo-6.webp"
     },
     { 
         "heuristica": 9,
         "esBuenEjemplo": true,
         "texto" : "Al enviar un correo electrónico, Gmail muestra un menú flotante para cancelar rápidamente su envío",
         "text" : "When sending an email, Gmail displays a floating menu to quickly cancel sending it",
-        "imagen" : "images/tarjetas/heuristica-9-buen-ejemplo-7.png"
+        "imagen" : "images/tarjetas/heuristica-9-buen-ejemplo-7.webp"
     },
     { 
         "heuristica": 9,
         "esBuenEjemplo": false,
         "texto" : "En vez de hacer una página de error 404 customizada que explique claramente el error y facilite una solución, dejar el mensaje por defecto del navegador",
         "text" : "Instead of making a custom 404 error page that clearly explains the error and provides a solution, leave the browser's default message",
-        "imagen" : "images/tarjetas/heuristica-9-mal-ejemplo-1.png"
+        "imagen" : "images/tarjetas/heuristica-9-mal-ejemplo-1.webp"
     },
     { 
         "heuristica": 10,
@@ -445,41 +445,41 @@
         "esBuenEjemplo": true,
         "texto" : "Una web tiene una sección de ayuda donde se puede buscar información en forma de pregunta",
         "text" : "A website has a help section where you can search for information in the form of a question",
-        "imagen" : "images/tarjetas/heuristica-10-buen-ejemplo-2.png"
+        "imagen" : "images/tarjetas/heuristica-10-buen-ejemplo-2.webp"
     },
     { 
         "heuristica": 10,
         "esBuenEjemplo": true,
         "texto" : "Una web tiene un menú de preguntas frecuentes organizado por temas",
         "text" : "A website has a frequently asked questions menu organized by topic",
-        "imagen" : "images/tarjetas/heuristica-10-buen-ejemplo-3.png"
+        "imagen" : "images/tarjetas/heuristica-10-buen-ejemplo-3.webp"
     },
     { 
         "heuristica": 10,
         "esBuenEjemplo": true,
         "texto" : "Cuando el usuario de una web de vuelos hace clic en el campo \"Destino\", aparece una ayuda contextual diciendo que puede buscar por todos los destinos",
         "text" : "When a flight website user clicks on the \"Destination\" field, a contextual help appears saying that they can search for all destinations",
-        "imagen" : "images/tarjetas/heuristica-10-buen-ejemplo-4.png"
+        "imagen" : "images/tarjetas/heuristica-10-buen-ejemplo-4.webp"
     },
     { 
         "heuristica": 10,
         "esBuenEjemplo": true,
         "texto" : "La sección de tutoriales de una web combina capturas de pantalla con instrucciones claras por pasos",
         "text" : "The tutorial section of a website combines screenshots with clear step-by-step instructions",
-        "imagen" : "images/tarjetas/heuristica-10-buen-ejemplo-5.png"
+        "imagen" : "images/tarjetas/heuristica-10-buen-ejemplo-5.webp"
     },
     { 
         "heuristica": 10,
         "esBuenEjemplo": false,
         "texto" : "Una web tiene una sección de ayuda con un límite de 30 caracteres por término de búsqueda",
         "text" : "One website has a help section with a 30-character limit per search term",
-        "imagen" : "images/tarjetas/heuristica-10-mal-ejemplo-1.png"
+        "imagen" : "images/tarjetas/heuristica-10-mal-ejemplo-1.webp"
     },
     { 
         "heuristica": 10,
         "esBuenEjemplo": false,
         "texto" : "Las sugerencias de búsqueda de una sección de ayuda son categorías genéricas que no coinciden con lo que se ha tecleado",
         "text" : "Search suggestions in a help section are generic categories that do not match what you typed.",
-        "imagen" : "images/tarjetas/heuristica-10-mal-ejemplo-2.png"
+        "imagen" : "images/tarjetas/heuristica-10-mal-ejemplo-2.webp"
     }
 ]

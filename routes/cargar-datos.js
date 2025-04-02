@@ -12,7 +12,7 @@ router.post('/cargar-datos', async (req, res) => {
     try {
         console.log('Iniciando carga de datos...');
         for (const tarjeta of tarjetas) {
-            console.log('Procesando tarjeta:', tarjeta);
+            //console.log('Procesando tarjeta:', tarjeta);
             const nuevaTarjeta = new Tarjeta({
                 heuristica: tarjeta.heuristica,
                 esBuenEjemplo: tarjeta.esBuenEjemplo,
@@ -25,7 +25,7 @@ router.post('/cargar-datos', async (req, res) => {
         }
 
         for (const heuristica of heuristicas) {
-            console.log('Procesando heurística:', heuristica);
+            //console.log('Procesando heurística:', heuristica);
             const nuevaHeuristica = new Heuristica({
                 nombre: heuristica.nombre,
                 ayuda: heuristica.ayuda,

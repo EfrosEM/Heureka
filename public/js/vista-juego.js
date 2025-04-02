@@ -1,6 +1,6 @@
 import {Controlador} from './controller/controlador.js';
 
-const BONUS_PUNTOS = 100;
+const BONUS_PUNTOS = calcularBonusPuntos(); // Bonus de puntos por ganar la partida
 
 let controlador = null;
 let translations = {};  // Aquí se almacenarán las traducciones cargadas
@@ -53,6 +53,27 @@ function cambiarIdioma(nuevoIdioma) {
     });
 }
 
+// Obtener la dificultad del juego desde la URL
+function obtenerDificultadDesdeURL() {
+    let path = window.location.pathname; // Obtiene la ruta actual, ej. "/game-intermediate.html"
+    
+    if (path.includes("game-intermediate")) return "intermedio";
+    if (path.includes("game-advanced")) return "avanzado";
+    return "principiante"; // Si es "game.html" o cualquier otro caso
+}
+
+// Calcular bonus de puntos por ganar la partida
+function calcularBonusPuntos() {
+    const dificultad = obtenerDificultadDesdeURL();
+    if (dificultad === "intermedio") {
+        return 200;
+    } else if (dificultad === "avanzado") {
+        return 300;
+    } else {
+        return 100;
+    }
+}
+
 function inicializarPagina() {
     // Deshabilitar botón por defecto
     $("#boton-accion").prop("disabled", true);
@@ -68,7 +89,8 @@ function inicializarPagina() {
             $('#cargando').hide();
             let mazoTarjetas = result.tarjetas;
             let infoHeuristicas = result.heuristicas;
-            controlador = new Controlador(mazoTarjetas, infoHeuristicas);
+            let dificultad = obtenerDificultadDesdeURL(); // Obtiene la dificultad desde la URL
+            controlador = new Controlador(mazoTarjetas, infoHeuristicas, dificultad);
             setupPartida();
         },
         error: function(xhr, status, error) {
@@ -115,13 +137,28 @@ function setupPartida() {
 function actualizarVidas() {
     const plantillaVidas = $("#plantilla-vidas").html();
     const plantillaVidasCompilada = Handlebars.compile(plantillaVidas);
+    const dificultad = obtenerDificultadDesdeURL();
 
     let cadenaVidas = "";
-    switch(controlador.getNumVidasActuales()) {
-        case 0: cadenaVidas = "<span id=\"ultima-vida\">💀</span>💀💀"; break;
-        case 1: cadenaVidas = "❤️<span id=\"ultima-vida\">💀</span>💀"; break;
-        case 2: cadenaVidas = "❤️❤️<span id=\"ultima-vida\">💀</span>"; break;
-        case 3: cadenaVidas = "❤️❤️❤️"; break;
+
+    if (dificultad === "principiante") {
+        switch(controlador.getNumVidasActuales()) {
+            case 0: cadenaVidas = "<span id=\"ultima-vida\">💀</span>💀💀"; break;
+            case 1: cadenaVidas = "❤️<span id=\"ultima-vida\">💀</span>💀"; break;
+            case 2: cadenaVidas = "❤️❤️<span id=\"ultima-vida\">💀</span>"; break;
+            case 3: cadenaVidas = "❤️❤️❤️"; break;
+        }
+    }else if (dificultad === "intermedio") {
+        switch(controlador.getNumVidasActuales()) {
+            case 0: cadenaVidas = "<span id=\"ultima-vida\">💀</span>💀"; break;
+            case 1: cadenaVidas = "❤️<span id=\"ultima-vida\">💀</span>"; break;
+            case 2: cadenaVidas = "❤️❤️"; break;
+        }
+    }else if (dificultad === "avanzado") {
+        switch(controlador.getNumVidasActuales()) {
+            case 0: cadenaVidas = "<span id=\"ultima-vida\">💀</span>"; break;
+            case 1: cadenaVidas = "❤️"; break;
+        }
     }
 
     var contexto = {
@@ -389,21 +426,24 @@ function terminarPartida(haGanado) {
     const total = controlador.getNumPreguntadas();
     const tiempo = controlador.leerValorCronometro();
     const puntos = controlador.getPuntosActuales();
+    const bonus = haGanado ? BONUS_PUNTOS : 0;
+    const avanzarNivel = haGanado;
 
     let queryString = 
         `?acertadas=${encodeURIComponent(acertadas)}`
         +`&total=${encodeURIComponent(total)}`
         +`&tiempo=${encodeURIComponent(cronometroToString(tiempo))}`
-        +`&puntos=${encodeURIComponent(puntos)}`;
+        +`&puntos=${encodeURIComponent(puntos)}`
+        +`&bonus=${encodeURIComponent(bonus)}`;
 
     if (haGanado) {
         // Se actualizan las estadísticas del usuario con un bonus de puntos por ganar la partida
-        actualizarStats(puntos, total, acertadas, tiempoEnSegundos(tiempo), BONUS_PUNTOS);
+        actualizarStats(puntos, total, acertadas, tiempoEnSegundos(tiempo), BONUS_PUNTOS, avanzarNivel);
 
         window.location.href = "has-ganado.html" + queryString;
     } else {
         // Se actualizan las estadísticas del usuario
-        actualizarStats(puntos, total, acertadas, tiempoEnSegundos(tiempo), 0);
+        actualizarStats(puntos, total, acertadas, tiempoEnSegundos(tiempo), 0, avanzarNivel);
 
         window.location.href = "has-perdido.html" + queryString;
     }
@@ -510,13 +550,14 @@ function clicTarjeta(event) {
     }
 }
 
-async function actualizarStats(puntos, preguntas, aciertos, tiempo, bonus) {
+async function actualizarStats(puntos, preguntas, aciertos, tiempo, bonus, avanzarNivel) {
     const data = {
         points: puntos,
         preguntas: preguntas,
         aciertos: aciertos,
         tiempo: tiempo,
-        bonus: bonus
+        bonus: bonus,
+        avanzar: avanzarNivel,
     };
 
     const response = await fetch('/stats', {

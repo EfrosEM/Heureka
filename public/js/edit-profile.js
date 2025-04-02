@@ -1,3 +1,8 @@
+//const { USERNAME_MAX_LENGTH, PASSWORD_MIN_LENGTH } = require('../../config/config.js');
+// FIXME
+const USERNAME_MAX_LENGTH = 30; // Máximo de caracteres para el nombre de usuario
+const PASSWORD_MIN_LENGTH = 8; // Mínimo de caracteres para la contraseña
+
 const usernameElement = document.getElementById("username");
 const emailElement = document.getElementById("email");
 
@@ -10,8 +15,8 @@ const messages = {
     es: {
       success: "Perfil actualizado correctamente.",
       found: "Usuario no encontrado.",
-      name: "El nombre de usuario no puede superar los 30 caracteres.",
-      password: "La contraseña debe tener al menos 5 caracteres.",
+      name: `El nombre de usuario no puede superar los ${USERNAME_MAX_LENGTH} caracteres.`,
+      password: `La contraseña debe tener al menos ${PASSWORD_MIN_LENGTH} caracteres.`,
       confirm: "Las contraseñas introducidas no coinciden.",
       email: "Ese email ya ha sido registrado.",
       user: "Ese nombre de usuario ya está en uso.",
@@ -21,8 +26,8 @@ const messages = {
     en: {
       success: "Profile updated successfully.",
       found: "User not found.",
-      name: "The username cannot exceed 30 characters.",
-      password: "The password must have at least 5 characters.",
+      name: `The username cannot exceed ${USERNAME_MAX_LENGTH} characters.`,
+      password: `The password must have at least ${PASSWORD_MIN_LENGTH} characters.`,
       confirm: "The passwords do not match.",
       email: "That email has already been registered.",
       user: "That user name is already in use.",

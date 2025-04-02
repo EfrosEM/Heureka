@@ -1,3 +1,8 @@
+//const { USERNAME_MAX_LENGTH, PASSWORD_MIN_LENGTH } = require('../../config/config.js');
+// FIXME
+const USERNAME_MAX_LENGTH = 30; // Máximo de caracteres para el nombre de usuario
+const PASSWORD_MIN_LENGTH = 8; // Mínimo de caracteres para la contraseña
+
 // Escuchar el evento submit del formulario
 document.getElementById('signup-form').addEventListener('submit', async function(event) {
     event.preventDefault();  // Prevenir el envío tradicional del formulario
@@ -6,8 +11,8 @@ document.getElementById('signup-form').addEventListener('submit', async function
       es: {
         success: "Usuario registrado correctamente.",
         fields: "Por favor, llena todos los campos.",
-        name: "El nombre de usuario no puede superar los 30 caracteres.",
-        password: "La contraseña debe tener al menos 5 caracteres.",
+        name: `El nombre de usuario no puede superar los ${USERNAME_MAX_LENGTH} caracteres.`,
+        password: `La contraseña debe tener al menos ${PASSWORD_MIN_LENGTH} caracteres.`,
         email: "Ese email ya ha sido registrado.",
         user: "Ese nombre de usuario ya está en uso.",
         connection: "Ocurrió un error en el registro.",
@@ -16,8 +21,8 @@ document.getElementById('signup-form').addEventListener('submit', async function
       en: {
         success: "User registered successfully.",
         fields: "Please fill in all the fields.",
-        name: "The username cannot exceed 30 characters.",
-        password: "The password must have at least 5 characters.",
+        name: `The username cannot exceed ${USERNAME_MAX_LENGTH} characters.`,
+        password: `The password must have at least ${PASSWORD_MIN_LENGTH} characters.`,
         email: "That email has already been registered.",
         user: "That user name is already in use.",
         connection: "An error occurred while signing up.",

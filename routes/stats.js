@@ -7,13 +7,18 @@ router.post('/stats', async (req, res) => {
         return res.status(401).json({ msg: 'error' });
     }
 
-    const { points, preguntas, aciertos, tiempo, bonus } = req.body;
+    const { points, preguntas, aciertos, tiempo, bonus, avanzar } = req.body;
 
     req.user.addPoints(points);
     req.user.addPreguntas(preguntas);
     req.user.addAciertos(aciertos);
     req.user.addTime(tiempo);
     req.user.addGame();
+
+    if (avanzar) {
+        // Avanzamos de nivel si el usuario ha ganado la partida
+        req.user.avanzarNivel();
+    }
 
     if (bonus > 0) {
         // Sumamos el bonus y la victoria si ha ganado la partida

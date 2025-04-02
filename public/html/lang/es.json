@@ -79,7 +79,8 @@
     "de": " de ",
     "preguntas-en": " preguntas en ",
     "has-conseguido": "Has obtenido una puntuación de",
-    "bonus": "Bonus por ganar la partida: +100 puntos",
+    "bonus": "Bonus por ganar la partida: +",
+    "puntos": " puntos",
 
 
     "definicion": "Ver definición ➕",
@@ -124,6 +125,7 @@
     "rol": "Rol",
     "alumno": "ALUMNO",
     "profesor": "PROFESOR",
+    "level": "Niveles desbloqueados",
     "info": "Información de usuario",
     "stats": "Estadísticas de juego",
     "games": "Partidas jugadas",
@@ -147,6 +149,15 @@
     "questions": "Preguntas",
     "aciertos/fallos": "Aciertos/Fallos",
     "tiempo": "Tiempo",
+    "delete-usuario": "Eliminar usuario",
+    "delete-usuario-confirm": "¿Estás seguro de que quieres eliminar este usuario?",
+    "delete-usuarios": "Eliminar usuarios",
+    "atencion": "¡ATENCIÓN!",
+    "delete-usuarios-confirm1": "Estás a punto de eliminar",
+    "todos": "TODOS",
+    "delete-usuarios-confirm2": "los usuarios a excepción de los administradores. ¿Estás seguro de que quieres hacerlo?",
+    "introduce-contraseña": "Introduce tu contraseña para confirmar la acción:",
+    "editar-usuario": "Editar datos de usuario",
 
 
     "tarjetas": "Tarjetas de juego",
@@ -162,5 +173,12 @@
     "actions": "Acciones",
     "delete-tarjeta": "Eliminar tarjeta",
     "delete-tarjeta-confirm": "¿Estás seguro de que quieres eliminar esta tarjeta?",
-    "eliminar": "Eliminar"
+    "eliminar": "Eliminar",
+
+
+    "principiante": "Principiante",
+    "intermedio": "Intermedio",
+    "avanzado": "Avanzado",
+    "nivel": "Selecciona el nivel de dificultad",
+    "comenzar": "Comenzar"
 }
