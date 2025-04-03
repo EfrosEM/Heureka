@@ -18,7 +18,7 @@
         "esBuenEjemplo": true,
         "texto" : "Manipular directamente el orden de las canciones en una lista de reproducción",
         "text" : "Directly manipulate the order of songs in a playlist",
-        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-3.gif"
+        "imagen" : "images/tarjetas/heuristica-1-buen-ejemplo-3.webp"
     },
     { 
         "heuristica": 1,
@@ -109,7 +109,7 @@
         "esBuenEjemplo": true,
         "texto" : "Pasar página en un libro electrónico con un gesto parecido a pasar página en un libro real",
         "text" : "Turning pages in an e-book with a gesture similar to turning pages in a real book",
-        "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-5.gif"
+        "imagen" : "images/tarjetas/heuristica-2-buen-ejemplo-5.webp"
     },
     { 
         "heuristica": 2,
@@ -326,7 +326,7 @@
         "esBuenEjemplo": true,
         "texto" : "En Instagram se puede dar un \"me gusta\" más rápido haciendo doble \"tap\" en la foto",
         "text" : "On Instagram you can give a \"like\" faster by double tapping on the photo",
-        "imagen" : "images/tarjetas/heuristica-7-buen-ejemplo-2.gif"
+        "imagen" : "images/tarjetas/heuristica-7-buen-ejemplo-2.webp"
     },
     { 
         "heuristica": 7,
@@ -438,7 +438,7 @@
         "esBuenEjemplo": true,
         "texto" : "Un juego de móvil tiene la ayuda fácil de encontrar, organizada y sucinta",
         "text" : "A mobile game has easy-to-find, organized, and succinct help",
-        "imagen" : "images/tarjetas/heuristica-10-buen-ejemplo-1.gif"
+        "imagen" : "images/tarjetas/heuristica-10-buen-ejemplo-1.webp"
     },
     { 
         "heuristica": 10,
