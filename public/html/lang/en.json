@@ -180,5 +180,9 @@
     "intermedio": "Intermediate",
     "avanzado": "Advanced",
     "nivel": "Select the difficulty level",
-    "comenzar": "Start"
+    "comenzar": "Start",
+    "info1": "You will get a higher score for answering the questions correctly in the shortest time possible.",
+    "info2": "To unlock difficulty levels, you must win a game on the previous level.",
+    "info3": "As the difficulty level increases, the number of lives decreases but you will get higher scores." ,
+    "info4": "Before starting the game:" 
 }

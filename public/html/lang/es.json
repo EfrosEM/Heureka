@@ -180,5 +180,9 @@
     "intermedio": "Intermedio",
     "avanzado": "Avanzado",
     "nivel": "Selecciona el nivel de dificultad",
-    "comenzar": "Comenzar"
+    "comenzar": "Comenzar",
+    "info1": "Obtendrás mayor puntuación por contestar correctamente las preguntas en el menor tiempo posible.",
+    "info2": "Para desbloquear los niveles de dificultad deberás ganar una partida en el nivel anterior.",
+    "info3": "Conforme aumenta el nivel de dificultad el número de vidas disminuye pero obtendrás mayores puntuaciones.",
+    "info4": "Antes de empezar a jugar:"
 }
