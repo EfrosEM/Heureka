@@ -85,6 +85,10 @@ document.getElementById('signup-form').addEventListener('submit', async function
         showAlert(result.msg, 'success');
         // Limpiar el formulario después del éxito
         this.reset();
+        // Redirigir a la página de inicio de sesión
+        setTimeout(() => {
+          window.location.href = '/login.html';
+      }, 1000);  // Redirigir después de 1 segundo
       } else {
         // Mostrar alerta de error
         showAlert(result.msg, 'danger');
