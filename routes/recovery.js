@@ -33,13 +33,15 @@ router.post('/recovery', async (req, res) => {
             user: EMAIL_USER,
             pass: EMAIL_PASS
         }
-    });
+      });
   
       // Configura el contenido del correo
       const resetLink = `${RECOVERY_LINK}${token}`;
       const mailOptions = {
+        from: `"Heureka" <${EMAIL_USER}>`,
         to: user.email,
         subject: 'Restablecer contraseña',
+        text: `Hola ${user.user}, Has solicitado restablecer tu contraseña. Enlace: ${resetLink}`,
         html: `
           <h3>Hola ${user.user},</h3>
           <p>Has solicitado restablecer tu contraseña. Haz clic en el enlace de abajo para cambiarla:</p>
