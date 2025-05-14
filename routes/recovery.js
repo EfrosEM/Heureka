@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 const Usuario = require('../models/Usuario');
 
-const { RECOVERY_LINK, EMAIL_USER, EMAIL_PASS } = require('../config/config');
+const { URL_HEUREKA, EMAIL_USER, EMAIL_PASS } = require('../config/config');
 
 // Ruta para recuperar contraseña
 router.post('/recovery', async (req, res) => {
@@ -36,7 +36,7 @@ router.post('/recovery', async (req, res) => {
       });
   
       // Configura el contenido del correo
-      const resetLink = `${RECOVERY_LINK}${token}`;
+      const resetLink = `${URL_HEUREKA}/reset-password.html?token=${token}`;
       const mailOptions = {
         from: `"Heureka" <${EMAIL_USER}>`,
         to: user.email,
