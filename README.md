@@ -3,7 +3,8 @@ Aplicación gamificada utilizada en la asignatura Interfaces de Usuario, del Gra
 
 <img src="./public/images/logo.webp" alt="Logo" width="400"/>
 
-## Tecnologías utilizadas:
+## Tecnologías utilizadas
+
 - **Node.js y Express** para el servidor
 - **MongoDB** para la base de datos
 - **HTML/CSS/JS** para el frontend
