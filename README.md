@@ -45,7 +45,7 @@ Aplicación gamificada utilizada en la asignatura Interfaces de Usuario, del Gra
 
 ## Configuración
 
-Para configurar la aplicación se deben modificar las variables  de entorno del archivo `.env`
+Para configurar la aplicación se deben modificar las variables  de entorno del archivo `.env`:
 
 ```
 # Configuración general
@@ -66,6 +66,22 @@ PASSWORD_MIN_LENGTH=8               # Longitud mínima de la contraseña
 USERNAME_MAX_LENGTH=30              # Longitud máxima del nombre de usuario
 BONUS_POINTS=100                    # Puntos de bonificación por victoria
 ```
+
+## Cargar datos
+
+Una vez desplegada y configurada la aplicación, para cargar los datos necesarios en una base de datos vacía se deberán enviar las siguientes peticiones HTTP al servidor:
+
+- Para cargar las Heuristicas y Tarjetas, almacenadas en los ficheros .json del direcctorio `Heureka/data`.
+  
+  ```bash
+   curl -X POST http://localhost:5000/api/cargar-datos -H "Content-Type: application/json"
+   ```
+
+- Para cargar un usuario administrador, con nombre de usuario `admin` y contraseña `admin` (Estas credenciales podrán ser modificadas una vez dentro de la aplicación).
+  
+  ```bash
+   curl -X POST http://localhost:5000/api/cargar-admin -H "Content-Type: application/json"
+   ```
 
 ## Estructura del proyecto
 
