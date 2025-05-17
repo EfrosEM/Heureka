@@ -67,21 +67,17 @@ USERNAME_MAX_LENGTH=30              # Longitud máxima del nombre de usuario
 BONUS_POINTS=100                    # Puntos de bonificación por victoria
 ```
 
-## Cargar datos
+## Carga de datos
 
-Una vez desplegada y configurada la aplicación, para cargar los datos necesarios en una base de datos vacía se deberán enviar las siguientes peticiones HTTP al servidor:
+Cuando se inicia el servidor, este comprueba automáticamente si la base de datos está vacía:
 
-- Para cargar las Heuristicas y Tarjetas, almacenadas en los ficheros .json del direcctorio `Heureka/data`.
-  
-  ```bash
-   curl -X POST http://localhost:5000/api/cargar-datos -H "Content-Type: application/json"
-   ```
+- Si **no existen tarjetas ni heurísticas**, se cargan automáticamente desde los archivos JSON del directorio `Heureka/data` (`tarjetas.json` y `heuristicas.json`).
+- Si **no existe ningún usuario con el rol `PROFESOR`**, se crea automáticamente un usuario administrador con las siguientes credenciales por defecto:
+  - **Usuario**: `admin`
+  - **Contraseña**: `admin`
+  - **Rol**: `PROFESOR`
 
-- Para cargar un usuario administrador, con nombre de usuario `admin` y contraseña `admin` (Estas credenciales podrán ser modificadas una vez dentro de la aplicación).
-  
-  ```bash
-   curl -X POST http://localhost:5000/api/cargar-admin -H "Content-Type: application/json"
-   ```
+> ⚠️ Estas credenciales podrán ser modificadas manualmente una vez dentro de la aplicación desde el perfil de usuario.
 
 ## Estructura del proyecto
 

@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 
+const { cargarDatosIniciales, cargarAdminInicial } = require('./initDB');
 const { PORT, MONGODB_URI, NODE_ENV, DB_NAME } = require('./config/config');
 
 const app = express();
@@ -15,8 +16,15 @@ const options = {dbName: DB_NAME};
 
 // Conectar a MongoDB
 mongoose.connect(MONGODB_URI, options)
-  .then(() => console.log('MongoDB conectado a ' + DB_NAME))
-  .catch(err => console.log(err));
+.then(async () => {
+    console.log('Conectado a MongoDB: '+ DB_NAME);
+
+    // Llamadas a carga inicial
+    await cargarDatosIniciales();
+    await cargarAdminInicial();
+}).catch(err => {
+    console.error('Error conectando a MongoDB:', err);
+});
 
 // Body parser para manejar datos de formularios
 app.use(express.urlencoded({ extended: true }));
