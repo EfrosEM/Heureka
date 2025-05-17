@@ -77,7 +77,7 @@ Cuando se inicia el servidor, este comprueba automáticamente si la base de dato
   - **Contraseña**: `admin`
   - **Rol**: `PROFESOR`
 
-> ⚠️ Estas credenciales podrán ser modificadas manualmente una vez dentro de la aplicación desde el perfil de usuario.
+> ⚠️ Estas credenciales podrán ser modificadas una vez dentro de la aplicación desde el perfil de usuario.
 
 ## Estructura del proyecto
 
