@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 
-const { cargarDatosIniciales, cargarAdminInicial } = require('./initDB');
+const { cargarDatosIniciales, cargarAdminInicial } = require('./data/dbinit');
 const { PORT, MONGODB_URI, NODE_ENV, DB_NAME } = require('./config/config');
 
 const app = express();
@@ -18,9 +18,9 @@ const options = {dbName: DB_NAME};
 mongoose.connect(MONGODB_URI, options)
 .then(async () => {
     console.log('Conectado a MongoDB: '+ DB_NAME);
-
-    // Llamadas a carga inicial
+    // Cargar datos iniciales
     await cargarDatosIniciales();
+    // Cargar usuario administrador inicial
     await cargarAdminInicial();
 }).catch(err => {
     console.error('Error conectando a MongoDB:', err);

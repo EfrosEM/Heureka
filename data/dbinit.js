@@ -1,9 +1,9 @@
-const Tarjeta = require('./models/Tarjeta');
-const Heuristica = require('./models/Heuristica');
-const Usuario = require('./models/Usuario');
+const Tarjeta = require('../models/Tarjeta');
+const Heuristica = require('../models/Heuristica');
+const Usuario = require('../models/Usuario');
 
-const tarjetas = require('./data/tarjetas.json'); // Archivo con las tarjetas
-const heuristicas = require('./data/heuristicas.json'); // Archivo con las heurísticas
+const tarjetas = require('./tarjetas.json'); // Archivo con las tarjetas
+const heuristicas = require('./heuristicas.json'); // Archivo con las heurísticas
 
 async function cargarDatosIniciales() {
     const tarjetasCount = await Tarjeta.countDocuments();
@@ -42,7 +42,6 @@ async function cargarAdminInicial() {
         console.log('✔️ Ya existe un usuario administrador. No se creó uno nuevo.');
     }
 }
-
 
 module.exports = {
     cargarDatosIniciales,
