@@ -43,6 +43,7 @@
             <h3 class='text-center mb-3 mt-3' data-i18n="welcome">Accede a tu cuenta</h3>
             <hr class="mb-4">
             <form action="/users/login" method="POST" id="login-form">
+              <!-- Usuario -->
               <div class="input-group mb-3">
                 <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
                 <div class='form-floating'>
@@ -50,13 +51,18 @@
                     <label class="form-label" data-i18n="user" for="user"></label>
                 </div>
               </div>
+              <!-- Contraseña -->
               <div class="input-group mb-2">
                 <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
                 <div class='form-floating'>
                     <input type="password" placeholder='Password' name='password' id='password' class='form-control' required>
                     <label class="form-label" data-i18n="password" for="password"></label>
                 </div>
+                <button type="button" class="btn btn-password" onclick="togglePassword()">
+                  <i class="bi bi-eye-slash-fill" id="eyeIcon"></i>
+                </button>
               </div>
+
               <a class='text-center' data-i18n="forgot" href="/recovery.html"></a>
               <div class='mb-3  mt-4 d-grid'>
                 <button class='btn btn-primary btn-lg'><i class="bi bi-box-arrow-in-right"></i> <span  data-i18n="login"></span></button>
@@ -94,6 +100,8 @@
     <script src="/js/utils/i18n.js" defer></script>
     <!-- Script para obtener mensajes de login del backend -->
     <script src="/js/login.js" defer></script>
+    <!-- Script para mostrar/ocultar la contraseña -->
+    <script src="/js/utils/toggle-password.js" defer></script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
