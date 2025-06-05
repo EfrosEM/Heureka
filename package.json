@@ -35,11 +35,11 @@
     "mongoose": "^8.7.0",
     "multer": "^2.0.1",
     "nodemailer": "^6.9.16",
-    "nodemon": "^2.0.4",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
+    "nodemon": "^3.1.10",
     "qunit": "^2.11.1"
   }
 }
