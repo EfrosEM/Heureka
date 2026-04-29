@@ -1,19 +1,19 @@
-# Heureka 💡
+# 💡 Heureka
 Aplicación gamificada utilizada en la asignatura Interfaces de Usuario, del Grado de Ingeniería Informática de la Universidad de Murcia, para promover entre los alumnos el aprendizaje de las 10 heurísticas de Nielsen.
 
 <img src="./public/images/logo.webp" alt="Logo" width="400"/>
 
-## Tecnologías utilizadas 🛠️
+## 🛠️ Tecnologías utilizadas
 
 - **Node.js y Express** para el servidor
 - **MongoDB** para la base de datos
 - **HTML/CSS/JS** para el frontend
 
-## Requisitos 📦
+## 📦 Requisitos
 
 - [Node.js](https://nodejs.org/es)
 
-## Despliegue 🚀
+## 🚀 Despliegue
 
 1. **Clonar el repositorio**
 
@@ -43,7 +43,7 @@ Aplicación gamificada utilizada en la asignatura Interfaces de Usuario, del Gra
 
     [http://localhost:5000](http://localhost:5000)
 
-## Configuración ⚙️
+## ⚙️ Configuración
 
 Para configurar la aplicación se deben modificar las variables  de entorno del archivo `.env`:
 
@@ -67,7 +67,7 @@ USERNAME_MAX_LENGTH=30              # Longitud máxima del nombre de usuario
 BONUS_POINTS=100                    # Puntos de bonificación por victoria
 ```
 
-## Carga de datos 📥
+## 📥 Carga de datos
 
 Cuando se inicia el servidor, este comprueba automáticamente si la base de datos está vacía:
 
@@ -79,7 +79,7 @@ Cuando se inicia el servidor, este comprueba automáticamente si la base de dato
 
 > ⚠️ Estas credenciales podrán ser modificadas una vez dentro de la aplicación desde el perfil de usuario.
 
-## Estructura del proyecto 🗂️
+## 🗂️ Estructura del proyecto
 
 El proyecto está organizado según la siguiente estructura de directorios:
 
@@ -127,7 +127,7 @@ Heureka
 
 ```
 
-## Vista previa 👀
+## 👀 Vista previa
 
 **Pantalla de inicio**
 
@@ -139,6 +139,6 @@ Heureka
 <img src="./public/images/juego.png" alt="Partida en curso" width="600"/>
 
 
-## Autor 👨‍💻
+## 👨‍💻 Autor
 
 - Eduardo Espinosa Meroño  ([@EfrosEM](https://github.com/EfrosEM)) – eduardo.espinosam@um.es
